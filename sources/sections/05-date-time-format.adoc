@@ -90,8 +90,8 @@ Simplicity is achieved by making most fields and punctuation mandatory.
 The format should allow implementations to specify additional important
 information in addition to the bare timestamp. This is done by allowing
 implementations to include an informative suffix at the end with as many
-tags as required, each with a hyphen separated key and value. The value
-can be a hyphen delimited list of multiple values.
+tags as required, each with a key and value separated by an equals sign.
+The value can be a hyphen delimited list of multiple values.
 
 In case a key is repeated or conflicted, the implementations should give
 precedence to whichever value is positioned first.
@@ -103,7 +103,7 @@ different standards bodies/organizations need a way to identify which part
 adheres to their standards. For this, all information needs to be
 namespaced. Each key is therefore divided into two hyphen-separated
 sections: the namespace and the key. For example, the calendar as defined
-by the Unicode consortium could be included as `u-ca-<value>`.
+by the Unicode consortium could be included as `u-ca=<value>`.
 
 All single-character namespaces are reserved for BCP47 extensions recorded
 in the BCP47 extensions registry. For these namespaces:
@@ -259,7 +259,7 @@ suffix-key     = namespace ["-" namespace-key]
 
 suffix-value   = 1*alphanum
 suffix-values  = suffix-value *("-" suffix-value)
-suffix-tag     = "[" suffix-key "-" suffix-values "]"
+suffix-tag     = "[" suffix-key "=" suffix-values "]"
 suffix         = [timezone] *suffix-tag
 
 date-time      = date-full "T" time-full suffix
@@ -372,7 +372,7 @@ time zone aware implementations to take into account.
 
 [%unnumbered]
 ----
-1996-12-19T16:39:57-08:00[America/Los_Angeles][u-ca-hebrew]
+1996-12-19T16:39:57-08:00[America/Los_Angeles][u-ca=hebrew]
 ----
 
 This represents the exact same instant but it informs calendar-aware
@@ -405,7 +405,7 @@ minutes and 32.13 seconds ahead of UTC by law from 1909-05-01 through
 
 [%unnumbered]
 ----
-1937-01-01T12:00:27.87+00:19:32.130[u-ca-japanese]
+1937-01-01T12:00:27.87+00:19:32.130[u-ca=japanese]
 ----
 
 This represents the exact same instant as the previous example but
@@ -414,7 +414,7 @@ calendar aware implementations to take into account.
 
 [%unnumbered]
 ----
-1937-01-01T12:00:27.87+00:19:32.130[u-ca-islamic-civil]
+1937-01-01T12:00:27.87+00:19:32.130[u-ca=islamic-civil]
 ----
 
 Since there's not a single agreed upon way to deal with dates in the
@@ -423,7 +423,7 @@ different interpretations.
 
 [%unnumbered]
 ----
-1937-01-01T12:00:27.87+00:19:32.130[x-foo-bar][x-baz-bat]
+1937-01-01T12:00:27.87+00:19:32.130[x-foo=bar][x-baz=bat]
 ----
 
 This timestamp utilizes the private use namespace to declare two additional
