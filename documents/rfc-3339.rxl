@@ -4,8 +4,8 @@
 <uri>https://ryzokuken.dev/draft-ryzokuken-datetime-extended/</uri>
 <uri type="html">https://ryzokuken.dev/draft-ryzokuken-datetime-extended/documents/rfc-3339.html</uri>
 <uri type="pdf">https://ryzokuken.dev/draft-ryzokuken-datetime-extended/documents/rfc-3339.pdf</uri>
-<docidentifier>draft-ryzokuken-datetime-extended-01</docidentifier>
-<docnumber>draft-ryzokuken-datetime-extended-01</docnumber>
+<docidentifier>draft-ryzokuken-datetime-extended-02</docidentifier>
+<docnumber>draft-ryzokuken-datetime-extended-02</docnumber>
 <contributor>
 <role type="author"/>
 <person>
@@ -49,12 +49,6 @@ information including a time zone.</p>
 </organization>
 </owner>
 </copyright>
-<relation type="obsoletes">
-<bibitem>
-<title>--</title>
-<docidentifier>3339</docidentifier>
-</bibitem>
-</relation>
 <series type="stream">
 <title>IETF</title>
 </series>
