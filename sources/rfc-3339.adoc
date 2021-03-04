@@ -1,9 +1,8 @@
 = Date and Time on the Internet: Timestamps with additional information
 :doctype: internet-draft
 :abbrev: Timestamps Extended
-:docnumber: draft-ryzokuken-datetime-extended-01
+:docnumber: draft-ryzokuken-datetime-extended-02
 :workgroup: Calendaring Extensions Working Group
-:obsoletes: 3339
 :revdate: 2020-10-21
 :uri: https://ryzokuken.dev/draft-ryzokuken-datetime-extended/
 :html-uri: https://ryzokuken.dev/draft-ryzokuken-datetime-extended/documents/rfc-3339.html
