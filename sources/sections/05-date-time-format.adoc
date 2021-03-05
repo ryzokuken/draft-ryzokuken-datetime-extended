@@ -250,8 +250,8 @@ time-full      = time-partial time-offset
 
 time-zone-char = ALPHA / "." / "_"
 time-zone-part = time-zone-char *13(time-zone-char / DIGIT / "-" / "+") ; but not "." or ".."
-time-zone-id   = time-zone-part *("/" time-zone-part)
-time-zone      = "[" time-zone-id "]"
+time-zone-name = time-zone-part *("/" time-zone-part)
+time-zone      = "[" time-zone-name "]"
 
 namespace      = 1*alphanum
 namespace-key  = 1*alphanum

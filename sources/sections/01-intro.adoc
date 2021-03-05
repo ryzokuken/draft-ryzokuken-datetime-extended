@@ -33,7 +33,7 @@ somewhere between 0000AD and 9999AD.
 Coordinated Universal Time (UTC). Certain applications require the
 presence of a time zone in order to perform scheduling as well as
 handle Daylight Savings Time transitions properly. In that case,
-an optional time zone ID may be included.
+an optional time zone name may be included.
 
 * Timestamps can express times that occurred before the introduction
 of UTC.  Such timestamps are expressed relative to universal time,
