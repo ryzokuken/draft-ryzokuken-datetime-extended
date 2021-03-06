@@ -311,8 +311,8 @@ as follows:
 year.
 
 The grammar element time-second may have the value "60" at the end of
-months in which a leap second occurs -- to date: June (XXXX-06-
-30T23:59:60Z) or December (XXXX-12-31T23:59:60Z); see <<annexC>> for
+months in which a leap second occurs -- to date: June
+(XXXX-06-30T23:59:60Z) or December (XXXX-12-31T23:59:60Z); see <<annexC>> for
 a table of leap seconds. It is also possible for a leap second to be
 subtracted, at which times the maximum value of time-second is "58".
 At all other times the maximum value of time-second is "59".
@@ -325,6 +325,9 @@ International Earth Rotation Service publishes bulletins (IERS) that
 announce leap seconds with a few weeks' warning. Applications should
 not generate timestamps involving inserted leap seconds until after
 the leap seconds are announced.
+
+The maximum value of a time-second grammar element inside a time-offset
+grammar element is always "59".
 
 Although ISO 8601 permits the hour to be "24", this extension of a profile
 of ISO 8601 only allows values between "00" and "23" for the hour in order
