@@ -245,7 +245,7 @@ time-second    = 2DIGIT ; 00-58, 00-59, 00-60 based on leap second rules
 time-secfrac   = "." 1*DIGIT
 time-partial   = time-hour ":" time-minute ":" time-second [time-secfrac]
 time-numoffset = ("+" / "-") time-partial
-time-offset    = "Z" / time-numoffset
+time-offset    = ("Z" / "z") / time-numoffset
 time-full      = time-partial time-offset
 
 time-zone-char = ALPHA / "." / "_"
@@ -262,18 +262,14 @@ suffix-values  = suffix-value *("-" suffix-value)
 suffix-tag     = "[" suffix-key "=" suffix-values "]"
 suffix         = [timezone] *suffix-tag
 
-date-time      = date-full "T" time-full suffix
+date-time      = date-full ("T" / "t") time-full suffix
 ----
 
 NOTE: Per <<RFC2234>> and ISO8601, the "T" and "Z" characters in this
 syntax may alternatively be lower case "t" or "z" respectively.
-
-This date/time format may be used in some environments or contexts
+Because this date/time format may be used in some environments or contexts
 that distinguish between the upper- and lower-case letters 'A'-'Z'
-and 'a'-'z' (e.g. XML). Specifications that use this format in
-such environments MAY further limit the date/time syntax so that
-the letters 'T' and 'Z' used in the date/time syntax must always
-be upper case. Applications that generate this format SHOULD use
+and 'a'-'z' (e.g. XML), applications that generate this format SHOULD use
 upper case letters.
 
 NOTE: ISO 8601 defines date and time separated by "T".
