@@ -8,14 +8,16 @@ Internet protocols.
 === Ordering
 
 If date and time components are ordered from least precise to most
-precise, then a useful property is achieved. Assuming that the time
-zones of the dates and times are the same (e.g., all in UTC),
+precise, then a useful property is achieved. Assuming that the UTC
+offsets of the dates and times are the same (e.g., all in UTC) and
 expressed using the same string (e.g., all "Z" or all "+00:00"), all
-times have the same number of fractional second digits, and they all
-have the same suffix (or none), then the date and time strings may be
+times have the same number of fractional second digits, all time
+designators use the same string (e.g., "T"), and all years
+are in the same era and use the same number of digits, then they may be
 sorted as strings (e.g., using the `strcmp()` function in C) and a
-time-ordered sequence will result. The presence of optional punctuation
-would violate this characteristic.
+time-ordered sequence will result (in descending order if the years
+start with "-"). The presence of optional punctuation would violate this
+characteristic.
 
 === Human Readability
 
