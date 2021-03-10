@@ -27,7 +27,7 @@ the other hand, human readability sometimes results in
 interoperability problems. For example, the date format "10/11/1996"
 is completely unsuitable for global interchange because it is
 interpreted differently in different countries. In addition, the
-date format in (RFC822) has resulted in interoperability problems when
+non-numeric UTC offset format in <<RFC822>> caused interoperability problems when
 people assumed any text string was permitted and translated the three
 letter abbreviations to other languages or substituted date formats
 which were easier to generate (e.g. the format used by the C function

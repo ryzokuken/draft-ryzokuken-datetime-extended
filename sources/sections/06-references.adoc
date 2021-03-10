@@ -1,8 +1,8 @@
 [[references]]
-// TODO: fix bibliography
+// TODO: fix bibliography ("References" with subsections "{Normative,Informative} References")
 [bibliography]
 == Normative References
-// * [[[RFC822,RFC 822]]]
+* [[[RFC822,RFC 822]]]
 * [[[RFC2822,RFC 2822]]]
 * [[[RFC2234,RFC 2234]]]
 * [[[RFC1123,RFC 1123]]]
