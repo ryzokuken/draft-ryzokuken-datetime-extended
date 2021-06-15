@@ -1,43 +1,31 @@
 [[intro]]
 == Introduction
 
-Date and time formats cause a lot of confusion and interoperability
-problems on the Internet. This document addresses many of the
-problems encountered and makes recommendations to improve consistency
-and interoperability when representing and using date and time in
-Internet protocols.
+Dates and times are used in a very diverse set of internet applications, all
+the way from server-side logging to calendaring and scheduling.
 
-This document includes an extension to an Internet profile of the
-<<ISO8601>> standard for representation of dates and times using the
-proleptic Gregorian calendar alongside any additional information.
+Each distinct instant in time can be represented in a descriptive text format
+using a timestamp, and <<ISO8601>> standardizes a widely-adopted timestamp
+format, which forms the basis of <<RFC3339>>. However, this format doesn't
+allow timestamps to contain any additional relevant information, which means
+that any contextual information related to a given timestamp needs to be
+either handled separately or attached to it in a non-standard manner.
 
-There are many ways in which date and time values might appear in
-Internet protocols:  this document focuses on just one common usage,
-viz. timestamps for Internet protocol events.  This limited
-consideration has the following consequences:
+This is already a pressing issue for applications that handle each instant with
+an associated time zone name, to take into account things like DST transitions.
+Most of these applications attach the timezone to the timestamp in a
+non-standard format, atleast one of which is fairly well-adopted. Furthermore,
+applications might want to attach even more information to the timestamp,
+including but not limited to the calendar system it must be represented in.
 
-* All dates and times are assumed to be in the "current era",
-somewhere between 0000AD and 9999AD.
+This document seeks to standardize an extension syntax for timestamps as
+specified in <<RFC3339>> that has the following properties:
 
-// * All times expressed have a stated relationship (offset) to
-// Coordinated Universal Time (UTC). (This is distinct from some
-// usage in scheduling applications where a local time and location
-// may be known, but the actual relationship to UTC may be dependent
-// on the unknown or unknowable actions of politicians or
-// administrators.  The UTC time corresponding to 17:00 on 23rd March
-// 2005 in New York may depend on administrative decisions about
-// daylight savings time.  This specification steers well clear of
-// such considerations.)
+* The extension suffix should be completely optional, making existing
+<<RFC3339>> timestamps compatible with this format.
 
-* All times expressed have a stated relationship (offset) to
-Coordinated Universal Time (UTC). Certain applications require the
-presence of a time zone in order to perform scheduling as well as
-handle Daylight Savings Time transitions properly. In that case,
-an optional time zone name may be included.
+* The format should be compatible to the pre-existing popular syntax for
+attaching time zone names to timestamps.
 
-* Timestamps can express times that occurred before the introduction
-of UTC.  Such timestamps are expressed relative to universal time,
-using the best available practice at the stated time.
-
-* Date and time expressions indicate an instant in time.
-Description of time periods, or intervals, is not covered here.
+* The format should allow a generalized way to attach any additional
+information to the timestamp.
