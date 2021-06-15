@@ -32,10 +32,8 @@
 </version>
 <language>en</language>
 <script>Latn</script><abstract>
-<p>This document defines a date and time format for use in Internet
-protocols for representation of dates and times using the proleptic
-Gregorian calendar, with optional extensions representing additional
-information including a time zone.</p>
+<p>This document defines an extension to the timestamp format defined in
+<eref type="inline" bibitemid="RFC3339" citeas="RFC 3339"/> for representing additional information including a time zone.</p>
 </abstract>
 <status>
 <stage>published</stage>

@@ -13,10 +13,9 @@ Expires: 18 December 2021
 
 Abstract
 
-   This document defines a date and time format for use in Internet
-   protocols for representation of dates and times using the proleptic
-   Gregorian calendar, with optional extensions representing additional
-   information including a time zone.
+   This document defines an extension to the timestamp format defined in
+   [RFC3339] for representing additional information including a time
+   zone.
 
 Status of This Memo
 
@@ -48,6 +47,7 @@ Copyright Notice
    extracted from this document must include Simplified BSD License text
    as described in Section 4.e of the Trust Legal Provisions and are
    provided without warranty as described in the Simplified BSD License.
+
 
 
 
@@ -631,13 +631,13 @@ Internet-Draft             Timestamps Extended                 June 2021
    time-secfrac   = "." 1*DIGIT
    time-partial   = time-hour ":" time-minute ":" time-second [time-secfrac]
    time-numoffset = ("+" / "-") time-partial
-   time-offset    = "Z" / time-numoffset
+   time-offset    = ("Z" / "z") / time-numoffset
    time-full      = time-partial time-offset
 
    time-zone-char = ALPHA / "." / "_"
    time-zone-part = time-zone-char *13(time-zone-char / DIGIT / "-" / "+") ; but not "." or ".."
-   time-zone-id   = time-zone-part *("/" time-zone-part)
-   time-zone      = "[" time-zone-id "]"
+   time-zone-name = time-zone-part *("/" time-zone-part)
+   time-zone      = "[" time-zone-name "]"
 
    namespace      = 1*alphanum
    namespace-key  = 1*alphanum
@@ -648,22 +648,22 @@ Internet-Draft             Timestamps Extended                 June 2021
    suffix-tag     = "[" suffix-key "=" suffix-values "]"
    suffix         = [timezone] *suffix-tag
 
-   date-time      = date-full "T" time-full suffix
+   date-time      = date-full ("T" / "t") time-full suffix
 
                                   Figure 2
 
       |  NOTE 1: Per [RFC2234] and ISO8601, the "T" and "Z" characters
       |  in this syntax may alternatively be lower case "t" or "z"
-      |  respectively.
+      |  respectively.  Because this date/time format may be used in
+      |  some environments or contexts that distinguish between the
+      |  upper- and lower-case letters 'A'-'Z' and 'a'-'z' (e.g.  XML),
+      |  applications that generate this format SHOULD use upper case
+      |  letters.
 
-   This date/time format may be used in some environments or contexts
-   that distinguish between the upper- and lower-case letters 'A'-'Z'
-   and 'a'-'z' (e.g.  XML).  Specifications that use this format in such
-   environments MAY further limit the date/time syntax so that the
-   letters 'T' and 'Z' used in the date/time syntax must always be upper
-   case.  Applications that generate this format SHOULD use upper case
-   letters.
-
+      |  NOTE 2: ISO 8601 defines date and time separated by "T".
+      |  Applications using this syntax may choose, for the sake of
+      |  readability, to specify a full-date and full-time separated by
+      |  (say) a space character.
 
 
 
@@ -673,11 +673,6 @@ Sharma                  Expires 18 December 2021               [Page 12]
 
 Internet-Draft             Timestamps Extended                 June 2021
 
-
-      |  NOTE 2: ISO 8601 defines date and time separated by "T".
-      |  Applications using this syntax may choose, for the sake of
-      |  readability, to specify a full-date and full-time separated by
-      |  (say) a space character.
 
 5.9.  Restrictions
 
@@ -725,17 +720,22 @@ Internet-Draft             Timestamps Extended                 June 2021
 
 
 
+
+
+
+
+
 Sharma                  Expires 18 December 2021               [Page 13]
 
 Internet-Draft             Timestamps Extended                 June 2021
 
 
    The grammar element time-second may have the value "60" at the end of
-   months in which a leap second occurs - to date: June (XXXX-06-
-   30T23:59:60Z) or December (XXXX-12-31T23:59:60Z); see Appendix C for
-   a table of leap seconds.  It is also possible for a leap second to be
-   subtracted, at which times the maximum value of time-second is "58".
-   At all other times the maximum value of time-second is "59".
+   months in which a leap second occurs - to date: June (XXXX-
+   06-30T23:59:60Z) or December (XXXX-12-31T23:59:60Z); see Appendix C
+   for a table of leap seconds.  It is also possible for a leap second
+   to be subtracted, at which times the maximum value of time-second is
+   "58".  At all other times the maximum value of time-second is "59".
    Further, in time zones other than "Z", the leap second point is
    shifted by the zone offset (so it happens at the same instant around
    the globe).
@@ -745,6 +745,9 @@ Internet-Draft             Timestamps Extended                 June 2021
    announce leap seconds with a few weeks' warning.  Applications should
    not generate timestamps involving inserted leap seconds until after
    the leap seconds are announced.
+
+   The maximum value of a time-second grammar element inside a time-
+   offset grammar element is always "59".
 
    Although ISO 8601 permits the hour to be "24", this extension of a
    profile of ISO 8601 only allows values between "00" and "23" for the
@@ -773,11 +776,8 @@ Internet-Draft             Timestamps Extended                 June 2021
                                   Figure 5
 
    This represents 39 minutes and 57 seconds after the 16th hour of
-   December 19th, 1996 with an offset of -08:00 from UTC (Pacific
-   Standard Time).  Note that this is equivalent to 1996-12-20T00:39:57Z
-   in UTC.
-
-   1996-12-19T16:39:57-08:00[America/Los_Angeles]
+   December 19th, 1996 with an offset of -08:00 from UTC.  Note that
+   this is equivalent to 1996-12-20T00:39:57Z in UTC.
 
 
 
@@ -786,11 +786,14 @@ Sharma                  Expires 18 December 2021               [Page 14]
 Internet-Draft             Timestamps Extended                 June 2021
 
 
+   1996-12-19T16:39:57-08:00[America/Los_Angeles]
+
                                   Figure 6
 
    This represents the exact same instant as the previous example but
-   additionally specifies the human time zone associated with it for
-   time zone aware implementations to take into account.
+   additionally specifies the human time zone associated with it
+   ("Pacific Time") for time-zone-aware implementations to take into
+   account.
 
    1996-12-19T16:39:57-08:00[America/Los_Angeles][u-ca=hebrew]
 
@@ -821,19 +824,16 @@ Internet-Draft             Timestamps Extended                 June 2021
    minutes and 32.13 seconds ahead of UTC by law from 1909-05-01 through
    1937-06-30.
 
-   1937-01-01T12:00:27.87+00:19:32.130[u-ca=japanese]
+   1937-01-01T12:00:27.87+00:19:32.130[u-ca=gregory]
 
                                  Figure 11
 
    This represents the exact same instant as the previous example but
-   additionally specifies the human calendar associated with it for
-   calendar aware implementations to take into account.
+   additionally specifies explicit use of the Gregorian calendar.
 
    1937-01-01T12:00:27.87+00:19:32.130[u-ca=islamic-civil]
 
                                  Figure 12
-
-
 
 
 
@@ -842,7 +842,7 @@ Sharma                  Expires 18 December 2021               [Page 15]
 Internet-Draft             Timestamps Extended                 June 2021
 
 
-   Since there's not a single agreed upon way to deal with dates in the
+   Since there's not a single agreed-upon way to deal with dates in the
    Islamic calendar, it provides another value to disambiguate between
    the different interpretations.
 
