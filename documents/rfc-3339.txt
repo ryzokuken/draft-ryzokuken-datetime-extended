@@ -64,18 +64,18 @@ Table of Contents
    2.  Definitions . . . . . . . . . . . . . . . . . . . . . . . . .   3
    3.  Local Time  . . . . . . . . . . . . . . . . . . . . . . . . .   4
      3.1.  Coordinated Universal Time (UTC)  . . . . . . . . . . . .   4
-     3.2.  Local Offsets . . . . . . . . . . . . . . . . . . . . . .   5
-     3.3.  Unknown Local Offset Convention . . . . . . . . . . . . .   5
+     3.2.  Local Offsets . . . . . . . . . . . . . . . . . . . . . .   4
+     3.3.  Unknown Local Offset Convention . . . . . . . . . . . . .   4
      3.4.  Unqualified Local Time  . . . . . . . . . . . . . . . . .   5
-   4.  Date and Time format  . . . . . . . . . . . . . . . . . . . .   6
-     4.1.  Ordering  . . . . . . . . . . . . . . . . . . . . . . . .   6
+   4.  Date and Time format  . . . . . . . . . . . . . . . . . . . .   5
+     4.1.  Ordering  . . . . . . . . . . . . . . . . . . . . . . . .   5
      4.2.  Human Readability . . . . . . . . . . . . . . . . . . . .   6
-     4.3.  Rarely Used Options . . . . . . . . . . . . . . . . . . .   7
-     4.4.  Redundant Information . . . . . . . . . . . . . . . . . .   7
+     4.3.  Rarely Used Options . . . . . . . . . . . . . . . . . . .   6
+     4.4.  Redundant Information . . . . . . . . . . . . . . . . . .   6
      4.5.  Simplicity  . . . . . . . . . . . . . . . . . . . . . . .   7
      4.6.  Informative . . . . . . . . . . . . . . . . . . . . . . .   7
-     4.7.  Namespaced  . . . . . . . . . . . . . . . . . . . . . . .   8
-     4.8.  Internet Date/Time Format . . . . . . . . . . . . . . . .  11
+     4.7.  Namespaced  . . . . . . . . . . . . . . . . . . . . . . .   7
+     4.8.  Internet Date/Time Format . . . . . . . . . . . . . . . .  10
      4.9.  Restrictions  . . . . . . . . . . . . . . . . . . . . . .  12
      4.10. Examples  . . . . . . . . . . . . . . . . . . . . . . . .  13
    5.  Normative references  . . . . . . . . . . . . . . . . . . . .  15
@@ -142,52 +142,11 @@ Internet-Draft             Timestamps Extended                 June 2021
       for attempting to follow Universal Time based on measuring the
       rotation of the earth.
 
-   second  The unit of time in the International System of Units.  Since
-      Resolution 1 of the 13th CGPM on 1967-10-13 [CGPM] the second is
-      defined as the duration of 9,192,631,770 cycles of microwave
-      radiation absorbed or emitted by the hyperfine transition of
-      cesium-133 atoms in their ground state undisturbed by external
-      fields, but this definition was not in practical use for civil
-      time until 1972-01-01.  Prior to 1972-01-01 civil time was based
-      on Universal Time which was measured by observations of the
-      rotation of the earth, and the practical definition of the second
-      was 1/86400 of the mean solar day.
-
-   minute  A period of time of 60 seconds.  However, see also the
-      restrictions in section Section 4.9 and Appendix C for how leap
-      seconds are denoted within minutes.
-
-   hour  A period of time of 60 minutes.
-
-   day  Starting 1972-01-01 a duration of 86400 SI seconds for the UTC
-
-
-
-
-
-Sharma                  Expires 18 December 2021                [Page 3]
-
-Internet-Draft             Timestamps Extended                 June 2021
-
-
-      time scale.  In other contexts the duration of one mean solar day
-      as agreed internationally by the 1884 International Meridian
-      Conference and measured using Universal Time.
-
-   leap year  In the proleptic Gregorian calendar, a year which has 366
-      days.  A leap year is a year whose number is divisible by four an
-      integral number of times, except that if it is a centennial year
-      (i.e. divisible by one hundred) it shall also be divisible by four
-      hundred an integral number of times.
-
    ABNF  Augmented Backus-Naur Form, a format used to represent
       permissible strings in a protocol or language, as defined in
       [RFC2234].
 
-   Email Date/Time Format  The date/time format used by Internet Mail as
-      defined by [RFC2822].
-
-   Internet Date/Time Format  The date/time format defined in section 5
+   Internet Date/Time Format  The date/time format defined in section 4
       of this document.
 
    Timestamp  This term is used in this document to refer to an
@@ -203,6 +162,14 @@ Internet-Draft             Timestamps Extended                 June 2021
    For more information about time scales, see Appendix E of [RFC1305],
    Section 3 of [ISO8601], and the appropriate ITU documents [ITU-R-TF].
 
+
+
+
+Sharma                  Expires 18 December 2021                [Page 3]
+
+Internet-Draft             Timestamps Extended                 June 2021
+
+
 3.  Local Time
 
 3.1.  Coordinated Universal Time (UTC)
@@ -214,17 +181,6 @@ Internet-Draft             Timestamps Extended                 June 2021
    time zone rules.  However, certain implementations may be expected
    to.  For these situations, a timestamp may additionally include a
    local time zone that the implementations can take into account.
-
-
-
-
-
-
-
-Sharma                  Expires 18 December 2021                [Page 4]
-
-Internet-Draft             Timestamps Extended                 June 2021
-
 
 3.2.  Local Offsets
 
@@ -256,6 +212,20 @@ Internet-Draft             Timestamps Extended                 June 2021
    is the preferred reference point for the specified time.  RFC2822
    [RFC2822] describes a similar convention for email.
 
+
+
+
+
+
+
+
+
+
+Sharma                  Expires 18 December 2021                [Page 4]
+
+Internet-Draft             Timestamps Extended                 June 2021
+
+
 3.4.  Unqualified Local Time
 
    A number of devices currently connected to the Internet run their
@@ -272,15 +242,6 @@ Internet-Draft             Timestamps Extended                 June 2021
    suitable mechanisms are:
 
    *  Use Network Time Protocol [RFC1305] to obtain the time in UTC.
-
-
-
-
-
-Sharma                  Expires 18 December 2021                [Page 5]
-
-Internet-Draft             Timestamps Extended                 June 2021
-
 
    *  Use another host in the same local time zone as a gateway to the
       Internet.  This host MUST correct unqualified local times that are
@@ -307,6 +268,20 @@ Internet-Draft             Timestamps Extended                 June 2021
    time-ordered sequence will result.  The presence of optional
    punctuation would violate this characteristic.
 
+
+
+
+
+
+
+
+
+
+Sharma                  Expires 18 December 2021                [Page 5]
+
+Internet-Draft             Timestamps Extended                 June 2021
+
+
 4.2.  Human Readability
 
    Human readability has proved to be a valuable feature of Internet
@@ -330,14 +305,6 @@ Internet-Draft             Timestamps Extended                 June 2021
    This may include translating UTC to local time as well as converting
    from the Gregorian calendar to the viewer's preferred calendar.
 
-
-
-
-Sharma                  Expires 18 December 2021                [Page 6]
-
-Internet-Draft             Timestamps Extended                 June 2021
-
-
 4.3.  Rarely Used Options
 
    A format which includes rarely used options is likely to cause
@@ -356,6 +323,20 @@ Internet-Draft             Timestamps Extended                 June 2021
    date is correct, or vice versa.  Since it is not difficult to compute
    the day of week from a date (see Appendix A), the day of week should
    not be included in a date/time format.
+
+
+
+
+
+
+
+
+
+
+Sharma                  Expires 18 December 2021                [Page 6]
+
+Internet-Draft             Timestamps Extended                 June 2021
+
 
 4.5.  Simplicity
 
@@ -386,14 +367,6 @@ Internet-Draft             Timestamps Extended                 June 2021
    In case a key is repeated or conflicted, the implementations should
    give precedence to whichever value is positioned first.
 
-
-
-
-Sharma                  Expires 18 December 2021                [Page 7]
-
-Internet-Draft             Timestamps Extended                 June 2021
-
-
 4.7.  Namespaced
 
    Since the suffix can include all sorts of additional information,
@@ -412,6 +385,14 @@ Internet-Draft             Timestamps Extended                 June 2021
    *  The namespace is restricted to single alphanum, corresponding to
       extension singletons ('x' can be used for a private use
       extension).
+
+
+
+
+Sharma                  Expires 18 December 2021                [Page 7]
+
+Internet-Draft             Timestamps Extended                 June 2021
+
 
    *  In addition, for CLDR extensions:
 
@@ -441,15 +422,6 @@ Internet-Draft             Timestamps Extended                 June 2021
 
    *  The specification MUST specify a canonical representation.
 
-
-
-
-
-Sharma                  Expires 18 December 2021                [Page 8]
-
-Internet-Draft             Timestamps Extended                 June 2021
-
-
    *  The specification of valid keys MUST be available over the
       Internet and at no cost.
 
@@ -471,6 +443,13 @@ Internet-Draft             Timestamps Extended                 June 2021
    *  IANA MUST be informed of changes to the contact information and
       URL for the specification.
 
+
+
+Sharma                  Expires 18 December 2021                [Page 8]
+
+Internet-Draft             Timestamps Extended                 June 2021
+
+
    IANA will maintain a registry of allocated multi-character
    namespaces.  This registry MUST use the record-jar format described
    by the ABNF in [RFC5646].  Upon publication of a namespace as an RFC,
@@ -488,23 +467,6 @@ Internet-Draft             Timestamps Extended                 June 2021
    be appealed to the IESG [RFC2028] under the same rules as other IETF
    decisions (see [RFC2026]) and MAY result in the authority to maintain
    the extension being withdrawn or reassigned by the IESG.
-
-
-
-
-
-
-
-
-
-
-
-
-
-Sharma                  Expires 18 December 2021                [Page 9]
-
-Internet-Draft             Timestamps Extended                 June 2021
-
 
    %%
    Identifier:
@@ -537,6 +499,13 @@ Internet-Draft             Timestamps Extended                 June 2021
 
    'RFC' contains the RFC number assigned to the namespace.
 
+
+
+Sharma                  Expires 18 December 2021                [Page 9]
+
+Internet-Draft             Timestamps Extended                 June 2021
+
+
    'Authority' contains the name of the maintaining authority for the
    namespace.
 
@@ -553,6 +522,37 @@ Internet-Draft             Timestamps Extended                 June 2021
    solely with the IESG and is subject to the normal review and appeals
    process associated with the RFC process.
 
+4.8.  Internet Date/Time Format
+
+   The following extension of a profile of [ISO8601] dates SHOULD be
+   used in new protocols on the Internet.  This is specified using the
+   syntax description notation defined in [RFC2234].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -561,12 +561,6 @@ Sharma                  Expires 18 December 2021               [Page 10]
 
 Internet-Draft             Timestamps Extended                 June 2021
 
-
-4.8.  Internet Date/Time Format
-
-   The following extension of a profile of [ISO8601] dates SHOULD be
-   used in new protocols on the Internet.  This is specified using the
-   syntax description notation defined in [RFC2234].
 
    alphanum       = ALPHA / DIGIT
 
@@ -610,6 +604,12 @@ Internet-Draft             Timestamps Extended                 June 2021
       |  applications that generate this format SHOULD use upper case
       |  letters.
 
+      |  NOTE 2: ISO 8601 defines date and time separated by "T".
+      |  Applications using this syntax may choose, for the sake of
+      |  readability, to specify a full-date and full-time separated by
+      |  (say) a space character.
+
+
 
 
 
@@ -617,11 +617,6 @@ Sharma                  Expires 18 December 2021               [Page 11]
 
 Internet-Draft             Timestamps Extended                 June 2021
 
-
-      |  NOTE 2: ISO 8601 defines date and time separated by "T".
-      |  Applications using this syntax may choose, for the sake of
-      |  readability, to specify a full-date and full-time separated by
-      |  (say) a space character.
 
 4.9.  Restrictions
 
@@ -663,6 +658,11 @@ Internet-Draft             Timestamps Extended                 June 2021
 
    Appendix B contains sample C code to determine if a year is a leap
    year.
+
+
+
+
+
 
 
 

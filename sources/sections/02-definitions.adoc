@@ -15,45 +15,12 @@ civil time was determined by individual jurisdictions
 using different techniques for attempting to follow
 Universal Time based on measuring the rotation of the earth.
 
-second:: The unit of time in the
-International System of Units. Since Resolution 1 of the 13th
-CGPM on 1967-10-13 <<CGPM>> the second is defined as the
-duration of 9,192,631,770 cycles of microwave radiation
-absorbed or emitted by the hyperfine transition of
-cesium-133 atoms in their ground state undisturbed by
-external fields, but this definition was not in practical
-use for civil time until 1972-01-01. Prior to 1972-01-01
-civil time was based on Universal Time which was measured by observations of the rotation
-of the earth, and the practical definition of the second
-was 1/86400 of the mean solar day.
-
-minute:: A period of time of 60 seconds. However, see also the
-restrictions in section <<restrictions>> and <<annexC>> for how
-leap seconds are denoted within minutes.
-
-hour:: A period of time of 60 minutes.
-
-day:: Starting 1972-01-01 a duration of 86400 SI seconds for the UTC time scale.
-In other contexts the duration of one mean solar day as agreed internationally by
-the 1884 International Meridian Conference and measured using Universal Time.
-
-leap year:: In the proleptic Gregorian calendar, a year which has
-366 days. A leap year is a year whose number is divisible by
-four an integral number of times, except that if it is
-a centennial year (i.e. divisible by one hundred) it
-shall also be divisible by four hundred an integral
-number of times.
-
 ABNF:: Augmented Backus-Naur Form, a format used to represent
 permissible strings in a protocol or language, as
 defined in <<RFC2234>>.
 
-Email Date/Time Format::
-The date/time format used by Internet Mail as defined
-by <<RFC2822>>.
-
 Internet Date/Time Format::
-The date/time format defined in section 5 of this document.
+The date/time format defined in section 4 of this document.
 
 Timestamp:: This term is used in this document to refer to an
 unambiguous representation of some instant in time.
