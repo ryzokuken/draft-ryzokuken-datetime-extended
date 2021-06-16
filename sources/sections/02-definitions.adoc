@@ -20,7 +20,7 @@ permissible strings in a protocol or language, as
 defined in <<RFC2234>>.
 
 Internet Date/Time Format::
-The date/time format defined in section 4 of this document.
+The date/time format defined in section 3 of this document.
 
 Timestamp:: This term is used in this document to refer to an
 unambiguous representation of some instant in time.

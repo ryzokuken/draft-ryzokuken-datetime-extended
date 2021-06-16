@@ -62,19 +62,14 @@ Table of Contents
 
    1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
    2.  Definitions . . . . . . . . . . . . . . . . . . . . . . . . .   3
-   3.  Local Time  . . . . . . . . . . . . . . . . . . . . . . . . .   3
-     3.1.  Coordinated Universal Time (UTC)  . . . . . . . . . . . .   4
-     3.2.  Local Offsets . . . . . . . . . . . . . . . . . . . . . .   4
-     3.3.  Unknown Local Offset Convention . . . . . . . . . . . . .   4
-     3.4.  Unqualified Local Time  . . . . . . . . . . . . . . . . .   4
-   4.  Extended Date and Time format . . . . . . . . . . . . . . . .   5
-     4.1.  Informative . . . . . . . . . . . . . . . . . . . . . . .   5
-     4.2.  Namespaced  . . . . . . . . . . . . . . . . . . . . . . .   5
-     4.3.  Syntax Extensions to RFC3339  . . . . . . . . . . . . . .   8
-     4.4.  Examples  . . . . . . . . . . . . . . . . . . . . . . . .   9
-   5.  Normative references  . . . . . . . . . . . . . . . . . . . .   9
-   6.  Bibliography  . . . . . . . . . . . . . . . . . . . . . . . .  10
-   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  10
+   3.  Extended Date and Time format . . . . . . . . . . . . . . . .   3
+     3.1.  Informative . . . . . . . . . . . . . . . . . . . . . . .   4
+     3.2.  Namespaced  . . . . . . . . . . . . . . . . . . . . . . .   4
+     3.3.  Syntax Extensions to RFC3339  . . . . . . . . . . . . . .   7
+     3.4.  Examples  . . . . . . . . . . . . . . . . . . . . . . . .   7
+   4.  Normative references  . . . . . . . . . . . . . . . . . . . .   8
+   5.  Bibliography  . . . . . . . . . . . . . . . . . . . . . . . .   8
+   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .   9
 
 1.  Introduction
 
@@ -107,15 +102,17 @@ Table of Contents
    *  The format should be compatible to the pre-existing popular syntax
       for attaching time zone names to timestamps.
 
+   *  The format should allow a generalized way to attach any additional
+      information to the timestamp.
+
+
+
 
 
 Sharma                  Expires 18 December 2021                [Page 2]
 
 Internet-Draft             Timestamps Extended                 June 2021
 
-
-   *  The format should allow a generalized way to attach any additional
-      information to the timestamp.
 
 2.  Definitions
 
@@ -137,7 +134,7 @@ Internet-Draft             Timestamps Extended                 June 2021
       permissible strings in a protocol or language, as defined in
       [RFC2234].
 
-   Internet Date/Time Format  The date/time format defined in section 4
+   Internet Date/Time Format  The date/time format defined in section 3
       of this document.
 
    Timestamp  This term is used in this document to refer to an
@@ -153,8 +150,11 @@ Internet-Draft             Timestamps Extended                 June 2021
    For more information about time scales, see Appendix E of [RFC1305],
    Section 3 of [ISO8601], and the appropriate ITU documents [ITU-R-TF].
 
-3.  Local Time
+3.  Extended Date and Time format
 
+   This section discusses desirable qualities of formats for the
+   timestamp extension suffix and defines such a format that extends
+   [RFC3339] for use in Internet protocols.
 
 
 
@@ -170,85 +170,7 @@ Sharma                  Expires 18 December 2021                [Page 3]
 Internet-Draft             Timestamps Extended                 June 2021
 
 
-3.1.  Coordinated Universal Time (UTC)
-
-   Because the daylight saving rules for local time zones are so
-   convoluted and can change based on local law at unpredictable times,
-   true interoperability is best achieved by using Coordinated Universal
-   Time (UTC).  This specification by itself does not cater to local
-   time zone rules.  However, certain implementations may be expected
-   to.  For these situations, a timestamp may additionally include a
-   local time zone that the implementations can take into account.
-
-3.2.  Local Offsets
-
-   The offset between local time and UTC is often useful information.
-   For example, in electronic mail (RFC2822, [RFC2822]) the local offset
-   provides a useful heuristic to determine the probability of a prompt
-   response.  Attempts to label local offsets with alphabetic strings
-   have resulted in poor interoperability in the past [RFC1123].  As a
-   result, RFC2822 [RFC2822] has made numeric offsets mandatory.
-
-   Numeric offsets are calculated as "local time minus UTC".  So the
-   equivalent time in UTC can be determined by subtracting the offset
-   from the local time.  For example, "18:50:00-04:00" is the same time
-   as "22:50:00Z".  (This example shows negative offsets handled by
-   adding the absolute value of the offset.)
-
-   Numeric offsets may differ from UTC by any number of seconds, or even
-   a fraction of seconds.  This can be easily represented by including
-   an optional seconds value in the offset, which may further optionally
-   include a fraction of seconds behind a decimal point, for example
-   "+12:34:56.789".  This is especially useful in the case of certain
-   historical time zones.
-
-3.3.  Unknown Local Offset Convention
-
-   If the time in UTC is known, but the offset to local time is unknown,
-   this can be represented with an offset of "-00:00".  This differs
-   semantically from an offset of "Z" or "+00:00", which imply that UTC
-   is the preferred reference point for the specified time.  RFC2822
-   [RFC2822] describes a similar convention for email.
-
-3.4.  Unqualified Local Time
-
-   A number of devices currently connected to the Internet run their
-   internal clocks in local time and are unaware of UTC.  While the
-   Internet does have a tradition of accepting reality when creating
-   specifications, this should not be done at the expense of
-   interoperability.  Since interpretation of an unqualified local time
-   zone will fail in approximately 23/24 of the globe, the
-
-
-
-Sharma                  Expires 18 December 2021                [Page 4]
-
-Internet-Draft             Timestamps Extended                 June 2021
-
-
-   interoperability problems of unqualified local time are deemed
-   unacceptable for the Internet.  Systems that are configured with a
-   local time, are unaware of the corresponding UTC offset, and depend
-   on time synchronization with other Internet systems, MUST use a
-   mechanism that ensures correct synchronization with UTC.  Some
-   suitable mechanisms are:
-
-   *  Use Network Time Protocol [RFC1305] to obtain the time in UTC.
-
-   *  Use another host in the same local time zone as a gateway to the
-      Internet.  This host MUST correct unqualified local times that are
-      transmitted to other hosts.
-
-   *  Prompt the user for the local time zone and daylight saving rule
-      settings.
-
-4.  Extended Date and Time format
-
-   This section discusses desirable qualities of formats for the
-   timestamp extension suffix and defines such a format that extends
-   [RFC3339] for use in Internet protocols.
-
-4.1.  Informative
+3.1.  Informative
 
    The format should allow implementations to specify additional
    important information in addition to the bare timestamp.  This is
@@ -260,7 +182,7 @@ Internet-Draft             Timestamps Extended                 June 2021
    In case a key is repeated or conflicted, the implementations should
    give precedence to whichever value is positioned first.
 
-4.2.  Namespaced
+3.2.  Namespaced
 
    Since the suffix can include all sorts of additional information,
    different standards bodies/organizations need a way to identify which
@@ -274,13 +196,6 @@ Internet-Draft             Timestamps Extended                 June 2021
    recorded in the BCP47 extensions registry.  For these namespaces:
 
    *  Case differences are ignored.
-
-
-
-Sharma                  Expires 18 December 2021                [Page 5]
-
-Internet-Draft             Timestamps Extended                 June 2021
-
 
    *  The namespace is restricted to single alphanum, corresponding to
       extension singletons ('x' can be used for a private use
@@ -301,6 +216,15 @@ Internet-Draft             Timestamps Extended                 June 2021
    registering authority, including name, contact email, discussion list
    email, and URL location of the registry, MUST be indicated clearly in
    the RFC.  The RFC MUST specify or include each of the following:
+
+
+
+
+
+Sharma                  Expires 18 December 2021                [Page 4]
+
+Internet-Draft             Timestamps Extended                 June 2021
+
 
    *  The specification MUST reference the specific version or revision
       of this document that governs its creation and MUST reference this
@@ -328,16 +252,6 @@ Internet-Draft             Timestamps Extended                 June 2021
       defined by a specification, MUST NOT be retracted or change in
       meaning in any substantial way.
 
-
-
-
-
-
-Sharma                  Expires 18 December 2021                [Page 6]
-
-Internet-Draft             Timestamps Extended                 June 2021
-
-
    *  The specification MUST include, in a separate section, the
       registration form reproduced in this section (below) to be used in
       registering the namespace upon publication as an RFC.
@@ -356,6 +270,17 @@ Internet-Draft             Timestamps Extended                 June 2021
    subject line "TIMESTAMP FORMAT NAMESPACE UPDATE" whenever content
    changes.  Only the 'Comments', 'Contact_Email', 'Mailing_List', and
    'URL' fields MAY be modified in these updates.
+
+
+
+
+
+
+
+Sharma                  Expires 18 December 2021                [Page 5]
+
+Internet-Draft             Timestamps Extended                 June 2021
+
 
    Failure to maintain this record, maintain the corresponding registry,
    or meet other conditions imposed by this section of this document MAY
@@ -385,15 +310,6 @@ Internet-Draft             Timestamps Extended                 June 2021
 
    'Description' contains the name and description of the namespace.
 
-
-
-
-
-Sharma                  Expires 18 December 2021                [Page 7]
-
-Internet-Draft             Timestamps Extended                 June 2021
-
-
    'Comments' is an OPTIONAL field and MAY contain a broader description
    of the namespace.
 
@@ -414,12 +330,20 @@ Internet-Draft             Timestamps Extended                 June 2021
 
    'URL' contains the URL of the registry for this namespace.
 
+
+
+
+Sharma                  Expires 18 December 2021                [Page 6]
+
+Internet-Draft             Timestamps Extended                 June 2021
+
+
    The determination of whether an Internet-Draft meets the above
    conditions and the decision to grant or withhold such authority rests
    solely with the IESG and is subject to the normal review and appeals
    process associated with the RFC process.
 
-4.3.  Syntax Extensions to [RFC3339]
+3.3.  Syntax Extensions to [RFC3339]
 
    The following rules extend the ABNF syntax defined in [RFC3339] in
    order to allow the inclusion of an optional suffix.
@@ -442,15 +366,7 @@ Internet-Draft             Timestamps Extended                 June 2021
 
                                   Figure 2
 
-
-
-
-Sharma                  Expires 18 December 2021                [Page 8]
-
-Internet-Draft             Timestamps Extended                 June 2021
-
-
-4.4.  Examples
+3.4.  Examples
 
    Here are some examples of Internet extended date/time format.
 
@@ -471,6 +387,13 @@ Internet-Draft             Timestamps Extended                 June 2021
    ("Pacific Time") for time-zone-aware implementations to take into
    account.
 
+
+
+Sharma                  Expires 18 December 2021                [Page 7]
+
+Internet-Draft             Timestamps Extended                 June 2021
+
+
    1996-12-19T16:39:57-08:00[America/Los_Angeles][u-ca=hebrew]
 
                                   Figure 5
@@ -486,30 +409,12 @@ Internet-Draft             Timestamps Extended                 June 2021
    additional pieces of information in the suffix that can be
    interpreted by any compatible implementations and ignored otherwise.
 
-5.  Normative references
-
-   [RFC2822]  Resnick, P., Ed., "Internet Message Format", IETF RFC
-              2822, IETF RFC 2822, DOI 10.17487/RFC2822, April 2001,
-              <https://www.rfc-editor.org/info/rfc2822>.
+4.  Normative references
 
    [RFC2234]  Crocker, D., Ed. and P. Overell, "Augmented BNF for Syntax
               Specifications: ABNF", IETF RFC 2234, IETF RFC 2234,
               DOI 10.17487/RFC2234, November 1997,
               <https://www.rfc-editor.org/info/rfc2234>.
-
-
-
-
-
-Sharma                  Expires 18 December 2021                [Page 9]
-
-Internet-Draft             Timestamps Extended                 June 2021
-
-
-   [RFC1123]  Braden, R., Ed., "Requirements for Internet
-              Hosts — Application and Support", IETF RFC 1123, IETF RFC
-              1123, DOI 10.17487/RFC1123, October 1989,
-              <https://www.rfc-editor.org/info/rfc1123>.
 
    [RFC1305]  Mills, D., "Network Time Protocol (Version 3)
               Specification, Implementation and Analysis", IETF RFC
@@ -535,7 +440,15 @@ Internet-Draft             Timestamps Extended                 June 2021
               DOI 10.17487/RFC2028, October 1996,
               <https://www.rfc-editor.org/info/rfc2028>.
 
-6.  Bibliography
+5.  Bibliography
+
+
+
+
+Sharma                  Expires 18 December 2021                [Page 8]
+
+Internet-Draft             Timestamps Extended                 June 2021
+
 
    [ISO8601]  International Organization for Standardization, "Data
               elements and interchange formats", ISO 8601:1988, June
@@ -551,16 +464,6 @@ Internet-Draft             Timestamps Extended                 June 2021
    [IERS]     "International Earth Rotation Service Bulletins".
 
 Author's Address
-
-
-
-
-
-
-Sharma                  Expires 18 December 2021               [Page 10]
-
-Internet-Draft             Timestamps Extended                 June 2021
-
 
    Ujjwal Sharma
    Igalia, S.L.
@@ -598,19 +501,4 @@ Internet-Draft             Timestamps Extended                 June 2021
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Sharma                  Expires 18 December 2021               [Page 11]
+Sharma                  Expires 18 December 2021                [Page 9]
