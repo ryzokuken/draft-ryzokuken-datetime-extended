@@ -16,6 +16,5 @@
 * [[[ISO8601,ISO 8601:1988]]]
 * [[[RFC3339,RFC 3339]]]
 * [[[ITU-R-TF,ITU-R TF.460-6]]]
-* [[[ZELLER,path:("https://projecteuclid.org/euclid.acta/1485888738",2)]]] _Zeller, Chr. Kalender-Formeln. Acta Math. 9 (1887), 131--136. doi:10.1007/BF02406733_
 * [[[IERS,path:("https://www.iers.org/IERS/EN/Publications/Bulletins/bulletins.html",3)]]] _International Earth Rotation Service Bulletins_
 

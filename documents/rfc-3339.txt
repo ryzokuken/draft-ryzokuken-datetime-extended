@@ -74,10 +74,7 @@ Table of Contents
      4.4.  Examples  . . . . . . . . . . . . . . . . . . . . . . . .   9
    5.  Normative references  . . . . . . . . . . . . . . . . . . . .   9
    6.  Bibliography  . . . . . . . . . . . . . . . . . . . . . . . .  10
-   Appendix A.  Day of the Week  . . . . . . . . . . . . . . . . . .  11
-   Appendix B.  Leap Years . . . . . . . . . . . . . . . . . . . . .  11
-   Appendix C.  Leap Seconds . . . . . . . . . . . . . . . . . . . .  12
-   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  14
+   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  10
 
 1.  Introduction
 
@@ -107,15 +104,15 @@ Table of Contents
    *  The extension suffix should be completely optional, making
       existing [RFC3339] timestamps compatible with this format.
 
+   *  The format should be compatible to the pre-existing popular syntax
+      for attaching time zone names to timestamps.
+
 
 
 Sharma                  Expires 18 December 2021                [Page 2]
 
 Internet-Draft             Timestamps Extended                 June 2021
 
-
-   *  The format should be compatible to the pre-existing popular syntax
-      for attaching time zone names to timestamps.
 
    *  The format should allow a generalized way to attach any additional
       information to the timestamp.
@@ -157,6 +154,9 @@ Internet-Draft             Timestamps Extended                 June 2021
    Section 3 of [ISO8601], and the appropriate ITU documents [ITU-R-TF].
 
 3.  Local Time
+
+
+
 
 
 
@@ -548,10 +548,10 @@ Internet-Draft             Timestamps Extended                 June 2021
 
    [ITU-R-TF] "", ITU-R TF.460-6.
 
-   [ZELLER]   "Zeller, Chr. Kalender-Formeln. Acta Math. 9 (1887),
-              131—136. doi:10.1007/BF02406733".
-
    [IERS]     "International Earth Rotation Service Bulletins".
+
+Author's Address
+
 
 
 
@@ -561,176 +561,6 @@ Sharma                  Expires 18 December 2021               [Page 10]
 
 Internet-Draft             Timestamps Extended                 June 2021
 
-
-Appendix A.  Day of the Week
-
-   The following is a sample C subroutine loosely based on Zeller's
-   Congruence [ZELLER] which may be used to obtain the day of the week
-   for dates on or after 0000-03-01:
-
-   char *day_of_week(int day, int month, int year)
-   {
-       int cent;
-       char *dayofweek[] = {
-           "Sunday", "Monday", "Tuesday", "Wednesday",
-           "Thursday", "Friday", "Saturday"
-       };
-
-       /* adjust months so February is the last one */
-       month -= 2;
-       if (month < 1) {
-           month += 12;
-           --year;
-       }
-       /* split by century */
-       cent = year / 100;
-       year %= 100;
-       return (dayofweek[((26 * month - 2) / 10 + day + year
-                       + year / 4 + cent / 4 + 5 * cent) % 7]);
-   }
-
-                                  Figure 7
-
-Appendix B.  Leap Years
-
-   Here is a sample C subroutine to calculate if a year is a leap year:
-
-   /* This returns non-zero if year is a leap year.  Must use 4 digit
-       year.
-   */
-   int leap_year(int year)
-   {
-       return (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0));
-   }
-
-                                  Figure 8
-
-
-
-
-
-
-
-
-
-Sharma                  Expires 18 December 2021               [Page 11]
-
-Internet-Draft             Timestamps Extended                 June 2021
-
-
-Appendix C.  Leap Seconds
-
-   In 1970 CCIR Recommendation 460 produced international agreement that
-   starting on 1972-01-01 radio broadcast time signals should provide SI
-   seconds with occasional leaps of 1 SI second as necessary to agree
-   with Universal Time.  The time scale in radio broadcasts became known
-   as UTC, and the current version of that recommendation is [ITU-R-TF].
-   Since 1988 IERS has the responsibility for announcing when leap
-   seconds will be introduced into UTC
-   (https://www.iers.org/SharedDocs/Publikationen/EN/IERS/Documents/
-   IERS_Leap_Seconds.pdf?__blob=publicationFile&v=1).  Further
-   information about leap seconds can be found at the US Navy
-   Oceanography Portal (https://www.usno.navy.mil/USNO/time/master-
-   clock/leap-seconds).  In particular, it notes that:
-
-   |  The decision to introduce a leap second in UTC is the
-   |  responsibility of the International Earth Rotation Service [IERS].
-   |  According to the CCIR Recommendation, first preference is given to
-   |  the opportunities at the end of December and June, and second
-   |  preference to those at the end of March and September.
-
-   When required, insertion of a leap second occurs as an extra second
-   at the end of a day in UTC, represented by a timestamp of the form
-   YYYY-MM-DDT23:59:60Z.  A leap second occurs simultaneously in all
-   time zones, so that time zone relationships are not affected.  See
-   section Section 4.4 for some examples of leap second times.
-
-   The following table is an excerpt from the table maintained by the
-   IERS.  The source data are located at the Earth Orientation
-   Parameters Product Centre at Observatoire de Paris
-   (https://hpiers.obspm.fr/eop-pc/index.php?index=TAI-UTC_tab&lang=en).
-
-   For dates after the initial adjustment on 1972-01-01 this table shows
-   the date of the leap second, and the difference between the time
-   scale TAI (which is not adjusted by leap seconds) and UTC after that
-   leap second.
-
-               +============+=============================+
-               | UTC Date   | TAI - UTC After Leap Second |
-               +============+=============================+
-               | 1972-06-30 | 11                          |
-               +------------+-----------------------------+
-               | 1972-12-31 | 12                          |
-               +------------+-----------------------------+
-               | 1973-12-31 | 13                          |
-               +------------+-----------------------------+
-               | 1974-12-31 | 14                          |
-               +------------+-----------------------------+
-
-
-
-Sharma                  Expires 18 December 2021               [Page 12]
-
-Internet-Draft             Timestamps Extended                 June 2021
-
-
-               | 1975-12-31 | 15                          |
-               +------------+-----------------------------+
-               | 1976-12-31 | 16                          |
-               +------------+-----------------------------+
-               | 1977-12-31 | 17                          |
-               +------------+-----------------------------+
-               | 1978-12-31 | 18                          |
-               +------------+-----------------------------+
-               | 1979-12-31 | 19                          |
-               +------------+-----------------------------+
-               | 1981-06-30 | 20                          |
-               +------------+-----------------------------+
-               | 1982-06-30 | 21                          |
-               +------------+-----------------------------+
-               | 1983-06-30 | 22                          |
-               +------------+-----------------------------+
-               | 1985-06-30 | 23                          |
-               +------------+-----------------------------+
-               | 1987-12-31 | 24                          |
-               +------------+-----------------------------+
-               | 1989-12-31 | 25                          |
-               +------------+-----------------------------+
-               | 1990-12-31 | 26                          |
-               +------------+-----------------------------+
-               | 1992-06-30 | 27                          |
-               +------------+-----------------------------+
-               | 1993-06-30 | 28                          |
-               +------------+-----------------------------+
-               | 1994-06-30 | 29                          |
-               +------------+-----------------------------+
-               | 1995-12-31 | 30                          |
-               +------------+-----------------------------+
-               | 1997-06-30 | 31                          |
-               +------------+-----------------------------+
-               | 1998-12-31 | 32                          |
-               +------------+-----------------------------+
-               | 2005-12-31 | 33                          |
-               +------------+-----------------------------+
-               | 2008-12-31 | 34                          |
-               +------------+-----------------------------+
-               | 2012-06-30 | 35                          |
-               +------------+-----------------------------+
-               | 2015-06-30 | 36                          |
-               +------------+-----------------------------+
-               | 2016-12-31 | 37                          |
-               +------------+-----------------------------+
-
-                      Table 1: Historic leap seconds
-
-
-
-Sharma                  Expires 18 December 2021               [Page 13]
-
-Internet-Draft             Timestamps Extended                 June 2021
-
-
-Author's Address
 
    Ujjwal Sharma
    Igalia, S.L.
@@ -781,4 +611,6 @@ Author's Address
 
 
 
-Sharma                  Expires 18 December 2021               [Page 14]
+
+
+Sharma                  Expires 18 December 2021               [Page 11]

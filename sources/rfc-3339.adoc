@@ -41,9 +41,9 @@ include::sections/06-references.adoc[]
 
 // include::sections/aa-iso-8601.adoc[]
 
-include::sections/ab-day-week.adoc[]
+// include::sections/ab-day-week.adoc[]
 
-include::sections/ac-leap-years.adoc[]
+// include::sections/ac-leap-years.adoc[]
 
-include::sections/ad-leap-seconds.adoc[]
+// include::sections/ad-leap-seconds.adoc[]
 
