@@ -4,8 +4,8 @@
 
 Calendaring Extensions Working Group                           U. Sharma
 Internet-Draft                                              Igalia, S.L.
-Intended status: Standards Track                            16 June 2021
-Expires: 18 December 2021
+Intended status: Standards Track                            18 June 2021
+Expires: 20 December 2021
 
 
  Date and Time on the Internet: Timestamps with additional information
@@ -32,7 +32,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 18 December 2021.
+   This Internet-Draft will expire on 20 December 2021.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Sharma                  Expires 18 December 2021                [Page 1]
+Sharma                  Expires 20 December 2021                [Page 1]
 
 Internet-Draft             Timestamps Extended                 June 2021
 
@@ -89,27 +89,27 @@ Table of Contents
    instant with an associated time zone name, to take into account
    things like DST transitions.  Most of these applications attach the
    timezone to the timestamp in a non-standard format, atleast one of
-   which is fairly well-adopted.  Furthermore, applications might want
-   to attach even more information to the timestamp, including but not
-   limited to the calendar system it must be represented in.
+   which is fairly well-adopted ([JAVAZDT]).  Furthermore, applications
+   might want to attach even more information to the timestamp,
+   including but not limited to the calendar system it must be
+   represented in.
 
-   This document seeks to standardize an extension syntax for timestamps
-   as specified in [RFC3339] that has the following properties:
+   This document defines an extension syntax for timestamps as specified
+   in [RFC3339] that has the following properties:
 
-   *  The extension suffix should be completely optional, making
-      existing [RFC3339] timestamps compatible with this format.
+   *  The extension suffix is completely optional, making existing
+      [RFC3339] timestamps compatible with this format.
 
-   *  The format should be compatible to the pre-existing popular syntax
-      for attaching time zone names to timestamps.
+   *  The format is compatible to the pre-existing popular syntax for
+      attaching time zone names to timestamps ([JAVAZDT]).
 
-   *  The format should allow a generalized way to attach any additional
+   *  The format provides generalized way to attach any additional
       information to the timestamp.
 
 
 
 
-
-Sharma                  Expires 18 December 2021                [Page 2]
+Sharma                  Expires 20 December 2021                [Page 2]
 
 Internet-Draft             Timestamps Extended                 June 2021
 
@@ -165,7 +165,7 @@ Internet-Draft             Timestamps Extended                 June 2021
 
 
 
-Sharma                  Expires 18 December 2021                [Page 3]
+Sharma                  Expires 20 December 2021                [Page 3]
 
 Internet-Draft             Timestamps Extended                 June 2021
 
@@ -221,7 +221,7 @@ Internet-Draft             Timestamps Extended                 June 2021
 
 
 
-Sharma                  Expires 18 December 2021                [Page 4]
+Sharma                  Expires 20 December 2021                [Page 4]
 
 Internet-Draft             Timestamps Extended                 June 2021
 
@@ -277,7 +277,7 @@ Internet-Draft             Timestamps Extended                 June 2021
 
 
 
-Sharma                  Expires 18 December 2021                [Page 5]
+Sharma                  Expires 20 December 2021                [Page 5]
 
 Internet-Draft             Timestamps Extended                 June 2021
 
@@ -333,7 +333,7 @@ Internet-Draft             Timestamps Extended                 June 2021
 
 
 
-Sharma                  Expires 18 December 2021                [Page 6]
+Sharma                  Expires 20 December 2021                [Page 6]
 
 Internet-Draft             Timestamps Extended                 June 2021
 
@@ -389,7 +389,7 @@ Internet-Draft             Timestamps Extended                 June 2021
 
 
 
-Sharma                  Expires 18 December 2021                [Page 7]
+Sharma                  Expires 20 December 2021                [Page 7]
 
 Internet-Draft             Timestamps Extended                 June 2021
 
@@ -445,7 +445,7 @@ Internet-Draft             Timestamps Extended                 June 2021
 
 
 
-Sharma                  Expires 18 December 2021                [Page 8]
+Sharma                  Expires 20 December 2021                [Page 8]
 
 Internet-Draft             Timestamps Extended                 June 2021
 
@@ -461,7 +461,14 @@ Internet-Draft             Timestamps Extended                 June 2021
 
    [ITU-R-TF] "", ITU-R TF.460-6.
 
-   [IERS]     "International Earth Rotation Service Bulletins".
+   [IERS]     "International Earth Rotation Service Bulletins",
+              <https://www.iers.org/IERS/EN/Publications/Bulletins/
+              bulletins.html>.
+
+   [JAVAZDT]  "Java SE 8, java.time.format, DateTimeFormatter:
+              ISO_ZONED_DATE_TIME",
+              <https://docs.oracle.com/javase/8/docs/api/java/time/
+              format/DateTimeFormatter.html#ISO_ZONED_DATE_TIME>.
 
 Author's Address
 
@@ -494,11 +501,4 @@ Author's Address
 
 
 
-
-
-
-
-
-
-
-Sharma                  Expires 18 December 2021                [Page 9]
+Sharma                  Expires 20 December 2021                [Page 9]

@@ -14,5 +14,17 @@
 * [[[ISO8601,ISO 8601:1988]]]
 * [[[RFC3339,RFC 3339]]]
 * [[[ITU-R-TF,ITU-R TF.460-6]]]
-* [[[IERS,path:("https://www.iers.org/IERS/EN/Publications/Bulletins/bulletins.html",3)]]] _International Earth Rotation Service Bulletins_
 
+[%bibitem]
+=== International Earth Rotation Service Bulletins
+id:: IERS
+link::
+  type::: src
+  content::: https://www.iers.org/IERS/EN/Publications/Bulletins/bulletins.html
+
+[%bibitem]
+=== Java SE 8, java.time.format, DateTimeFormatter: ISO_ZONED_DATE_TIME
+id:: JAVAZDT
+link::
+  type::: src
+  content::: https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html#ISO_ZONED_DATE_TIME

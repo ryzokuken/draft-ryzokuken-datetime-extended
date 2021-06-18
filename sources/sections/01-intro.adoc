@@ -14,18 +14,19 @@ either handled separately or attached to it in a non-standard manner.
 This is already a pressing issue for applications that handle each instant with
 an associated time zone name, to take into account things like DST transitions.
 Most of these applications attach the timezone to the timestamp in a
-non-standard format, atleast one of which is fairly well-adopted. Furthermore,
-applications might want to attach even more information to the timestamp,
-including but not limited to the calendar system it must be represented in.
+non-standard format, atleast one of which is fairly well-adopted (<<JAVAZDT>>).
+Furthermore, applications might want to attach even more information to the
+timestamp, including but not limited to the calendar system it must be
+represented in.
 
-This document seeks to standardize an extension syntax for timestamps as
-specified in <<RFC3339>> that has the following properties:
+This document defines an extension syntax for timestamps as specified in
+<<RFC3339>> that has the following properties:
 
-* The extension suffix should be completely optional, making existing
-<<RFC3339>> timestamps compatible with this format.
+* The extension suffix is completely optional, making existing <<RFC3339>>
+timestamps compatible with this format.
 
-* The format should be compatible to the pre-existing popular syntax for
-attaching time zone names to timestamps.
+* The format is compatible to the pre-existing popular syntax for attaching
+time zone names to timestamps (<<JAVAZDT>>).
 
-* The format should allow a generalized way to attach any additional
-information to the timestamp.
+* The format provides generalized way to attach any additional information to
+the timestamp.
