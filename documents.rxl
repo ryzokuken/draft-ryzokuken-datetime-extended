@@ -58,4 +58,45 @@ This document defines an extension to the timestamp format defined in
     <doctype>internet-draft</doctype>
   </ext>
 </bibdata></relation>
+<relation type='partOf'><bibdata type="standard">
+  <fetched>2021-06-18</fetched>
+  <title format="text/plain" language="en" script="Latn">Date and Time on the Internet: Timestamps with additional information</title>
+  <uri type="xml">documents/rfc-3339.rfc.xml</uri>
+  <docidentifier type="IETF">draft-ryzokuken-datetime-extended-02</docidentifier>
+  <contributor>
+    <role type="author"/>
+    <person>
+      <name>
+        <completename language="en">Ujjwal Sharma</completename>
+      </name>
+      <affiliation>
+        <organization>
+          <name>Igalia, S.L.</name>
+        </organization>
+      </affiliation>
+      <address>
+        <street>Bugallal Marchesi, 22, 1º</street>
+        <city>A Coruña</city>
+        <country>Spain</country>
+      </address>
+      <email>ryzokuken@igalia.com</email>
+      <uri/>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="publisher"/>
+    <organization>
+      <name>Internet Engineering Task Force</name>
+      <abbreviation>IETF</abbreviation>
+    </organization>
+  </contributor>
+  <language>en</language>
+  <script>Latn</script>
+  <abstract format="text/plain" language="en" script="Latn">This document defines an extension to the timestamp format defined in
+ for representing additional information including a time zone.</abstract>
+  <place>Fremont, CA</place>
+  <ext>
+    <doctype>rfc</doctype>
+  </ext>
+</bibdata></relation>
 </relaton-collection>

@@ -67,8 +67,8 @@ Table of Contents
      3.2.  Namespaced  . . . . . . . . . . . . . . . . . . . . . . .   4
      3.3.  Syntax Extensions to RFC3339  . . . . . . . . . . . . . .   7
      3.4.  Examples  . . . . . . . . . . . . . . . . . . . . . . . .   7
-   4.  Normative references  . . . . . . . . . . . . . . . . . . . .   8
-   5.  Bibliography  . . . . . . . . . . . . . . . . . . . . . . . .   8
+   4.  Normative References  . . . . . . . . . . . . . . . . . . . .   8
+   5.  Informative References  . . . . . . . . . . . . . . . . . . .   8
    Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .   9
 
 1.  Introduction
@@ -179,8 +179,8 @@ Internet-Draft             Timestamps Extended                 June 2021
    separated by an equals sign.  The value can be a hyphen delimited
    list of multiple values.
 
-   In case a key is repeated or conflicted, the implementations should
-   give precedence to whichever value is positioned first.
+   In case a key is repeated or conflicted, implementations MUST give
+   precedence to whichever value is positioned first.
 
 3.2.  Namespaced
 
@@ -300,9 +300,6 @@ Internet-Draft             Timestamps Extended                 June 2021
    URL:
    %%
 
-       Figure 1: Format of Records in the Timestamp Format Namespace
-                                  Registry
-
    'Identifier' contains the multi-character sequence assigned to the
    namespace.  The Internet-Draft submitted to define the namespace
    SHOULD specify which sequence to use, although the IESG MAY change
@@ -314,7 +311,7 @@ Internet-Draft             Timestamps Extended                 June 2021
    of the namespace.
 
    'Added' contains the date the namespace's RFC was published in the
-   "date-full" format specified in Figure 2.  For example: 2004-06-28
+   "date-full" format specified in Section 3.3.  For example: 2004-06-28
    represents June 28, 2004, in the Gregorian calendar.
 
    'RFC' contains the RFC number assigned to the namespace.
@@ -329,6 +326,9 @@ Internet-Draft             Timestamps Extended                 June 2021
    mailing list used by the maintaining authority.
 
    'URL' contains the URL of the registry for this namespace.
+
+
+
 
 
 
@@ -364,15 +364,11 @@ Internet-Draft             Timestamps Extended                 June 2021
 
    date-time-ext  = date-time suffix
 
-                                  Figure 2
-
 3.4.  Examples
 
    Here are some examples of Internet extended date/time format.
 
    1996-12-19T16:39:57-08:00
-
-                                  Figure 3
 
    This represents 39 minutes and 57 seconds after the 16th hour of
    December 19th, 1996 with an offset of -08:00 from UTC.  Note that
@@ -380,12 +376,16 @@ Internet-Draft             Timestamps Extended                 June 2021
 
    1996-12-19T16:39:57-08:00[America/Los_Angeles]
 
-                                  Figure 4
-
    This represents the exact same instant as the previous example but
    additionally specifies the human time zone associated with it
    ("Pacific Time") for time-zone-aware implementations to take into
    account.
+
+   1996-12-19T16:39:57-08:00[America/Los_Angeles][u-ca=hebrew]
+
+   This represents the exact same instant but it informs calendar-aware
+   implementations that they should project it to the Hebrew calendar.
+
 
 
 
@@ -394,54 +394,54 @@ Sharma                  Expires 20 December 2021                [Page 7]
 Internet-Draft             Timestamps Extended                 June 2021
 
 
-   1996-12-19T16:39:57-08:00[America/Los_Angeles][u-ca=hebrew]
-
-                                  Figure 5
-
-   This represents the exact same instant but it informs calendar-aware
-   implementations that they should project it to the Hebrew calendar.
-
    1996-12-19T16:39:57-08:00[x-foo=bar][x-baz=bat]
-
-                                  Figure 6
 
    This timestamp utilizes the private use namespace to declare two
    additional pieces of information in the suffix that can be
    interpreted by any compatible implementations and ignored otherwise.
 
-4.  Normative references
+4.  Normative References
 
    [RFC2234]  Crocker, D., Ed. and P. Overell, "Augmented BNF for Syntax
-              Specifications: ABNF", IETF RFC 2234, IETF RFC 2234,
+              Specifications: ABNF", RFC 2234, IETF RFC 2234,
               DOI 10.17487/RFC2234, November 1997,
               <https://www.rfc-editor.org/info/rfc2234>.
 
    [RFC1305]  Mills, D., "Network Time Protocol (Version 3)
-              Specification, Implementation and Analysis", IETF RFC
-              1305, IETF RFC 1305, DOI 10.17487/RFC1305, March 1992,
+              Specification, Implementation and Analysis", RFC 1305,
+              IETF RFC 1305, DOI 10.17487/RFC1305, March 1992,
               <https://www.rfc-editor.org/info/rfc1305>.
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
-              Requirement Levels", IETF RFC 2119, IETF RFC 2119,
+              Requirement Levels", RFC 2119, IETF RFC 2119,
               DOI 10.17487/RFC2119, March 1997,
               <https://www.rfc-editor.org/info/rfc2119>.
 
    [RFC5646]  Phillips, A., Ed. and M. Davis, Ed., "Tags for Identifying
-              Languages", IETF RFC 5646, IETF RFC 5646,
-              DOI 10.17487/RFC5646, September 2009,
-              <https://www.rfc-editor.org/info/rfc5646>.
+              Languages", RFC 5646, IETF RFC 5646, DOI 10.17487/RFC5646,
+              September 2009, <https://www.rfc-editor.org/info/rfc5646>.
 
    [RFC2026]  Bradner, S., "The Internet Standards Process — Revision
-              3", IETF RFC 2026, IETF RFC 2026, DOI 10.17487/RFC2026,
-              October 1996, <https://www.rfc-editor.org/info/rfc2026>.
+              3", RFC 2026, IETF RFC 2026, DOI 10.17487/RFC2026, October
+              1996, <https://www.rfc-editor.org/info/rfc2026>.
 
    [RFC2028]  Hovey, R. and S. Bradner, "The Organizations Involved in
-              the IETF Standards Process", IETF RFC 2028, IETF RFC 2028,
+              the IETF Standards Process", RFC 2028, IETF RFC 2028,
               DOI 10.17487/RFC2028, October 1996,
               <https://www.rfc-editor.org/info/rfc2028>.
 
-5.  Bibliography
+5.  Informative References
 
+   [ISO8601]  International Organization for Standardization, "Data
+              elements and interchange formats", ISO 8601:1988, June
+              1988, <https://www.iso.org/standard/15903.html>.
+
+   [RFC3339]  Klyne, G. and C. Newman, "Date and Time on the Internet:
+              Timestamps", RFC 3339, IETF RFC 3339,
+              DOI 10.17487/RFC3339, July 2002,
+              <https://www.rfc-editor.org/info/rfc3339>.
+
+   [ITU-R-TF] "", ITU-R TF.460-6.
 
 
 
@@ -449,17 +449,6 @@ Sharma                  Expires 20 December 2021                [Page 8]
 
 Internet-Draft             Timestamps Extended                 June 2021
 
-
-   [ISO8601]  International Organization for Standardization, "Data
-              elements and interchange formats", ISO 8601:1988, June
-              1988, <https://www.iso.org/standard/15903.html>.
-
-   [RFC3339]  Klyne, G. and C. Newman, "Date and Time on the Internet:
-              Timestamps", IETF RFC 3339, IETF RFC 3339,
-              DOI 10.17487/RFC3339, July 2002,
-              <https://www.rfc-editor.org/info/rfc3339>.
-
-   [ITU-R-TF] "", ITU-R TF.460-6.
 
    [IERS]     "International Earth Rotation Service Bulletins",
               <https://www.iers.org/IERS/EN/Publications/Bulletins/
@@ -474,8 +463,19 @@ Author's Address
 
    Ujjwal Sharma
    Igalia, S.L.
+   Bugallal Marchesi, 22, 1º
+   A Coruña
+   Spain
 
    Email: ryzokuken@igalia.com
+
+
+
+
+
+
+
+
 
 
 
