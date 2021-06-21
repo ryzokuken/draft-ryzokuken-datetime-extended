@@ -8,6 +8,7 @@
 * [[[RFC5646,RFC 5646]]]
 * [[[RFC2026,RFC 2026]]]
 * [[[RFC2028,RFC 2028]]]
+* [[[BCP47,IETF BCP 47]]]
 
 [bibliography]
 == Informative References
