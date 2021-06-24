@@ -39,7 +39,8 @@ jobs:
           sudo chown -R $USER:$(id -gn $USER) $HOME/.config
       - name: Setup Fonts
         run: |
-          sudo gem install rake metanorma-cli
+          sudo gem install rake
+          sudo gem install metanorma-cli --version 1.3
           sudo metanorma setup --agree-to-terms
       - name: Install yq
         run: |
