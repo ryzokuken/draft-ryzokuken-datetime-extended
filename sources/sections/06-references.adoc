@@ -14,7 +14,7 @@
 == Informative References
 * [[[ISO8601,ISO 8601:1988]]]
 * [[[RFC3339,RFC 3339]]]
-* [[[ITU-R-TF,ITU-R TF.460-6]]]
+* [[[ITURTF460-6,(ITU-R TF.460-6)]]], _ITU-R TF.460-6. Standard-frequency and time-signal emissions_
 
 [%bibitem]
 === International Earth Rotation Service Bulletins

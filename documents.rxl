@@ -59,7 +59,7 @@ This document defines an extension to the timestamp format defined in
   </ext>
 </bibdata></relation>
 <relation type='partOf'><bibdata type="standard">
-  <fetched>2021-06-18</fetched>
+  <fetched>2021-06-23</fetched>
   <title format="text/plain" language="en" script="Latn">Date and Time on the Internet: Timestamps with additional information</title>
   <uri type="xml">documents/rfc-3339.rfc.xml</uri>
   <docidentifier type="IETF">draft-ryzokuken-datetime-extended-02</docidentifier>

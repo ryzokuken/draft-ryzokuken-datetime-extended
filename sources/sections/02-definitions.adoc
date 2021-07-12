@@ -33,4 +33,4 @@ Time Zone:: A time zone that is a included in the Time Zone Database
 (often called `tz` or `zoneinfo`) maintained by IANA.
 
 For more information about time scales, see Appendix E of <<RFC1305>>,
-Section 3 of <<ISO8601>>, and the appropriate ITU documents <<ITU-R-TF>>.
+Section 3 of <<ISO8601>>, and the appropriate ITU documents <<ITURTF460-6>>.

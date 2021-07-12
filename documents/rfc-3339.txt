@@ -4,8 +4,8 @@
 
 Calendaring Extensions Working Group                           U. Sharma
 Internet-Draft                                              Igalia, S.L.
-Intended status: Standards Track                            18 June 2021
-Expires: 20 December 2021
+Intended status: Standards Track                            23 June 2021
+Expires: 25 December 2021
 
 
  Date and Time on the Internet: Timestamps with additional information
@@ -32,7 +32,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 20 December 2021.
+   This Internet-Draft will expire on 25 December 2021.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Sharma                  Expires 20 December 2021                [Page 1]
+Sharma                  Expires 25 December 2021                [Page 1]
 
 Internet-Draft             Timestamps Extended                 June 2021
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Sharma                  Expires 20 December 2021                [Page 2]
+Sharma                  Expires 25 December 2021                [Page 2]
 
 Internet-Draft             Timestamps Extended                 June 2021
 
@@ -148,7 +148,8 @@ Internet-Draft             Timestamps Extended                 June 2021
       (often called "tz" or "zoneinfo") maintained by IANA.
 
    For more information about time scales, see Appendix E of [RFC1305],
-   Section 3 of [ISO8601], and the appropriate ITU documents [ITU-R-TF].
+   Section 3 of [ISO8601], and the appropriate ITU documents
+   [ITURTF460-6].
 
 3.  Extended Date and Time format
 
@@ -164,8 +165,7 @@ Internet-Draft             Timestamps Extended                 June 2021
 
 
 
-
-Sharma                  Expires 20 December 2021                [Page 3]
+Sharma                  Expires 25 December 2021                [Page 3]
 
 Internet-Draft             Timestamps Extended                 June 2021
 
@@ -221,7 +221,7 @@ Internet-Draft             Timestamps Extended                 June 2021
 
 
 
-Sharma                  Expires 20 December 2021                [Page 4]
+Sharma                  Expires 25 December 2021                [Page 4]
 
 Internet-Draft             Timestamps Extended                 June 2021
 
@@ -277,7 +277,7 @@ Internet-Draft             Timestamps Extended                 June 2021
 
 
 
-Sharma                  Expires 20 December 2021                [Page 5]
+Sharma                  Expires 25 December 2021                [Page 5]
 
 Internet-Draft             Timestamps Extended                 June 2021
 
@@ -333,7 +333,7 @@ Internet-Draft             Timestamps Extended                 June 2021
 
 
 
-Sharma                  Expires 20 December 2021                [Page 6]
+Sharma                  Expires 25 December 2021                [Page 6]
 
 Internet-Draft             Timestamps Extended                 June 2021
 
@@ -389,7 +389,7 @@ Internet-Draft             Timestamps Extended                 June 2021
 
 
 
-Sharma                  Expires 20 December 2021                [Page 7]
+Sharma                  Expires 25 December 2021                [Page 7]
 
 Internet-Draft             Timestamps Extended                 June 2021
 
@@ -441,14 +441,18 @@ Internet-Draft             Timestamps Extended                 June 2021
               DOI 10.17487/RFC3339, July 2002,
               <https://www.rfc-editor.org/info/rfc3339>.
 
-   [ITU-R-TF] "", ITU-R TF.460-6.
 
 
 
-Sharma                  Expires 20 December 2021                [Page 8]
+
+Sharma                  Expires 25 December 2021                [Page 8]
 
 Internet-Draft             Timestamps Extended                 June 2021
 
+
+   [ITURTF460-6]
+              "ITU-R TF.460-6. Standard-frequency and time-signal
+              emissions".
 
    [IERS]     "International Earth Rotation Service Bulletins",
               <https://www.iers.org/IERS/EN/Publications/Bulletins/
@@ -497,8 +501,4 @@ Author's Address
 
 
 
-
-
-
-
-Sharma                  Expires 20 December 2021                [Page 9]
+Sharma                  Expires 25 December 2021                [Page 9]

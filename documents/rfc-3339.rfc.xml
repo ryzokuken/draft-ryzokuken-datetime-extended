@@ -23,47 +23,47 @@
     </author>
     <workgroup>Calendaring Extensions Working Group</workgroup>
     <abstract anchor="_abstract">
-<t anchor="_7dbc8dcd-344e-4393-8fd4-80658f423588">This document defines an extension to the timestamp format defined in
+<t anchor="_28a66b74-0edf-4e1b-a4c2-0d1318002a00">This document defines an extension to the timestamp format defined in
 <relref target="RFC3339" section="" relative=""></relref> for representing additional information including a time zone.</t>
 </abstract>
   </front>
   <middle>
-    <section anchor="intro"><name>Introduction</name><t anchor="_4731119e-cde2-49d2-88ef-c269ed11a5e4">Dates and times are used in a very diverse set of internet applications, all
+    <section anchor="intro"><name>Introduction</name><t anchor="_10daa5a5-a0cf-48d6-a23e-2e1e762afb6b">Dates and times are used in a very diverse set of internet applications, all
 the way from server-side logging to calendaring and scheduling.</t>
-<t anchor="_f8b1a32c-6a03-4c10-a79d-50898fde61b6">Each distinct instant in time can be represented in a descriptive text format
+<t anchor="_f4d1b002-b3c1-4e5f-97b2-35ef6ace3fcb">Each distinct instant in time can be represented in a descriptive text format
 using a timestamp, and <relref target="ISO8601" section="" relative=""></relref> standardizes a widely-adopted timestamp
 format, which forms the basis of <relref target="RFC3339" section="" relative=""></relref>. However, this format doesn't
 allow timestamps to contain any additional relevant information, which means
 that any contextual information related to a given timestamp needs to be
 either handled separately or attached to it in a non-standard manner.</t>
-<t anchor="_1fdc081d-f5c6-4d66-960c-72ef6d3bd3e5">This is already a pressing issue for applications that handle each instant with
+<t anchor="_3cca4a33-8dda-407f-94cc-6d604a7271f0">This is already a pressing issue for applications that handle each instant with
 an associated time zone name, to take into account things like DST transitions.
 Most of these applications attach the timezone to the timestamp in a
 non-standard format, atleast one of which is fairly well-adopted (<relref target="JAVAZDT" section="" relative=""></relref>).
 Furthermore, applications might want to attach even more information to the
 timestamp, including but not limited to the calendar system it must be
 represented in.</t>
-<t anchor="_e54e094d-63b2-4c18-b7ff-daeb98b5ac6c">This document defines an extension syntax for timestamps as specified in
+<t anchor="_a26f875c-6db7-4231-b9ae-034ba4820ab6">This document defines an extension syntax for timestamps as specified in
 <relref target="RFC3339" section="" relative=""></relref> that has the following properties:</t>
-<ul anchor="_165e7677-01c7-42a1-b6b9-a3a19d76b02f">
+<ul anchor="_a6928b31-45da-4863-a31f-6f1d6d22deda">
 <li>
-<t anchor="_1e1f9d99-3d29-41b2-ab84-265b42c4132d">The extension suffix is completely optional, making existing <relref target="RFC3339" section="" relative=""></relref>
+<t anchor="_6888c8cc-17c0-45dd-bfac-4a234d606718">The extension suffix is completely optional, making existing <relref target="RFC3339" section="" relative=""></relref>
 timestamps compatible with this format.</t>
 </li>
 <li>
-<t anchor="_4f2fa948-5da8-43d3-af74-8accc38a11f4">The format is compatible to the pre-existing popular syntax for attaching
+<t anchor="_4370c046-14b3-4d31-8e3b-a3b9cc0e17b6">The format is compatible to the pre-existing popular syntax for attaching
 time zone names to timestamps (<relref target="JAVAZDT" section="" relative=""></relref>).</t>
 </li>
 <li>
-<t anchor="_47c535c2-79e3-4e62-b192-08ee23addb85">The format provides generalized way to attach any additional information to
+<t anchor="_6f83eb0a-a169-4b41-b4bf-32b424695693">The format provides generalized way to attach any additional information to
 the timestamp.</t>
 </li>
 </ul></section>
-    <section anchor="defintions"><name>Definitions</name><t anchor="_8925bb0f-a3d6-458a-a679-039b9aadaa19">The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+    <section anchor="defintions"><name>Definitions</name><t anchor="_2399e452-4bd6-4ffb-8ccb-f7853d6b0b7b">The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
 "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
 document are to be interpreted as described in <relref target="RFC2119" section="" relative=""></relref>.</t>
-<dl anchor="_5d4d126f-60de-49f9-a7f8-d7040c02991e"><dt>UTC</dt><dd>
-<t anchor="_a4644747-88ec-490f-8b5c-cb09768e972f">Coordinated Universal Time as maintained since 1988 by the Bureau
+<dl anchor="_3fc16243-5831-40f3-8f77-129ae389ae3e"><dt>UTC</dt><dd>
+<t anchor="_d11d11ca-1b97-4bd5-beed-6fc5e844af4b">Coordinated Universal Time as maintained since 1988 by the Bureau
 International des Poids et Mesures (BIPM) in conjunction with
 leap seconds as announced by the International Earth Rotation
 and Reference Frames Service <relref target="IERS" section="" relative=""></relref>. From 1972 through 1987
@@ -73,64 +73,64 @@ civil time was determined by individual jurisdictions
 using different techniques for attempting to follow
 Universal Time based on measuring the rotation of the earth.</t>
 </dd><dt>ABNF</dt><dd>
-<t anchor="_92d15af6-5176-41be-b319-6c1998eb0358">Augmented Backus-Naur Form, a format used to represent
+<t anchor="_e88d9bab-584e-43da-9bd6-f8136e05372e">Augmented Backus-Naur Form, a format used to represent
 permissible strings in a protocol or language, as
 defined in <relref target="RFC2234" section="" relative=""></relref>.</t>
 </dd><dt>Internet Date/Time Format</dt><dd>
-<t anchor="_34e692a0-0426-443d-9e12-646a64738b3d">The date/time format defined in section 3 of this document.</t>
+<t anchor="_4424d54e-835e-427d-9193-eb10a8bb3c2c">The date/time format defined in section 3 of this document.</t>
 </dd><dt>Timestamp</dt><dd>
-<t anchor="_2634d46e-081e-4bd1-bb47-d3777fc7ceca">This term is used in this document to refer to an
+<t anchor="_82f135f2-7e17-43a1-becf-9600b7826172">This term is used in this document to refer to an
 unambiguous representation of some instant in time.</t>
 </dd><dt>Z</dt><dd>
-<t anchor="_381c04ff-ddea-4771-a4f1-b7e95bd00d2d">A suffix which, when applied to a time, denotes a UTC
+<t anchor="_0fd4a04d-684b-497b-b37b-3de656919d1d">A suffix which, when applied to a time, denotes a UTC
 offset of 00:00; often spoken "Zulu" from the ICAO
 phonetic alphabet representation of the letter "Z".</t>
 </dd><dt>Time Zone</dt><dd>
-<t anchor="_445e1eb8-5c09-4dee-95ea-2a5b73c33faf">A time zone that is a included in the Time Zone Database
+<t anchor="_2d1bc736-1bbe-47cf-a8db-0cbf77079230">A time zone that is a included in the Time Zone Database
 (often called <tt>tz</tt> or <tt>zoneinfo</tt>) maintained by IANA.</t>
 </dd></dl>
-<t anchor="_15d1cb38-893d-4b60-9338-9706746cef5a">For more information about time scales, see Appendix E of <relref target="RFC1305" section="" relative=""></relref>,
-Section 3 of <relref target="ISO8601" section="" relative=""></relref>, and the appropriate ITU documents <relref target="ITU-R-TF" section="" relative=""></relref>.</t></section>
-    <section anchor="date-time-format"><name>Extended Date and Time format</name><t anchor="_050ad7eb-9da7-4088-b1cf-5e44dd4e53bb">This section discusses desirable qualities of formats for the timestamp
+<t anchor="_556e1a3f-b026-42c2-b34e-ea1199e507c5">For more information about time scales, see Appendix E of <relref target="RFC1305" section="" relative=""></relref>,
+Section 3 of <relref target="ISO8601" section="" relative=""></relref>, and the appropriate ITU documents <relref target="ITURTF460-6" section="" relative=""></relref>.</t></section>
+    <section anchor="date-time-format"><name>Extended Date and Time format</name><t anchor="_1367930a-98f6-49bd-baac-aa72eace9dd7">This section discusses desirable qualities of formats for the timestamp
 extension suffix and defines such a format that extends <relref target="RFC3339" section="" relative=""></relref> for use in
 Internet protocols.</t>
-<section anchor="_informative"><name>Informative</name><t anchor="_2c9beb43-bf6f-48ce-a3c9-3f8129bd70fa">The format should allow implementations to specify additional important
+<section anchor="_informative"><name>Informative</name><t anchor="_8504ef1c-7adf-4b0b-8106-0e49f125f177">The format should allow implementations to specify additional important
 information in addition to the bare timestamp. This is done by allowing
 implementations to include an informative suffix at the end with as many
 tags as required, each with a key and value separated by an equals sign.
 The value can be a hyphen delimited list of multiple values.</t>
-<t anchor="_989a7520-cb4c-425a-a4ce-0d4f7d6afae6">In case a key is repeated or conflicted, implementations MUST give precedence
+<t anchor="_2cb25dc4-a668-4f23-9a9a-303d6cc89475">In case a key is repeated or conflicted, implementations MUST give precedence
 to whichever value is positioned first.</t></section>
-<section anchor="_namespaced"><name>Namespaced</name><t anchor="_8f12c571-6951-4427-a768-1b38c8cc4762">Since the suffix can include all sorts of additional information,
+<section anchor="_namespaced"><name>Namespaced</name><t anchor="_538ca1b3-248f-4a33-8734-4014d63d9e3e">Since the suffix can include all sorts of additional information,
 different standards bodies/organizations need a way to identify which part
 adheres to their standards. For this, all information needs to be
 namespaced. Each key is therefore divided into two hyphen-separated
 sections: the namespace and the key. For example, the calendar as defined
 by the Unicode consortium could be included as <tt>u-ca=&lt;value&gt;</tt>.</t>
-<t anchor="_c1e8a50d-a0f5-49c8-989e-bdc7eb93af1a">All single-character namespaces are reserved for BCP47 extensions recorded
+<t anchor="_6341a3f0-967f-46ed-aa79-3a7411810d04">All single-character namespaces are reserved for BCP47 extensions recorded
 in the BCP47 extensions registry. For these namespaces:</t>
-<ul anchor="_01aec71e-5329-407e-aaf2-aaf95cc720b9">
+<ul anchor="_5798fc21-766d-4709-877f-8057b4ec669a">
 <li>
-<t anchor="_9f8fb86e-466d-4a65-977c-bdcb3b4766c1">Case differences are ignored.</t>
+<t anchor="_bd512790-d23c-4f32-9a97-c2c6666f17bc">Case differences are ignored.</t>
 </li>
 <li>
-<t anchor="_4c9e6819-108e-4f9d-88a9-0e4624d77ed9">The namespace is restricted to single alphanum, corresponding to
+<t anchor="_95e58dd0-6318-4a24-b412-08523e331556">The namespace is restricted to single alphanum, corresponding to
 extension singletons ('x' can be used for a private use extension).</t>
 </li>
 <li>
-<t anchor="_347345ff-6bed-4d4d-b4f1-705108808dac">In addition, for CLDR extensions:</t>
-<ul anchor="_79f5e191-1669-4de0-9207-badbd4b9aab2">
+<t anchor="_eeac750a-61ed-4281-a8ee-e2c2cab78e42">In addition, for CLDR extensions:</t>
+<ul anchor="_512e1a39-12aa-4236-a055-8b5583262aa1">
 <li>
-<t anchor="_1a632bb4-f56f-4037-b335-a2558834e897">There must be a <tt>namespace-key</tt> and it is restricted to 2 <tt>alphanum</tt>
+<t anchor="_5ce6da3f-1d11-47c3-bf65-ade9c3f95b9b">There must be a <tt>namespace-key</tt> and it is restricted to 2 <tt>alphanum</tt>
 characters.</t>
 </li>
 <li>
-<t anchor="_79ccb1f6-61df-4662-abfb-135676f530de">A <tt>suffix-value</tt> is limited to <tt>3*8alphanum</tt>.</t>
+<t anchor="_c870eb7e-7afb-45e8-993b-46780ef7c541">A <tt>suffix-value</tt> is limited to <tt>3*8alphanum</tt>.</t>
 </li>
 </ul>
 </li>
 </ul>
-<t anchor="_dde35637-76ba-4920-9d3f-cbb0e3e47f98">Multi-character namespaces can be registered specifically for use in this
+<t anchor="_935e8d44-1d24-447b-8ebd-6c25e6d83604">Multi-character namespaces can be registered specifically for use in this
 format. They are assigned by IANA using the "IETF Review" policy defined
 by [RFC5226]. This policy requires the development of an RFC, which SHALL
 define the name, purpose, processes, and procedures for maintaining the
@@ -138,49 +138,49 @@ subtags. The maintaining or registering authority, including name, contact
 email, discussion list email, and URL location of the registry, MUST be
 indicated clearly in the RFC. The RFC MUST specify or include each of the
 following:</t>
-<ul anchor="_ee3dfda2-2c4c-46a4-a189-04e890f4602a">
+<ul anchor="_2941befd-34b6-434b-b2c9-b48147459c0e">
 <li>
-<t anchor="_7b49e856-0834-4892-b6d6-503a286ab078">The specification MUST reference the specific version or revision of
+<t anchor="_857d561b-1119-48c1-b001-db282c35de6d">The specification MUST reference the specific version or revision of
 this document that governs its creation and MUST reference this section of
 this document.</t>
 </li>
 <li>
-<t anchor="_957dd4c8-5cdb-4ef2-8d09-8f8c512045fb">The specification and all keys defined by the specification MUST
+<t anchor="_0f784a79-dbf3-4ad1-8995-0cf5e0ee04ff">The specification and all keys defined by the specification MUST
 follow the ABNF and other rules for the formation of keys as defined in
 this document. In particular, it MUST specify that case is not significant
 and that keys MUST NOT exceed eight characters in length.</t>
 </li>
 <li>
-<t anchor="_82f49281-721e-4c4b-ac0c-049971b51dcd">The specification MUST specify a canonical representation.</t>
+<t anchor="_17368d92-3121-49ce-a62b-0f916fc85aee">The specification MUST specify a canonical representation.</t>
 </li>
 <li>
-<t anchor="_413d7e85-1daf-4c6e-bbb2-84802639d9af">The specification of valid keys MUST be available over the Internet
+<t anchor="_3d04141a-8305-49ea-80e0-be6805f94012">The specification of valid keys MUST be available over the Internet
 and at no cost.</t>
 </li>
 <li>
-<t anchor="_2d3da681-e6dd-4aba-b937-5bc979e53ad4">The specification MUST be in the public domain or available via a
+<t anchor="_1d297775-9572-4921-966d-5074ed4e8d99">The specification MUST be in the public domain or available via a
 royalty-free license acceptable to the IETF and specified in the RFC.</t>
 </li>
 <li>
-<t anchor="_0f88b3e1-102f-4e2d-8a73-286804718d26">The specification MUST be versioned, and each version of the
+<t anchor="_f51100f8-50c1-42fe-ac86-1ddac6b7729c">The specification MUST be versioned, and each version of the
 specification MUST be numbered, dated, and stable.</t>
 </li>
 <li>
-<t anchor="_f498a811-d101-4174-a01e-07d9363f7750">The specification MUST be stable. That is, namespace keys, once defined
+<t anchor="_dc128927-985a-4e5e-bb13-cfd714b3b4d2">The specification MUST be stable. That is, namespace keys, once defined
 by a specification, MUST NOT be retracted or change in meaning in any
 substantial way.</t>
 </li>
 <li>
-<t anchor="_3049640b-7347-432b-b42b-612744269947">The specification MUST include, in a separate section, the registration
+<t anchor="_1c3fc657-b5e9-4af4-8d76-6979a7cb82f2">The specification MUST include, in a separate section, the registration
 form reproduced in this section (below) to be used in registering the
 namespace upon publication as an RFC.</t>
 </li>
 <li>
-<t anchor="_af1e8afd-e253-4291-8445-9bdea10fd0de">IANA MUST be informed of changes to the contact information and URL for
+<t anchor="_3c997157-9b64-413f-8413-20c893d10c71">IANA MUST be informed of changes to the contact information and URL for
 the specification.</t>
 </li>
 </ul>
-<t anchor="_71e800d7-63aa-4cd7-84b9-60363ab97779">IANA will maintain a registry of allocated multi-character namespaces. This
+<t anchor="_2a71e33d-9576-4752-9e0d-78e6caae66c4">IANA will maintain a registry of allocated multi-character namespaces. This
 registry MUST use the record-jar format described by the ABNF in <relref target="RFC5646" section="" relative=""></relref>.
 Upon publication of a namespace as an RFC, the maintaining
 authority defined in the RFC MUST forward this registration form to
@@ -190,12 +190,12 @@ record by sending an updated full copy of the record to &lt;<eref target="mailto
 with the subject line "TIMESTAMP FORMAT NAMESPACE UPDATE" whenever content
 changes. Only the 'Comments', 'Contact_Email', 'Mailing_List', and 'URL'
 fields MAY be modified in these updates.</t>
-<t anchor="_a1ac440e-2bbb-4bb6-b884-3fc60649d944">Failure to maintain this record, maintain the corresponding registry,
+<t anchor="_b5a283ba-1e09-4fc8-882b-8484cdf338d9">Failure to maintain this record, maintain the corresponding registry,
 or meet other conditions imposed by this section of this document MAY
 be appealed to the IESG <relref target="RFC2028" section="" relative=""></relref> under the same rules as other IETF
 decisions (see <relref target="RFC2026" section="" relative=""></relref>) and MAY result in the authority to maintain
 the extension being withdrawn or reassigned by the IESG.</t>
-<sourcecode anchor="_1ef1e143-54a4-4eb2-95c9-534377498d93"><![CDATA[%%
+<sourcecode anchor="_87d29501-d774-4344-be77-646b5d9cc9d1"><![CDATA[%%
 Identifier:
 Description:
 Comments:
@@ -207,29 +207,29 @@ Mailing_List:
 URL:
 %%]]></sourcecode>
 
-<t anchor="_93263fd5-dcd5-4a09-b3a5-698d1edb0bf9">'Identifier' contains the multi-character sequence assigned to the
+<t anchor="_2c295047-209e-4405-b200-e4ec9242f779">'Identifier' contains the multi-character sequence assigned to the
 namespace. The Internet-Draft submitted to define the namespace SHOULD
 specify which sequence to use, although the IESG MAY change the assignment
 when approving the RFC.</t>
-<t anchor="_e1f51e8b-40cf-4ee9-a0c1-33292f0e6447">'Description' contains the name and description of the namespace.</t>
-<t anchor="_bd959a24-8c65-43d6-a75e-0d08c56a9522">'Comments' is an OPTIONAL field and MAY contain a broader description
+<t anchor="_d31f814e-ffef-4493-bac6-4198239bea45">'Description' contains the name and description of the namespace.</t>
+<t anchor="_33282247-0af0-4674-bb3c-11b70cf7571b">'Comments' is an OPTIONAL field and MAY contain a broader description
 of the namespace.</t>
-<t anchor="_5bbdbd3b-5364-47b8-ab31-361a90b228a5">'Added' contains the date the namespace's RFC was published in the
+<t anchor="_da21123c-bfb3-40fb-9eae-57d9226e75a0">'Added' contains the date the namespace's RFC was published in the
 "date-full" format specified in <xref target="grammar"></xref>.  For example: 2004-06-28
 represents June 28, 2004, in the Gregorian calendar.</t>
-<t anchor="_863e4ff9-9eda-463c-af54-eaa165179360">'RFC' contains the RFC number assigned to the namespace.</t>
-<t anchor="_8c563679-0ed6-486f-9667-58d3d775d8b5">'Authority' contains the name of the maintaining authority for the
+<t anchor="_0c82a100-9775-4e83-80f2-2021f9a58e2f">'RFC' contains the RFC number assigned to the namespace.</t>
+<t anchor="_8dc1794c-3779-4189-98c5-d429386f643d">'Authority' contains the name of the maintaining authority for the
 namespace.</t>
-<t anchor="_882db4c1-4ea0-44ff-ad5d-f285381d2ae9">'Contact_Email' contains the email address used to contact the
+<t anchor="_440fa05e-626d-4051-a500-504223b947ad">'Contact_Email' contains the email address used to contact the
 maintaining authority.</t>
-<t anchor="_ba3faa28-47a6-4615-97ce-4a0dcb23c34e">'Mailing_List' contains the URL or subscription email address of the
+<t anchor="_a0020975-2ff9-474e-b059-48b5f318647a">'Mailing_List' contains the URL or subscription email address of the
 mailing list used by the maintaining authority.</t>
-<t anchor="_3cca1a79-39da-49f7-ad26-fca13b6687c4">'URL' contains the URL of the registry for this namespace.</t>
-<t anchor="_d68c4f7f-6ab0-4f14-bf54-d2d3d164cd52">The determination of whether an Internet-Draft meets the above
+<t anchor="_bb0436bf-0ff8-4645-8b43-852b8cf082bd">'URL' contains the URL of the registry for this namespace.</t>
+<t anchor="_b82e5d6e-23b9-4715-a1ed-d3a5c8e5b985">The determination of whether an Internet-Draft meets the above
 conditions and the decision to grant or withhold such authority rests
 solely with the IESG and is subject to the normal review and appeals
 process associated with the RFC process.</t></section>
-<section anchor="_syntax_extensions_to"><name>Syntax Extensions to <relref target="RFC3339" section="" relative=""></relref></name><t anchor="_b4507e05-df33-4c45-8718-840525702b08">The following rules extend the ABNF syntax defined in <relref target="RFC3339" section="" relative=""></relref> in order to
+<section anchor="_syntax_extensions_to"><name>Syntax Extensions to <relref target="RFC3339" section="" relative=""></relref></name><t anchor="_f01a2904-4d80-4ea8-a565-eac0dd6953be">The following rules extend the ABNF syntax defined in <relref target="RFC3339" section="" relative=""></relref> in order to
 allow the inclusion of an optional suffix.</t>
 <sourcecode anchor="grammar"><![CDATA[time-zone-char = ALPHA / "." / "_"
 time-zone-part = time-zone-char *13(time-zone-char / DIGIT / "-" / "+") ; but not "." or ".."
@@ -247,24 +247,24 @@ suffix         = [time-zone] *suffix-tag
 
 date-time-ext  = date-time suffix]]></sourcecode>
 </section>
-<section anchor="date-time-examples"><name>Examples</name><t anchor="_66f6e09a-61b2-40ba-8ffd-c9b8d7a7bbc6">Here are some examples of Internet extended date/time format.</t>
-<sourcecode anchor="_b7260a81-0baa-42b0-aa81-8aebd851ed43"><![CDATA[1996-12-19T16:39:57-08:00]]></sourcecode>
+<section anchor="date-time-examples"><name>Examples</name><t anchor="_99acb19d-c5a2-4242-803e-0a9e3e7dbe13">Here are some examples of Internet extended date/time format.</t>
+<sourcecode anchor="_1b41f0c0-74bf-4a0c-9664-78f464753c7c"><![CDATA[1996-12-19T16:39:57-08:00]]></sourcecode>
 
-<t anchor="_9a70a94d-262e-4d7f-9226-66ea5a7466b3">This represents 39 minutes and 57 seconds after the 16th hour of
+<t anchor="_18724b82-b3c0-4e64-ab1c-376022adc4f7">This represents 39 minutes and 57 seconds after the 16th hour of
 December 19th, 1996 with an offset of -08:00 from UTC.
 Note that this is equivalent to 1996-12-20T00:39:57Z in UTC.</t>
-<sourcecode anchor="_cd0b230e-4532-41cd-9d5f-bf414903f29e"><![CDATA[1996-12-19T16:39:57-08:00[America/Los_Angeles]]]></sourcecode>
+<sourcecode anchor="_db7b9851-c3d7-4ba8-977a-5802b181c1bc"><![CDATA[1996-12-19T16:39:57-08:00[America/Los_Angeles]]]></sourcecode>
 
-<t anchor="_996b2281-84b5-467d-8c37-54042890bc60">This represents the exact same instant as the previous example but
+<t anchor="_8b4f6acb-528c-46ea-a8d8-55a9642abb7d">This represents the exact same instant as the previous example but
 additionally specifies the human time zone associated with it
 ("Pacific Time") for time-zone-aware implementations to take into account.</t>
-<sourcecode anchor="_465a4484-3e6c-4463-a13d-aa4f7445c71f"><![CDATA[1996-12-19T16:39:57-08:00[America/Los_Angeles][u-ca=hebrew]]]></sourcecode>
+<sourcecode anchor="_5cbfea58-9a78-4a7b-96ac-476856e9b44e"><![CDATA[1996-12-19T16:39:57-08:00[America/Los_Angeles][u-ca=hebrew]]]></sourcecode>
 
-<t anchor="_298bd82f-8bcf-4236-9a96-0181d357c43f">This represents the exact same instant but it informs calendar-aware
+<t anchor="_cb984423-0ea0-4538-94a6-a205bf46bd12">This represents the exact same instant but it informs calendar-aware
 implementations that they should project it to the Hebrew calendar.</t>
-<sourcecode anchor="_55eef348-9a58-4813-88ac-8e3d16c3b272"><![CDATA[1996-12-19T16:39:57-08:00[x-foo=bar][x-baz=bat]]]></sourcecode>
+<sourcecode anchor="_19846c22-c0ce-4040-86b7-249cb1f5a150"><![CDATA[1996-12-19T16:39:57-08:00[x-foo=bar][x-baz=bat]]]></sourcecode>
 
-<t anchor="_46f7c0c2-9673-461e-959c-7b55f46cb60e">This timestamp utilizes the private use namespace to declare two additional
+<t anchor="_fbf36412-f40a-410b-897c-256ef61abfe8">This timestamp utilizes the private use namespace to declare two additional
 pieces of information in the suffix that can be interpreted by any
 compatible implementations and ignored otherwise.</t></section></section>
   </middle>
@@ -395,11 +395,12 @@ compatible implementations and ignored otherwise.</t></section></section>
         <seriesInfo value="RFC 3339" name="IETF"></seriesInfo>
         <seriesInfo value="10.17487/RFC3339" name="DOI"></seriesInfo>
       </reference>
-      <reference anchor="ITU-R-TF">
+      <reference anchor="ITURTF460-6">
         <front>
-          <title></title><author surname="Unknown"></author>
+          <title>
+    ITU-R TF.460-6. Standard-frequency and time-signal emissions
+  </title><author surname="Unknown"></author>
         </front>
-        <refcontent>ITU-R TF.460-6</refcontent>
       </reference>
       <reference target="https://www.iers.org/IERS/EN/Publications/Bulletins/bulletins.html" anchor="IERS">
         <front>
