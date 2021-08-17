@@ -4,8 +4,8 @@
 
 Calendaring Extensions Working Group                           U. Sharma
 Internet-Draft                                              Igalia, S.L.
-Intended status: Standards Track                            23 June 2021
-Expires: 25 December 2021
+Intended status: Standards Track                          17 August 2021
+Expires: 18 February 2022
 
 
  Date and Time on the Internet: Timestamps with additional information
@@ -32,7 +32,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 25 December 2021.
+   This Internet-Draft will expire on 18 February 2022.
 
 Copyright Notice
 
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Sharma                  Expires 25 December 2021                [Page 1]
+Sharma                  Expires 18 February 2022                [Page 1]
 
-Internet-Draft             Timestamps Extended                 June 2021
+Internet-Draft             Timestamps Extended               August 2021
 
 
 Table of Contents
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Sharma                  Expires 25 December 2021                [Page 2]
+Sharma                  Expires 18 February 2022                [Page 2]
 
-Internet-Draft             Timestamps Extended                 June 2021
+Internet-Draft             Timestamps Extended               August 2021
 
 
 2.  Definitions
@@ -165,9 +165,9 @@ Internet-Draft             Timestamps Extended                 June 2021
 
 
 
-Sharma                  Expires 25 December 2021                [Page 3]
+Sharma                  Expires 18 February 2022                [Page 3]
 
-Internet-Draft             Timestamps Extended                 June 2021
+Internet-Draft             Timestamps Extended               August 2021
 
 
 3.1.  Informative
@@ -221,9 +221,9 @@ Internet-Draft             Timestamps Extended                 June 2021
 
 
 
-Sharma                  Expires 25 December 2021                [Page 4]
+Sharma                  Expires 18 February 2022                [Page 4]
 
-Internet-Draft             Timestamps Extended                 June 2021
+Internet-Draft             Timestamps Extended               August 2021
 
 
    *  The specification MUST reference the specific version or revision
@@ -277,9 +277,9 @@ Internet-Draft             Timestamps Extended                 June 2021
 
 
 
-Sharma                  Expires 25 December 2021                [Page 5]
+Sharma                  Expires 18 February 2022                [Page 5]
 
-Internet-Draft             Timestamps Extended                 June 2021
+Internet-Draft             Timestamps Extended               August 2021
 
 
    Failure to maintain this record, maintain the corresponding registry,
@@ -333,9 +333,9 @@ Internet-Draft             Timestamps Extended                 June 2021
 
 
 
-Sharma                  Expires 25 December 2021                [Page 6]
+Sharma                  Expires 18 February 2022                [Page 6]
 
-Internet-Draft             Timestamps Extended                 June 2021
+Internet-Draft             Timestamps Extended               August 2021
 
 
    The determination of whether an Internet-Draft meets the above
@@ -389,9 +389,9 @@ Internet-Draft             Timestamps Extended                 June 2021
 
 
 
-Sharma                  Expires 25 December 2021                [Page 7]
+Sharma                  Expires 18 February 2022                [Page 7]
 
-Internet-Draft             Timestamps Extended                 June 2021
+Internet-Draft             Timestamps Extended               August 2021
 
 
    1996-12-19T16:39:57-08:00[x-foo=bar][x-baz=bat]
@@ -445,9 +445,9 @@ Internet-Draft             Timestamps Extended                 June 2021
 
 
 
-Sharma                  Expires 25 December 2021                [Page 8]
+Sharma                  Expires 18 February 2022                [Page 8]
 
-Internet-Draft             Timestamps Extended                 June 2021
+Internet-Draft             Timestamps Extended               August 2021
 
 
    [ITURTF460-6]
@@ -501,4 +501,4 @@ Author's Address
 
 
 
-Sharma                  Expires 25 December 2021                [Page 9]
+Sharma                  Expires 18 February 2022                [Page 9]

@@ -14,7 +14,7 @@
 <meta content="draft-ryzokuken-datetime-extended-02" name="ietf.draft">
 <!-- Generator version information:
   xml2rfc 3.5.0
-    Python 3.9.5
+    Python 3.9.6
     appdirs 1.4.4
     ConfigArgParse 1.2.3
     google-i18n-address 2.4.0
@@ -27,8 +27,8 @@
     pycountry 20.7.3
     pyflakes 2.3.1
     PyYAML 5.4.1
-    requests 2.25.1
-    setuptools 57.0.0
+    requests 2.26.0
+    setuptools 57.4.0
     six 1.16.0
     WeasyPrint 52.2
 -->
@@ -1170,11 +1170,11 @@ dt+dd:empty::before{
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">Timestamps Extended</td>
-<td class="right">June 2021</td>
+<td class="right">August 2021</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Sharma</td>
-<td class="center">Expires 25 December 2021</td>
+<td class="center">Expires 18 February 2022</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1187,12 +1187,12 @@ dt+dd:empty::before{
 <dd class="internet-draft">draft-ryzokuken-datetime-extended-02</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2021-06-23" class="published">23 June 2021</time>
+<time datetime="2021-08-17" class="published">17 August 2021</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2021-12-25">25 December 2021</time></dd>
+<dd class="expires"><time datetime="2022-02-18">18 February 2022</time></dd>
 <dt class="label-authors">Author:</dt>
 <dd class="authors">
 <div class="author">
@@ -1206,7 +1206,7 @@ dt+dd:empty::before{
 <div id="_abstract">
 <section id="section-abstract">
       <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
-<div id="_28a66b74-0edf-4e1b-a4c2-0d1318002a00">
+<div id="_e8d3a6a7-0aaf-4c5e-9473-a6fe944f9aec">
 <p id="section-abstract-1">This document defines an extension to the timestamp format defined in
 <span>[<a href="#RFC3339" class="xref">RFC3339</a>]</span> for representing additional information including a time zone.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
 </div>
@@ -1231,7 +1231,7 @@ dt+dd:empty::before{
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 25 December 2021.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 18 February 2022.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1259,37 +1259,37 @@ dt+dd:empty::before{
         <a href="#" onclick="scroll(0,0)" class="toplink">▲</a><h2 id="name-table-of-contents">
 <a href="#name-table-of-contents" class="section-name selfRef">Table of Contents</a>
         </h2>
-<nav class="toc"><ul class="ulEmpty compact toc">
-<li class="ulEmpty compact toc" id="section-toc.1-1.1">
+<nav class="toc"><ul class="toc compact ulEmpty">
+<li class="toc compact ulEmpty" id="section-toc.1-1.1">
             <p id="section-toc.1-1.1.1" class="keepWithNext"><a href="#section-1" class="xref">1</a>.  <a href="#name-introduction" class="xref">Introduction</a><a href="#section-toc.1-1.1.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="ulEmpty compact toc" id="section-toc.1-1.2">
+          <li class="toc compact ulEmpty" id="section-toc.1-1.2">
             <p id="section-toc.1-1.2.1" class="keepWithNext"><a href="#section-2" class="xref">2</a>.  <a href="#name-definitions" class="xref">Definitions</a><a href="#section-toc.1-1.2.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="ulEmpty compact toc" id="section-toc.1-1.3">
+          <li class="toc compact ulEmpty" id="section-toc.1-1.3">
             <p id="section-toc.1-1.3.1"><a href="#section-3" class="xref">3</a>.  <a href="#name-extended-date-and-time-form" class="xref">Extended Date and Time format</a><a href="#section-toc.1-1.3.1" class="pilcrow">¶</a></p>
-<ul class="ulEmpty compact toc">
-<li class="ulEmpty compact toc" id="section-toc.1-1.3.2.1">
+<ul class="toc compact ulEmpty">
+<li class="toc compact ulEmpty" id="section-toc.1-1.3.2.1">
                 <p id="section-toc.1-1.3.2.1.1" class="keepWithNext"><a href="#section-3.1" class="xref">3.1</a>.  <a href="#name-informative" class="xref">Informative</a><a href="#section-toc.1-1.3.2.1.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.3.2.2">
+              <li class="toc compact ulEmpty" id="section-toc.1-1.3.2.2">
                 <p id="section-toc.1-1.3.2.2.1"><a href="#section-3.2" class="xref">3.2</a>.  <a href="#name-namespaced" class="xref">Namespaced</a><a href="#section-toc.1-1.3.2.2.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.3.2.3">
+              <li class="toc compact ulEmpty" id="section-toc.1-1.3.2.3">
                 <p id="section-toc.1-1.3.2.3.1"><a href="#section-3.3" class="xref">3.3</a>.  <a href="#name-syntax-extensions-to" class="xref">Syntax Extensions to RFC3339</a><a href="#section-toc.1-1.3.2.3.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="ulEmpty compact toc" id="section-toc.1-1.3.2.4">
+              <li class="toc compact ulEmpty" id="section-toc.1-1.3.2.4">
                 <p id="section-toc.1-1.3.2.4.1"><a href="#section-3.4" class="xref">3.4</a>.  <a href="#name-examples" class="xref">Examples</a><a href="#section-toc.1-1.3.2.4.1" class="pilcrow">¶</a></p>
 </li>
             </ul>
 </li>
-          <li class="ulEmpty compact toc" id="section-toc.1-1.4">
+          <li class="toc compact ulEmpty" id="section-toc.1-1.4">
             <p id="section-toc.1-1.4.1"><a href="#section-4" class="xref">4</a>.  <a href="#name-normative-references" class="xref">Normative References</a><a href="#section-toc.1-1.4.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="ulEmpty compact toc" id="section-toc.1-1.5">
+          <li class="toc compact ulEmpty" id="section-toc.1-1.5">
             <p id="section-toc.1-1.5.1"><a href="#section-5" class="xref">5</a>.  <a href="#name-informative-references" class="xref">Informative References</a><a href="#section-toc.1-1.5.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="ulEmpty compact toc" id="section-toc.1-1.6">
+          <li class="toc compact ulEmpty" id="section-toc.1-1.6">
             <p id="section-toc.1-1.6.1"><a href="#section-appendix.a" class="xref"></a><a href="#name-authors-address" class="xref">Author's Address</a><a href="#section-toc.1-1.6.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
@@ -1301,11 +1301,11 @@ dt+dd:empty::before{
       <h2 id="name-introduction">
 <a href="#section-1" class="section-number selfRef">1. </a><a href="#name-introduction" class="section-name selfRef">Introduction</a>
       </h2>
-<div id="_10daa5a5-a0cf-48d6-a23e-2e1e762afb6b">
+<div id="_db69af69-582a-4309-b70c-729c307a09cf">
 <p id="section-1-1">Dates and times are used in a very diverse set of internet applications, all
 the way from server-side logging to calendaring and scheduling.<a href="#section-1-1" class="pilcrow">¶</a></p>
 </div>
-<div id="_f4d1b002-b3c1-4e5f-97b2-35ef6ace3fcb">
+<div id="_538f95a3-da25-4345-a97e-439dc1057aa0">
 <p id="section-1-2">Each distinct instant in time can be represented in a descriptive text format
 using a timestamp, and <span>[<a href="#ISO8601" class="xref">ISO8601</a>]</span> standardizes a widely-adopted timestamp
 format, which forms the basis of <span>[<a href="#RFC3339" class="xref">RFC3339</a>]</span>. However, this format doesn't
@@ -1313,7 +1313,7 @@ allow timestamps to contain any additional relevant information, which means
 that any contextual information related to a given timestamp needs to be
 either handled separately or attached to it in a non-standard manner.<a href="#section-1-2" class="pilcrow">¶</a></p>
 </div>
-<div id="_3cca4a33-8dda-407f-94cc-6d604a7271f0">
+<div id="_95d6ce3d-8f98-4347-a84f-7f386f8d6f66">
 <p id="section-1-3">This is already a pressing issue for applications that handle each instant with
 an associated time zone name, to take into account things like DST transitions.
 Most of these applications attach the timezone to the timestamp in a
@@ -1322,25 +1322,25 @@ Furthermore, applications might want to attach even more information to the
 timestamp, including but not limited to the calendar system it must be
 represented in.<a href="#section-1-3" class="pilcrow">¶</a></p>
 </div>
-<div id="_a26f875c-6db7-4231-b9ae-034ba4820ab6">
+<div id="_cf435fd9-d6cb-49d6-9af0-ff5d1e1c9e09">
 <p id="section-1-4">This document defines an extension syntax for timestamps as specified in
 <span>[<a href="#RFC3339" class="xref">RFC3339</a>]</span> that has the following properties:<a href="#section-1-4" class="pilcrow">¶</a></p>
 </div>
 <ul class="normal">
 <li class="normal" id="section-1-5.1">
-          <div id="_6888c8cc-17c0-45dd-bfac-4a234d606718">
+          <div id="_ddeae98a-daff-487e-b23f-023469ffe1f0">
 <p id="section-1-5.1.1">The extension suffix is completely optional, making existing <span>[<a href="#RFC3339" class="xref">RFC3339</a>]</span>
 timestamps compatible with this format.<a href="#section-1-5.1.1" class="pilcrow">¶</a></p>
 </div>
 </li>
         <li class="normal" id="section-1-5.2">
-          <div id="_4370c046-14b3-4d31-8e3b-a3b9cc0e17b6">
+          <div id="_c8508241-9c3d-4c9c-9329-993396d6b8cc">
 <p id="section-1-5.2.1">The format is compatible to the pre-existing popular syntax for attaching
 time zone names to timestamps (<span>[<a href="#JAVAZDT" class="xref">JAVAZDT</a>]</span>).<a href="#section-1-5.2.1" class="pilcrow">¶</a></p>
 </div>
 </li>
         <li class="normal" id="section-1-5.3">
-          <div id="_6f83eb0a-a169-4b41-b4bf-32b424695693">
+          <div id="_342dde35-4291-455c-bf51-aad618e376c4">
 <p id="section-1-5.3.1">The format provides generalized way to attach any additional information to
 the timestamp.<a href="#section-1-5.3.1" class="pilcrow">¶</a></p>
 </div>
@@ -1353,16 +1353,16 @@ the timestamp.<a href="#section-1-5.3.1" class="pilcrow">¶</a></p>
       <h2 id="name-definitions">
 <a href="#section-2" class="section-number selfRef">2. </a><a href="#name-definitions" class="section-name selfRef">Definitions</a>
       </h2>
-<div id="_2399e452-4bd6-4ffb-8ccb-f7853d6b0b7b">
+<div id="_4c469a32-b692-4405-af27-7b0717742b72">
 <p id="section-2-1">The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
 "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
 document are to be interpreted as described in <span>[<a href="#RFC2119" class="xref">RFC2119</a>]</span>.<a href="#section-2-1" class="pilcrow">¶</a></p>
 </div>
-<span class="break"></span><div id="_3fc16243-5831-40f3-8f77-129ae389ae3e">
+<span class="break"></span><div id="_b69d81e1-6bc0-4998-8b49-c2c730a170d0">
 <dl class="dlParallel" id="section-2-2">
         <dt id="section-2-2.1">UTC</dt>
         <dd style="margin-left: 1.5em" id="section-2-2.2">
-          <div id="_d11d11ca-1b97-4bd5-beed-6fc5e844af4b">
+          <div id="_d6c2c5ef-9918-4195-a2d4-a3f69dab6416">
 <p id="section-2-2.2.1">Coordinated Universal Time as maintained since 1988 by the Bureau
 International des Poids et Mesures (BIPM) in conjunction with
 leap seconds as announced by the International Earth Rotation
@@ -1377,7 +1377,7 @@ Universal Time based on measuring the rotation of the earth.<a href="#section-2-
         <dd class="break"></dd>
 <dt id="section-2-2.3">ABNF</dt>
         <dd style="margin-left: 1.5em" id="section-2-2.4">
-          <div id="_e88d9bab-584e-43da-9bd6-f8136e05372e">
+          <div id="_63f13d2d-a059-4273-a36c-eee07e95127d">
 <p id="section-2-2.4.1">Augmented Backus-Naur Form, a format used to represent
 permissible strings in a protocol or language, as
 defined in <span>[<a href="#RFC2234" class="xref">RFC2234</a>]</span>.<a href="#section-2-2.4.1" class="pilcrow">¶</a></p>
@@ -1386,14 +1386,14 @@ defined in <span>[<a href="#RFC2234" class="xref">RFC2234</a>]</span>.<a href="#
         <dd class="break"></dd>
 <dt id="section-2-2.5">Internet Date/Time Format</dt>
         <dd style="margin-left: 1.5em" id="section-2-2.6">
-          <div id="_4424d54e-835e-427d-9193-eb10a8bb3c2c">
+          <div id="_fd87b3d0-50b8-423b-9151-b2f38490773b">
 <p id="section-2-2.6.1">The date/time format defined in section 3 of this document.<a href="#section-2-2.6.1" class="pilcrow">¶</a></p>
 </div>
 </dd>
         <dd class="break"></dd>
 <dt id="section-2-2.7">Timestamp</dt>
         <dd style="margin-left: 1.5em" id="section-2-2.8">
-          <div id="_82f135f2-7e17-43a1-becf-9600b7826172">
+          <div id="_d86b11ab-237f-4e80-abde-bd16459b2934">
 <p id="section-2-2.8.1">This term is used in this document to refer to an
 unambiguous representation of some instant in time.<a href="#section-2-2.8.1" class="pilcrow">¶</a></p>
 </div>
@@ -1401,7 +1401,7 @@ unambiguous representation of some instant in time.<a href="#section-2-2.8.1" cl
         <dd class="break"></dd>
 <dt id="section-2-2.9">Z</dt>
         <dd style="margin-left: 1.5em" id="section-2-2.10">
-          <div id="_0fd4a04d-684b-497b-b37b-3de656919d1d">
+          <div id="_8c228bf8-917d-4979-baf6-e3a7792487db">
 <p id="section-2-2.10.1">A suffix which, when applied to a time, denotes a UTC
 offset of 00:00; often spoken "Zulu" from the ICAO
 phonetic alphabet representation of the letter "Z".<a href="#section-2-2.10.1" class="pilcrow">¶</a></p>
@@ -1410,7 +1410,7 @@ phonetic alphabet representation of the letter "Z".<a href="#section-2-2.10.1" c
         <dd class="break"></dd>
 <dt id="section-2-2.11">Time Zone</dt>
         <dd style="margin-left: 1.5em" id="section-2-2.12">
-          <div id="_2d1bc736-1bbe-47cf-a8db-0cbf77079230">
+          <div id="_ffe42c62-5165-46f0-a786-686e81e0b566">
 <p id="section-2-2.12.1">A time zone that is a included in the Time Zone Database
 (often called <code>tz</code> or <code>zoneinfo</code>) maintained by IANA.<a href="#section-2-2.12.1" class="pilcrow">¶</a></p>
 </div>
@@ -1418,7 +1418,7 @@ phonetic alphabet representation of the letter "Z".<a href="#section-2-2.10.1" c
       <dd class="break"></dd>
 </dl>
 </div>
-<div id="_556e1a3f-b026-42c2-b34e-ea1199e507c5">
+<div id="_ea931107-f0d0-4084-97d1-8717c1effa0c">
 <p id="section-2-3">For more information about time scales, see Appendix E of <span>[<a href="#RFC1305" class="xref">RFC1305</a>]</span>,
 Section 3 of <span>[<a href="#ISO8601" class="xref">ISO8601</a>]</span>, and the appropriate ITU documents <span>[<a href="#ITURTF460-6" class="xref">ITURTF460-6</a>]</span>.<a href="#section-2-3" class="pilcrow">¶</a></p>
 </div>
@@ -1429,7 +1429,7 @@ Section 3 of <span>[<a href="#ISO8601" class="xref">ISO8601</a>]</span>, and the
       <h2 id="name-extended-date-and-time-form">
 <a href="#section-3" class="section-number selfRef">3. </a><a href="#name-extended-date-and-time-form" class="section-name selfRef">Extended Date and Time format</a>
       </h2>
-<div id="_1367930a-98f6-49bd-baac-aa72eace9dd7">
+<div id="_3886eb7d-5c9c-4c29-9442-3d4a7551e86b">
 <p id="section-3-1">This section discusses desirable qualities of formats for the timestamp
 extension suffix and defines such a format that extends <span>[<a href="#RFC3339" class="xref">RFC3339</a>]</span> for use in
 Internet protocols.<a href="#section-3-1" class="pilcrow">¶</a></p>
@@ -1439,14 +1439,14 @@ Internet protocols.<a href="#section-3-1" class="pilcrow">¶</a></p>
         <h3 id="name-informative">
 <a href="#section-3.1" class="section-number selfRef">3.1. </a><a href="#name-informative" class="section-name selfRef">Informative</a>
         </h3>
-<div id="_8504ef1c-7adf-4b0b-8106-0e49f125f177">
+<div id="_2f8b484f-d835-4df9-817b-948114fcaed6">
 <p id="section-3.1-1">The format should allow implementations to specify additional important
 information in addition to the bare timestamp. This is done by allowing
 implementations to include an informative suffix at the end with as many
 tags as required, each with a key and value separated by an equals sign.
 The value can be a hyphen delimited list of multiple values.<a href="#section-3.1-1" class="pilcrow">¶</a></p>
 </div>
-<div id="_2cb25dc4-a668-4f23-9a9a-303d6cc89475">
+<div id="_22c9cec6-c50a-44d7-999e-bfff551fa31b">
 <p id="section-3.1-2">In case a key is repeated or conflicted, implementations MUST give precedence
 to whichever value is positioned first.<a href="#section-3.1-2" class="pilcrow">¶</a></p>
 </div>
@@ -1457,7 +1457,7 @@ to whichever value is positioned first.<a href="#section-3.1-2" class="pilcrow">
         <h3 id="name-namespaced">
 <a href="#section-3.2" class="section-number selfRef">3.2. </a><a href="#name-namespaced" class="section-name selfRef">Namespaced</a>
         </h3>
-<div id="_538ca1b3-248f-4a33-8734-4014d63d9e3e">
+<div id="_01413975-eff7-4a38-813f-9eedf65f3a96">
 <p id="section-3.2-1">Since the suffix can include all sorts of additional information,
 different standards bodies/organizations need a way to identify which part
 adheres to their standards. For this, all information needs to be
@@ -1465,42 +1465,42 @@ namespaced. Each key is therefore divided into two hyphen-separated
 sections: the namespace and the key. For example, the calendar as defined
 by the Unicode consortium could be included as <code>u-ca=&lt;value&gt;</code>.<a href="#section-3.2-1" class="pilcrow">¶</a></p>
 </div>
-<div id="_6341a3f0-967f-46ed-aa79-3a7411810d04">
+<div id="_d86c78a6-35ca-4512-8fb2-99102a15574f">
 <p id="section-3.2-2">All single-character namespaces are reserved for BCP47 extensions recorded
 in the BCP47 extensions registry. For these namespaces:<a href="#section-3.2-2" class="pilcrow">¶</a></p>
 </div>
 <ul class="normal">
 <li class="normal" id="section-3.2-3.1">
-            <div id="_bd512790-d23c-4f32-9a97-c2c6666f17bc">
+            <div id="_50dc34fa-b1c6-47c1-97a7-0c604701b808">
 <p id="section-3.2-3.1.1">Case differences are ignored.<a href="#section-3.2-3.1.1" class="pilcrow">¶</a></p>
 </div>
 </li>
           <li class="normal" id="section-3.2-3.2">
-            <div id="_95e58dd0-6318-4a24-b412-08523e331556">
+            <div id="_192e765b-61a1-40d9-814b-ef7e925db62c">
 <p id="section-3.2-3.2.1">The namespace is restricted to single alphanum, corresponding to
 extension singletons ('x' can be used for a private use extension).<a href="#section-3.2-3.2.1" class="pilcrow">¶</a></p>
 </div>
 </li>
           <li class="normal" id="section-3.2-3.3">
-            <div id="_eeac750a-61ed-4281-a8ee-e2c2cab78e42">
+            <div id="_085166b6-ad58-4ded-80d3-4008ffe77440">
 <p id="section-3.2-3.3.1">In addition, for CLDR extensions:<a href="#section-3.2-3.3.1" class="pilcrow">¶</a></p>
 </div>
 <ul class="normal">
 <li class="normal" id="section-3.2-3.3.2.1">
-                <div id="_5ce6da3f-1d11-47c3-bf65-ade9c3f95b9b">
+                <div id="_30f45157-a37b-4263-9fc3-8de49bb6378c">
 <p id="section-3.2-3.3.2.1.1">There must be a <code>namespace-key</code> and it is restricted to 2 <code>alphanum</code>
 characters.<a href="#section-3.2-3.3.2.1.1" class="pilcrow">¶</a></p>
 </div>
 </li>
               <li class="normal" id="section-3.2-3.3.2.2">
-                <div id="_c870eb7e-7afb-45e8-993b-46780ef7c541">
+                <div id="_df6e039a-024f-40a7-bb48-f994cdb70878">
 <p id="section-3.2-3.3.2.2.1">A <code>suffix-value</code> is limited to <code>3*8alphanum</code>.<a href="#section-3.2-3.3.2.2.1" class="pilcrow">¶</a></p>
 </div>
 </li>
             </ul>
 </li>
         </ul>
-<div id="_935e8d44-1d24-447b-8ebd-6c25e6d83604">
+<div id="_707cc5c3-996d-42c8-87a0-71d688676ab9">
 <p id="section-3.2-4">Multi-character namespaces can be registered specifically for use in this
 format. They are assigned by IANA using the "IETF Review" policy defined
 by [RFC5226]. This policy requires the development of an RFC, which SHALL
@@ -1512,14 +1512,14 @@ following:<a href="#section-3.2-4" class="pilcrow">¶</a></p>
 </div>
 <ul class="normal">
 <li class="normal" id="section-3.2-5.1">
-            <div id="_857d561b-1119-48c1-b001-db282c35de6d">
+            <div id="_025ca0a9-f49b-487e-a367-5aaca444d7c9">
 <p id="section-3.2-5.1.1">The specification MUST reference the specific version or revision of
 this document that governs its creation and MUST reference this section of
 this document.<a href="#section-3.2-5.1.1" class="pilcrow">¶</a></p>
 </div>
 </li>
           <li class="normal" id="section-3.2-5.2">
-            <div id="_0f784a79-dbf3-4ad1-8995-0cf5e0ee04ff">
+            <div id="_dec6ce3c-71e8-4741-8330-55e2b8e499e9">
 <p id="section-3.2-5.2.1">The specification and all keys defined by the specification MUST
 follow the ABNF and other rules for the formation of keys as defined in
 this document. In particular, it MUST specify that case is not significant
@@ -1527,50 +1527,50 @@ and that keys MUST NOT exceed eight characters in length.<a href="#section-3.2-5
 </div>
 </li>
           <li class="normal" id="section-3.2-5.3">
-            <div id="_17368d92-3121-49ce-a62b-0f916fc85aee">
+            <div id="_fc8f0d81-e080-45c7-a493-c76e68584885">
 <p id="section-3.2-5.3.1">The specification MUST specify a canonical representation.<a href="#section-3.2-5.3.1" class="pilcrow">¶</a></p>
 </div>
 </li>
           <li class="normal" id="section-3.2-5.4">
-            <div id="_3d04141a-8305-49ea-80e0-be6805f94012">
+            <div id="_6858104e-eaf0-4683-a6ca-ff60a52e4ec7">
 <p id="section-3.2-5.4.1">The specification of valid keys MUST be available over the Internet
 and at no cost.<a href="#section-3.2-5.4.1" class="pilcrow">¶</a></p>
 </div>
 </li>
           <li class="normal" id="section-3.2-5.5">
-            <div id="_1d297775-9572-4921-966d-5074ed4e8d99">
+            <div id="_dcf0b4a2-e461-4ad0-b99f-ded784ed2548">
 <p id="section-3.2-5.5.1">The specification MUST be in the public domain or available via a
 royalty-free license acceptable to the IETF and specified in the RFC.<a href="#section-3.2-5.5.1" class="pilcrow">¶</a></p>
 </div>
 </li>
           <li class="normal" id="section-3.2-5.6">
-            <div id="_f51100f8-50c1-42fe-ac86-1ddac6b7729c">
+            <div id="_07fc9327-a08a-4d39-9942-05a90424ccde">
 <p id="section-3.2-5.6.1">The specification MUST be versioned, and each version of the
 specification MUST be numbered, dated, and stable.<a href="#section-3.2-5.6.1" class="pilcrow">¶</a></p>
 </div>
 </li>
           <li class="normal" id="section-3.2-5.7">
-            <div id="_dc128927-985a-4e5e-bb13-cfd714b3b4d2">
+            <div id="_108a71a0-df6d-463a-a5bb-45dd9bcc8639">
 <p id="section-3.2-5.7.1">The specification MUST be stable. That is, namespace keys, once defined
 by a specification, MUST NOT be retracted or change in meaning in any
 substantial way.<a href="#section-3.2-5.7.1" class="pilcrow">¶</a></p>
 </div>
 </li>
           <li class="normal" id="section-3.2-5.8">
-            <div id="_1c3fc657-b5e9-4af4-8d76-6979a7cb82f2">
+            <div id="_57fb4df0-695f-4f6e-b28c-05c369f634d9">
 <p id="section-3.2-5.8.1">The specification MUST include, in a separate section, the registration
 form reproduced in this section (below) to be used in registering the
 namespace upon publication as an RFC.<a href="#section-3.2-5.8.1" class="pilcrow">¶</a></p>
 </div>
 </li>
           <li class="normal" id="section-3.2-5.9">
-            <div id="_3c997157-9b64-413f-8413-20c893d10c71">
+            <div id="_def46b53-b00a-4a44-901d-bad913a645d5">
 <p id="section-3.2-5.9.1">IANA MUST be informed of changes to the contact information and URL for
 the specification.<a href="#section-3.2-5.9.1" class="pilcrow">¶</a></p>
 </div>
 </li>
         </ul>
-<div id="_2a71e33d-9576-4752-9e0d-78e6caae66c4">
+<div id="_7a3892f2-f00a-4558-9617-1f3bece2f026">
 <p id="section-3.2-6">IANA will maintain a registry of allocated multi-character namespaces. This
 registry MUST use the record-jar format described by the ABNF in <span>[<a href="#RFC5646" class="xref">RFC5646</a>]</span>.
 Upon publication of a namespace as an RFC, the maintaining
@@ -1582,14 +1582,14 @@ with the subject line "TIMESTAMP FORMAT NAMESPACE UPDATE" whenever content
 changes. Only the 'Comments', 'Contact_Email', 'Mailing_List', and 'URL'
 fields MAY be modified in these updates.<a href="#section-3.2-6" class="pilcrow">¶</a></p>
 </div>
-<div id="_b5a283ba-1e09-4fc8-882b-8484cdf338d9">
+<div id="_978fcb0f-83a3-49c6-8e53-b83d668b4548">
 <p id="section-3.2-7">Failure to maintain this record, maintain the corresponding registry,
 or meet other conditions imposed by this section of this document MAY
 be appealed to the IESG <span>[<a href="#RFC2028" class="xref">RFC2028</a>]</span> under the same rules as other IETF
 decisions (see <span>[<a href="#RFC2026" class="xref">RFC2026</a>]</span>) and MAY result in the authority to maintain
 the extension being withdrawn or reassigned by the IESG.<a href="#section-3.2-7" class="pilcrow">¶</a></p>
 </div>
-<div id="_87d29501-d774-4344-be77-646b5d9cc9d1">
+<div id="_f6707eb4-6931-4f0c-bfe6-c55488aece33">
 <div id="section-3.2-8">
 <pre class="sourcecode">%%
 Identifier:
@@ -1604,43 +1604,43 @@ URL:
 %%</pre><a href="#section-3.2-8" class="pilcrow">¶</a>
 </div>
 </div>
-<div id="_2c295047-209e-4405-b200-e4ec9242f779">
+<div id="_e59fa118-0fb1-4fe9-84bb-168b1bffe051">
 <p id="section-3.2-9">'Identifier' contains the multi-character sequence assigned to the
 namespace. The Internet-Draft submitted to define the namespace SHOULD
 specify which sequence to use, although the IESG MAY change the assignment
 when approving the RFC.<a href="#section-3.2-9" class="pilcrow">¶</a></p>
 </div>
-<div id="_d31f814e-ffef-4493-bac6-4198239bea45">
+<div id="_e8680b94-d4ba-42ac-af49-cf550271a663">
 <p id="section-3.2-10">'Description' contains the name and description of the namespace.<a href="#section-3.2-10" class="pilcrow">¶</a></p>
 </div>
-<div id="_33282247-0af0-4674-bb3c-11b70cf7571b">
+<div id="_377fdda5-5f5a-4a32-89d1-5d8b27bb5998">
 <p id="section-3.2-11">'Comments' is an OPTIONAL field and MAY contain a broader description
 of the namespace.<a href="#section-3.2-11" class="pilcrow">¶</a></p>
 </div>
-<div id="_da21123c-bfb3-40fb-9eae-57d9226e75a0">
+<div id="_d40db163-55f6-4c83-92da-9e75a7904522">
 <p id="section-3.2-12">'Added' contains the date the namespace's RFC was published in the
 "date-full" format specified in <a href="#grammar" class="xref">Section 3.3</a>.  For example: 2004-06-28
 represents June 28, 2004, in the Gregorian calendar.<a href="#section-3.2-12" class="pilcrow">¶</a></p>
 </div>
-<div id="_0c82a100-9775-4e83-80f2-2021f9a58e2f">
+<div id="_7b186727-c851-4eb9-9fe9-49f716f84502">
 <p id="section-3.2-13">'RFC' contains the RFC number assigned to the namespace.<a href="#section-3.2-13" class="pilcrow">¶</a></p>
 </div>
-<div id="_8dc1794c-3779-4189-98c5-d429386f643d">
+<div id="_aab55705-36c8-4631-b4d9-65229726ae87">
 <p id="section-3.2-14">'Authority' contains the name of the maintaining authority for the
 namespace.<a href="#section-3.2-14" class="pilcrow">¶</a></p>
 </div>
-<div id="_440fa05e-626d-4051-a500-504223b947ad">
+<div id="_f494d07b-80ba-41c6-90af-f82abff10367">
 <p id="section-3.2-15">'Contact_Email' contains the email address used to contact the
 maintaining authority.<a href="#section-3.2-15" class="pilcrow">¶</a></p>
 </div>
-<div id="_a0020975-2ff9-474e-b059-48b5f318647a">
+<div id="_28df9b55-b0b2-46f0-92f8-99f1cf1441ef">
 <p id="section-3.2-16">'Mailing_List' contains the URL or subscription email address of the
 mailing list used by the maintaining authority.<a href="#section-3.2-16" class="pilcrow">¶</a></p>
 </div>
-<div id="_bb0436bf-0ff8-4645-8b43-852b8cf082bd">
+<div id="_918daae1-63ac-44ab-ab04-981423a8bed0">
 <p id="section-3.2-17">'URL' contains the URL of the registry for this namespace.<a href="#section-3.2-17" class="pilcrow">¶</a></p>
 </div>
-<div id="_b82e5d6e-23b9-4715-a1ed-d3a5c8e5b985">
+<div id="_638e7f7a-c193-4e9a-8161-1fbf8c0587e5">
 <p id="section-3.2-18">The determination of whether an Internet-Draft meets the above
 conditions and the decision to grant or withhold such authority rests
 solely with the IESG and is subject to the normal review and appeals
@@ -1653,7 +1653,7 @@ process associated with the RFC process.<a href="#section-3.2-18" class="pilcrow
         <h3 id="name-syntax-extensions-to">
 <a href="#section-3.3" class="section-number selfRef">3.3. </a><a href="#name-syntax-extensions-to" class="section-name selfRef">Syntax Extensions to <em class="xref">[RFC3339]</em></a>
         </h3>
-<div id="_f01a2904-4d80-4ea8-a565-eac0dd6953be">
+<div id="_4d1e5c96-cc50-4607-9e6f-86feb870e5e8">
 <p id="section-3.3-1">The following rules extend the ABNF syntax defined in <span>[<a href="#RFC3339" class="xref">RFC3339</a>]</span> in order to
 allow the inclusion of an optional suffix.<a href="#section-3.3-1" class="pilcrow">¶</a></p>
 </div>
@@ -1683,44 +1683,44 @@ date-time-ext  = date-time suffix</pre><a href="#section-3.3-2" class="pilcrow">
         <h3 id="name-examples">
 <a href="#section-3.4" class="section-number selfRef">3.4. </a><a href="#name-examples" class="section-name selfRef">Examples</a>
         </h3>
-<div id="_99acb19d-c5a2-4242-803e-0a9e3e7dbe13">
+<div id="_090b66eb-ab70-4dae-aac1-41b70f236e9e">
 <p id="section-3.4-1">Here are some examples of Internet extended date/time format.<a href="#section-3.4-1" class="pilcrow">¶</a></p>
 </div>
-<div id="_1b41f0c0-74bf-4a0c-9664-78f464753c7c">
+<div id="_c10b65ca-94a1-4427-b639-165c7bd50fad">
 <div id="section-3.4-2">
 <pre class="sourcecode">1996-12-19T16:39:57-08:00</pre><a href="#section-3.4-2" class="pilcrow">¶</a>
 </div>
 </div>
-<div id="_18724b82-b3c0-4e64-ab1c-376022adc4f7">
+<div id="_272ff181-905d-4e4b-9e86-84a8bf90dd5c">
 <p id="section-3.4-3">This represents 39 minutes and 57 seconds after the 16th hour of
 December 19th, 1996 with an offset of -08:00 from UTC.
 Note that this is equivalent to 1996-12-20T00:39:57Z in UTC.<a href="#section-3.4-3" class="pilcrow">¶</a></p>
 </div>
-<div id="_db7b9851-c3d7-4ba8-977a-5802b181c1bc">
+<div id="_7e560f47-9f01-48e4-80c5-bce4d6102f9e">
 <div id="section-3.4-4">
 <pre class="sourcecode">1996-12-19T16:39:57-08:00[America/Los_Angeles]</pre><a href="#section-3.4-4" class="pilcrow">¶</a>
 </div>
 </div>
-<div id="_8b4f6acb-528c-46ea-a8d8-55a9642abb7d">
+<div id="_ef696b45-016a-4e6c-bb99-784e0489fc16">
 <p id="section-3.4-5">This represents the exact same instant as the previous example but
 additionally specifies the human time zone associated with it
 ("Pacific Time") for time-zone-aware implementations to take into account.<a href="#section-3.4-5" class="pilcrow">¶</a></p>
 </div>
-<div id="_5cbfea58-9a78-4a7b-96ac-476856e9b44e">
+<div id="_b22e5488-eed3-4382-89da-4c893a8be981">
 <div id="section-3.4-6">
 <pre class="sourcecode">1996-12-19T16:39:57-08:00[America/Los_Angeles][u-ca=hebrew]</pre><a href="#section-3.4-6" class="pilcrow">¶</a>
 </div>
 </div>
-<div id="_cb984423-0ea0-4538-94a6-a205bf46bd12">
+<div id="_8b28d668-87fe-4471-97ab-ae19802f89cc">
 <p id="section-3.4-7">This represents the exact same instant but it informs calendar-aware
 implementations that they should project it to the Hebrew calendar.<a href="#section-3.4-7" class="pilcrow">¶</a></p>
 </div>
-<div id="_19846c22-c0ce-4040-86b7-249cb1f5a150">
+<div id="_42e467bd-1f1d-4a68-9b31-3ae43778457e">
 <div id="section-3.4-8">
 <pre class="sourcecode">1996-12-19T16:39:57-08:00[x-foo=bar][x-baz=bat]</pre><a href="#section-3.4-8" class="pilcrow">¶</a>
 </div>
 </div>
-<div id="_fbf36412-f40a-410b-897c-256ef61abfe8">
+<div id="_9c0384e1-a17d-42d0-b3ae-1185d4505910">
 <p id="section-3.4-9">This timestamp utilizes the private use namespace to declare two additional
 pieces of information in the suffix that can be interpreted by any
 compatible implementations and ignored otherwise.<a href="#section-3.4-9" class="pilcrow">¶</a></p>

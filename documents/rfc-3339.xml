@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="US-ASCII"?>
-<ietf-standard xmlns="https://www.metanorma.org/ns/ietf" type="semantic" version="2.3.3">
+<ietf-standard xmlns="https://www.metanorma.org/ns/ietf" type="semantic" version="2.3.5">
 <bibdata type="standard">
 <title language="en" format="text/plain" type="main">Date and Time on the Internet: Timestamps with additional information</title>
 <title language="en" format="text/plain" type="abbrev">Timestamps Extended</title>
@@ -69,47 +69,47 @@
 </ext>
 </bibdata>
 <preface><abstract id="_abstract"><title>Abstract</title>
-<p id="_28a66b74-0edf-4e1b-a4c2-0d1318002a00">This document defines an extension to the timestamp format defined in
+<p id="_e8d3a6a7-0aaf-4c5e-9473-a6fe944f9aec">This document defines an extension to the timestamp format defined in
 <eref type="inline" bibitemid="RFC3339" citeas="RFC 3339"/> for representing additional information including a time zone.</p>
 </abstract></preface><sections>
-<clause id="intro" inline-header="false" obligation="normative"><title>Introduction</title><p id="_10daa5a5-a0cf-48d6-a23e-2e1e762afb6b">Dates and times are used in a very diverse set of internet applications, all
+<clause id="intro" inline-header="false" obligation="normative"><title>Introduction</title><p id="_db69af69-582a-4309-b70c-729c307a09cf">Dates and times are used in a very diverse set of internet applications, all
 the way from server-side logging to calendaring and scheduling.</p>
-<p id="_f4d1b002-b3c1-4e5f-97b2-35ef6ace3fcb">Each distinct instant in time can be represented in a descriptive text format
+<p id="_538f95a3-da25-4345-a97e-439dc1057aa0">Each distinct instant in time can be represented in a descriptive text format
 using a timestamp, and <eref type="inline" bibitemid="ISO8601" citeas="ISO 8601:1988"/> standardizes a widely-adopted timestamp
 format, which forms the basis of <eref type="inline" bibitemid="RFC3339" citeas="RFC 3339"/>. However, this format doesn't
 allow timestamps to contain any additional relevant information, which means
 that any contextual information related to a given timestamp needs to be
 either handled separately or attached to it in a non-standard manner.</p>
-<p id="_3cca4a33-8dda-407f-94cc-6d604a7271f0">This is already a pressing issue for applications that handle each instant with
+<p id="_95d6ce3d-8f98-4347-a84f-7f386f8d6f66">This is already a pressing issue for applications that handle each instant with
 an associated time zone name, to take into account things like DST transitions.
 Most of these applications attach the timezone to the timestamp in a
 non-standard format, atleast one of which is fairly well-adopted (<eref type="inline" bibitemid="JAVAZDT" citeas=""/>).
 Furthermore, applications might want to attach even more information to the
 timestamp, including but not limited to the calendar system it must be
 represented in.</p>
-<p id="_a26f875c-6db7-4231-b9ae-034ba4820ab6">This document defines an extension syntax for timestamps as specified in
+<p id="_cf435fd9-d6cb-49d6-9af0-ff5d1e1c9e09">This document defines an extension syntax for timestamps as specified in
 <eref type="inline" bibitemid="RFC3339" citeas="RFC 3339"/> that has the following properties:</p>
-<ul id="_a6928b31-45da-4863-a31f-6f1d6d22deda">
+<ul id="_ca6c4e5f-e395-416a-b875-3fbd71c349e9">
 <li>
-<p id="_6888c8cc-17c0-45dd-bfac-4a234d606718">The extension suffix is completely optional, making existing <eref type="inline" bibitemid="RFC3339" citeas="RFC 3339"/>
+<p id="_ddeae98a-daff-487e-b23f-023469ffe1f0">The extension suffix is completely optional, making existing <eref type="inline" bibitemid="RFC3339" citeas="RFC 3339"/>
 timestamps compatible with this format.</p>
 </li>
 <li>
-<p id="_4370c046-14b3-4d31-8e3b-a3b9cc0e17b6">The format is compatible to the pre-existing popular syntax for attaching
+<p id="_c8508241-9c3d-4c9c-9329-993396d6b8cc">The format is compatible to the pre-existing popular syntax for attaching
 time zone names to timestamps (<eref type="inline" bibitemid="JAVAZDT" citeas=""/>).</p>
 </li>
 <li>
-<p id="_6f83eb0a-a169-4b41-b4bf-32b424695693">The format provides generalized way to attach any additional information to
+<p id="_342dde35-4291-455c-bf51-aad618e376c4">The format provides generalized way to attach any additional information to
 the timestamp.</p>
 </li>
 </ul></clause>
-<clause id="defintions" inline-header="false" obligation="normative"><title>Definitions</title><p id="_2399e452-4bd6-4ffb-8ccb-f7853d6b0b7b">The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+<clause id="defintions" inline-header="false" obligation="normative"><title>Definitions</title><p id="_4c469a32-b692-4405-af27-7b0717742b72">The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
 "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
 document are to be interpreted as described in <eref type="inline" bibitemid="RFC2119" citeas="RFC 2119"/>.</p>
-<dl id="_3fc16243-5831-40f3-8f77-129ae389ae3e">
+<dl id="_b69d81e1-6bc0-4998-8b49-c2c730a170d0">
 <dt>UTC</dt>
 <dd>
-<p id="_d11d11ca-1b97-4bd5-beed-6fc5e844af4b">Coordinated Universal Time as maintained since 1988 by the Bureau
+<p id="_d6c2c5ef-9918-4195-a2d4-a3f69dab6416">Coordinated Universal Time as maintained since 1988 by the Bureau
 International des Poids et Mesures (BIPM) in conjunction with
 leap seconds as announced by the International Earth Rotation
 and Reference Frames Service <eref type="inline" bibitemid="IERS" citeas=""/>. From 1972 through 1987
@@ -121,73 +121,73 @@ Universal Time based on measuring the rotation of the earth.</p>
 </dd>
 <dt>ABNF</dt>
 <dd>
-<p id="_e88d9bab-584e-43da-9bd6-f8136e05372e">Augmented Backus-Naur Form, a format used to represent
+<p id="_63f13d2d-a059-4273-a36c-eee07e95127d">Augmented Backus-Naur Form, a format used to represent
 permissible strings in a protocol or language, as
 defined in <eref type="inline" bibitemid="RFC2234" citeas="RFC 2234"/>.</p>
 </dd>
 <dt>Internet Date/Time Format</dt>
 <dd>
-<p id="_4424d54e-835e-427d-9193-eb10a8bb3c2c">The date/time format defined in section 3 of this document.</p>
+<p id="_fd87b3d0-50b8-423b-9151-b2f38490773b">The date/time format defined in section 3 of this document.</p>
 </dd>
 <dt>Timestamp</dt>
 <dd>
-<p id="_82f135f2-7e17-43a1-becf-9600b7826172">This term is used in this document to refer to an
+<p id="_d86b11ab-237f-4e80-abde-bd16459b2934">This term is used in this document to refer to an
 unambiguous representation of some instant in time.</p>
 </dd>
 <dt>Z</dt>
 <dd>
-<p id="_0fd4a04d-684b-497b-b37b-3de656919d1d">A suffix which, when applied to a time, denotes a UTC
+<p id="_8c228bf8-917d-4979-baf6-e3a7792487db">A suffix which, when applied to a time, denotes a UTC
 offset of 00:00; often spoken "Zulu" from the ICAO
 phonetic alphabet representation of the letter "Z".</p>
 </dd>
 <dt>Time Zone</dt>
 <dd>
-<p id="_2d1bc736-1bbe-47cf-a8db-0cbf77079230">A time zone that is a included in the Time Zone Database
+<p id="_ffe42c62-5165-46f0-a786-686e81e0b566">A time zone that is a included in the Time Zone Database
 (often called <tt>tz</tt> or <tt>zoneinfo</tt>) maintained by IANA.</p>
 </dd>
 </dl>
-<p id="_556e1a3f-b026-42c2-b34e-ea1199e507c5">For more information about time scales, see Appendix E of <eref type="inline" bibitemid="RFC1305" citeas="RFC 1305"/>,
+<p id="_ea931107-f0d0-4084-97d1-8717c1effa0c">For more information about time scales, see Appendix E of <eref type="inline" bibitemid="RFC1305" citeas="RFC 1305"/>,
 Section 3 of <eref type="inline" bibitemid="ISO8601" citeas="ISO 8601:1988"/>, and the appropriate ITU documents <eref type="inline" bibitemid="ITURTF460-6" citeas="[ITU-R TF.460-6]"/>.</p></clause>
-<clause id="date-time-format" inline-header="false" obligation="normative"><title>Extended Date and Time format</title><p id="_1367930a-98f6-49bd-baac-aa72eace9dd7">This section discusses desirable qualities of formats for the timestamp
+<clause id="date-time-format" inline-header="false" obligation="normative"><title>Extended Date and Time format</title><p id="_3886eb7d-5c9c-4c29-9442-3d4a7551e86b">This section discusses desirable qualities of formats for the timestamp
 extension suffix and defines such a format that extends <eref type="inline" bibitemid="RFC3339" citeas="RFC 3339"/> for use in
 Internet protocols.</p>
-<clause id="_informative" inline-header="false" obligation="normative"><title>Informative</title><p id="_8504ef1c-7adf-4b0b-8106-0e49f125f177">The format should allow implementations to specify additional important
+<clause id="_informative" inline-header="false" obligation="normative"><title>Informative</title><p id="_2f8b484f-d835-4df9-817b-948114fcaed6">The format should allow implementations to specify additional important
 information in addition to the bare timestamp. This is done by allowing
 implementations to include an informative suffix at the end with as many
 tags as required, each with a key and value separated by an equals sign.
 The value can be a hyphen delimited list of multiple values.</p>
-<p id="_2cb25dc4-a668-4f23-9a9a-303d6cc89475">In case a key is repeated or conflicted, implementations MUST give precedence
+<p id="_22c9cec6-c50a-44d7-999e-bfff551fa31b">In case a key is repeated or conflicted, implementations MUST give precedence
 to whichever value is positioned first.</p></clause>
-<clause id="_namespaced" inline-header="false" obligation="normative"><title>Namespaced</title><p id="_538ca1b3-248f-4a33-8734-4014d63d9e3e">Since the suffix can include all sorts of additional information,
+<clause id="_namespaced" inline-header="false" obligation="normative"><title>Namespaced</title><p id="_01413975-eff7-4a38-813f-9eedf65f3a96">Since the suffix can include all sorts of additional information,
 different standards bodies/organizations need a way to identify which part
 adheres to their standards. For this, all information needs to be
 namespaced. Each key is therefore divided into two hyphen-separated
 sections: the namespace and the key. For example, the calendar as defined
 by the Unicode consortium could be included as <tt>u-ca=&lt;value&gt;</tt>.</p>
-<p id="_6341a3f0-967f-46ed-aa79-3a7411810d04">All single-character namespaces are reserved for BCP47 extensions recorded
+<p id="_d86c78a6-35ca-4512-8fb2-99102a15574f">All single-character namespaces are reserved for BCP47 extensions recorded
 in the BCP47 extensions registry. For these namespaces:</p>
-<ul id="_5798fc21-766d-4709-877f-8057b4ec669a">
+<ul id="_c9c26f2f-a89e-4107-86ef-7a2d6d6de0ae">
 <li>
-<p id="_bd512790-d23c-4f32-9a97-c2c6666f17bc">Case differences are ignored.</p>
+<p id="_50dc34fa-b1c6-47c1-97a7-0c604701b808">Case differences are ignored.</p>
 </li>
 <li>
-<p id="_95e58dd0-6318-4a24-b412-08523e331556">The namespace is restricted to single alphanum, corresponding to
+<p id="_192e765b-61a1-40d9-814b-ef7e925db62c">The namespace is restricted to single alphanum, corresponding to
 extension singletons ('x' can be used for a private use extension).</p>
 </li>
 <li>
-<p id="_eeac750a-61ed-4281-a8ee-e2c2cab78e42">In addition, for CLDR extensions:</p>
-<ul id="_512e1a39-12aa-4236-a055-8b5583262aa1">
+<p id="_085166b6-ad58-4ded-80d3-4008ffe77440">In addition, for CLDR extensions:</p>
+<ul id="_993da172-b1a7-44d1-9074-c47dd910c6a0">
 <li>
-<p id="_5ce6da3f-1d11-47c3-bf65-ade9c3f95b9b">There must be a <tt>namespace-key</tt> and it is restricted to 2 <tt>alphanum</tt>
+<p id="_30f45157-a37b-4263-9fc3-8de49bb6378c">There must be a <tt>namespace-key</tt> and it is restricted to 2 <tt>alphanum</tt>
 characters.</p>
 </li>
 <li>
-<p id="_c870eb7e-7afb-45e8-993b-46780ef7c541">A <tt>suffix-value</tt> is limited to <tt>3*8alphanum</tt>.</p>
+<p id="_df6e039a-024f-40a7-bb48-f994cdb70878">A <tt>suffix-value</tt> is limited to <tt>3*8alphanum</tt>.</p>
 </li>
 </ul>
 </li>
 </ul>
-<p id="_935e8d44-1d24-447b-8ebd-6c25e6d83604">Multi-character namespaces can be registered specifically for use in this
+<p id="_707cc5c3-996d-42c8-87a0-71d688676ab9">Multi-character namespaces can be registered specifically for use in this
 format. They are assigned by IANA using the "IETF Review" policy defined
 by [RFC5226]. This policy requires the development of an RFC, which SHALL
 define the name, purpose, processes, and procedures for maintaining the
@@ -195,49 +195,49 @@ subtags. The maintaining or registering authority, including name, contact
 email, discussion list email, and URL location of the registry, MUST be
 indicated clearly in the RFC. The RFC MUST specify or include each of the
 following:</p>
-<ul id="_2941befd-34b6-434b-b2c9-b48147459c0e">
+<ul id="_70da0f54-4c4f-410a-9cff-cd70165bb96c">
 <li>
-<p id="_857d561b-1119-48c1-b001-db282c35de6d">The specification MUST reference the specific version or revision of
+<p id="_025ca0a9-f49b-487e-a367-5aaca444d7c9">The specification MUST reference the specific version or revision of
 this document that governs its creation and MUST reference this section of
 this document.</p>
 </li>
 <li>
-<p id="_0f784a79-dbf3-4ad1-8995-0cf5e0ee04ff">The specification and all keys defined by the specification MUST
+<p id="_dec6ce3c-71e8-4741-8330-55e2b8e499e9">The specification and all keys defined by the specification MUST
 follow the ABNF and other rules for the formation of keys as defined in
 this document. In particular, it MUST specify that case is not significant
 and that keys MUST NOT exceed eight characters in length.</p>
 </li>
 <li>
-<p id="_17368d92-3121-49ce-a62b-0f916fc85aee">The specification MUST specify a canonical representation.</p>
+<p id="_fc8f0d81-e080-45c7-a493-c76e68584885">The specification MUST specify a canonical representation.</p>
 </li>
 <li>
-<p id="_3d04141a-8305-49ea-80e0-be6805f94012">The specification of valid keys MUST be available over the Internet
+<p id="_6858104e-eaf0-4683-a6ca-ff60a52e4ec7">The specification of valid keys MUST be available over the Internet
 and at no cost.</p>
 </li>
 <li>
-<p id="_1d297775-9572-4921-966d-5074ed4e8d99">The specification MUST be in the public domain or available via a
+<p id="_dcf0b4a2-e461-4ad0-b99f-ded784ed2548">The specification MUST be in the public domain or available via a
 royalty-free license acceptable to the IETF and specified in the RFC.</p>
 </li>
 <li>
-<p id="_f51100f8-50c1-42fe-ac86-1ddac6b7729c">The specification MUST be versioned, and each version of the
+<p id="_07fc9327-a08a-4d39-9942-05a90424ccde">The specification MUST be versioned, and each version of the
 specification MUST be numbered, dated, and stable.</p>
 </li>
 <li>
-<p id="_dc128927-985a-4e5e-bb13-cfd714b3b4d2">The specification MUST be stable. That is, namespace keys, once defined
+<p id="_108a71a0-df6d-463a-a5bb-45dd9bcc8639">The specification MUST be stable. That is, namespace keys, once defined
 by a specification, MUST NOT be retracted or change in meaning in any
 substantial way.</p>
 </li>
 <li>
-<p id="_1c3fc657-b5e9-4af4-8d76-6979a7cb82f2">The specification MUST include, in a separate section, the registration
+<p id="_57fb4df0-695f-4f6e-b28c-05c369f634d9">The specification MUST include, in a separate section, the registration
 form reproduced in this section (below) to be used in registering the
 namespace upon publication as an RFC.</p>
 </li>
 <li>
-<p id="_3c997157-9b64-413f-8413-20c893d10c71">IANA MUST be informed of changes to the contact information and URL for
+<p id="_def46b53-b00a-4a44-901d-bad913a645d5">IANA MUST be informed of changes to the contact information and URL for
 the specification.</p>
 </li>
 </ul>
-<p id="_2a71e33d-9576-4752-9e0d-78e6caae66c4">IANA will maintain a registry of allocated multi-character namespaces. This
+<p id="_7a3892f2-f00a-4558-9617-1f3bece2f026">IANA will maintain a registry of allocated multi-character namespaces. This
 registry MUST use the record-jar format described by the ABNF in <eref type="inline" bibitemid="RFC5646" citeas="RFC 5646"><localityStack><locality type="section"><referenceFrom>3.1.1</referenceFrom></locality></localityStack></eref>.
 Upon publication of a namespace as an RFC, the maintaining
 authority defined in the RFC MUST forward this registration form to
@@ -247,12 +247,12 @@ record by sending an updated full copy of the record to &lt;<link target="mailto
 with the subject line "TIMESTAMP FORMAT NAMESPACE UPDATE" whenever content
 changes. Only the 'Comments', 'Contact_Email', 'Mailing_List', and 'URL'
 fields MAY be modified in these updates.</p>
-<p id="_b5a283ba-1e09-4fc8-882b-8484cdf338d9">Failure to maintain this record, maintain the corresponding registry,
+<p id="_978fcb0f-83a3-49c6-8e53-b83d668b4548">Failure to maintain this record, maintain the corresponding registry,
 or meet other conditions imposed by this section of this document MAY
 be appealed to the IESG <eref type="inline" bibitemid="RFC2028" citeas="RFC 2028"/> under the same rules as other IETF
 decisions (see <eref type="inline" bibitemid="RFC2026" citeas="RFC 2026"/>) and MAY result in the authority to maintain
 the extension being withdrawn or reassigned by the IESG.</p>
-<sourcecode id="_87d29501-d774-4344-be77-646b5d9cc9d1"><name>Format of Records in the Timestamp Format Namespace Registry</name>%%
+<sourcecode id="_f6707eb4-6931-4f0c-bfe6-c55488aece33"><name>Format of Records in the Timestamp Format Namespace Registry</name>%%
 Identifier:
 Description:
 Comments:
@@ -264,29 +264,29 @@ Mailing_List:
 URL:
 %%</sourcecode>
 
-<p id="_2c295047-209e-4405-b200-e4ec9242f779">'Identifier' contains the multi-character sequence assigned to the
+<p id="_e59fa118-0fb1-4fe9-84bb-168b1bffe051">'Identifier' contains the multi-character sequence assigned to the
 namespace. The Internet-Draft submitted to define the namespace SHOULD
 specify which sequence to use, although the IESG MAY change the assignment
 when approving the RFC.</p>
-<p id="_d31f814e-ffef-4493-bac6-4198239bea45">'Description' contains the name and description of the namespace.</p>
-<p id="_33282247-0af0-4674-bb3c-11b70cf7571b">'Comments' is an OPTIONAL field and MAY contain a broader description
+<p id="_e8680b94-d4ba-42ac-af49-cf550271a663">'Description' contains the name and description of the namespace.</p>
+<p id="_377fdda5-5f5a-4a32-89d1-5d8b27bb5998">'Comments' is an OPTIONAL field and MAY contain a broader description
 of the namespace.</p>
-<p id="_da21123c-bfb3-40fb-9eae-57d9226e75a0">'Added' contains the date the namespace's RFC was published in the
+<p id="_d40db163-55f6-4c83-92da-9e75a7904522">'Added' contains the date the namespace's RFC was published in the
 "date-full" format specified in <xref target="grammar"/>.  For example: 2004-06-28
 represents June 28, 2004, in the Gregorian calendar.</p>
-<p id="_0c82a100-9775-4e83-80f2-2021f9a58e2f">'RFC' contains the RFC number assigned to the namespace.</p>
-<p id="_8dc1794c-3779-4189-98c5-d429386f643d">'Authority' contains the name of the maintaining authority for the
+<p id="_7b186727-c851-4eb9-9fe9-49f716f84502">'RFC' contains the RFC number assigned to the namespace.</p>
+<p id="_aab55705-36c8-4631-b4d9-65229726ae87">'Authority' contains the name of the maintaining authority for the
 namespace.</p>
-<p id="_440fa05e-626d-4051-a500-504223b947ad">'Contact_Email' contains the email address used to contact the
+<p id="_f494d07b-80ba-41c6-90af-f82abff10367">'Contact_Email' contains the email address used to contact the
 maintaining authority.</p>
-<p id="_a0020975-2ff9-474e-b059-48b5f318647a">'Mailing_List' contains the URL or subscription email address of the
+<p id="_28df9b55-b0b2-46f0-92f8-99f1cf1441ef">'Mailing_List' contains the URL or subscription email address of the
 mailing list used by the maintaining authority.</p>
-<p id="_bb0436bf-0ff8-4645-8b43-852b8cf082bd">'URL' contains the URL of the registry for this namespace.</p>
-<p id="_b82e5d6e-23b9-4715-a1ed-d3a5c8e5b985">The determination of whether an Internet-Draft meets the above
+<p id="_918daae1-63ac-44ab-ab04-981423a8bed0">'URL' contains the URL of the registry for this namespace.</p>
+<p id="_638e7f7a-c193-4e9a-8161-1fbf8c0587e5">The determination of whether an Internet-Draft meets the above
 conditions and the decision to grant or withhold such authority rests
 solely with the IESG and is subject to the normal review and appeals
 process associated with the RFC process.</p></clause>
-<clause id="_syntax_extensions_to" inline-header="false" obligation="normative"><title>Syntax Extensions to <eref type="inline" bibitemid="RFC3339" citeas="RFC 3339"/></title><p id="_f01a2904-4d80-4ea8-a565-eac0dd6953be">The following rules extend the ABNF syntax defined in <eref type="inline" bibitemid="RFC3339" citeas="RFC 3339"/> in order to
+<clause id="_syntax_extensions_to" inline-header="false" obligation="normative"><title>Syntax Extensions to <eref type="inline" bibitemid="RFC3339" citeas="RFC 3339"/></title><p id="_4d1e5c96-cc50-4607-9e6f-86feb870e5e8">The following rules extend the ABNF syntax defined in <eref type="inline" bibitemid="RFC3339" citeas="RFC 3339"/> in order to
 allow the inclusion of an optional suffix.</p>
 <sourcecode id="grammar">time-zone-char = ALPHA / "." / "_"
 time-zone-part = time-zone-char *13(time-zone-char / DIGIT / "-" / "+") ; but not "." or ".."
@@ -304,39 +304,39 @@ suffix         = [time-zone] *suffix-tag
 
 date-time-ext  = date-time suffix</sourcecode>
 </clause>
-<clause id="date-time-examples" inline-header="false" obligation="normative"><title>Examples</title><p id="_99acb19d-c5a2-4242-803e-0a9e3e7dbe13">Here are some examples of Internet extended date/time format.</p>
-<sourcecode id="_1b41f0c0-74bf-4a0c-9664-78f464753c7c" unnumbered="true">1996-12-19T16:39:57-08:00</sourcecode>
+<clause id="date-time-examples" inline-header="false" obligation="normative"><title>Examples</title><p id="_090b66eb-ab70-4dae-aac1-41b70f236e9e">Here are some examples of Internet extended date/time format.</p>
+<sourcecode id="_c10b65ca-94a1-4427-b639-165c7bd50fad" unnumbered="true">1996-12-19T16:39:57-08:00</sourcecode>
 
-<p id="_18724b82-b3c0-4e64-ab1c-376022adc4f7">This represents 39 minutes and 57 seconds after the 16th hour of
+<p id="_272ff181-905d-4e4b-9e86-84a8bf90dd5c">This represents 39 minutes and 57 seconds after the 16th hour of
 December 19th, 1996 with an offset of -08:00 from UTC.
 Note that this is equivalent to 1996-12-20T00:39:57Z in UTC.</p>
-<sourcecode id="_db7b9851-c3d7-4ba8-977a-5802b181c1bc" unnumbered="true">1996-12-19T16:39:57-08:00[America/Los_Angeles]</sourcecode>
+<sourcecode id="_7e560f47-9f01-48e4-80c5-bce4d6102f9e" unnumbered="true">1996-12-19T16:39:57-08:00[America/Los_Angeles]</sourcecode>
 
-<p id="_8b4f6acb-528c-46ea-a8d8-55a9642abb7d">This represents the exact same instant as the previous example but
+<p id="_ef696b45-016a-4e6c-bb99-784e0489fc16">This represents the exact same instant as the previous example but
 additionally specifies the human time zone associated with it
 ("Pacific Time") for time-zone-aware implementations to take into account.</p>
-<sourcecode id="_5cbfea58-9a78-4a7b-96ac-476856e9b44e" unnumbered="true">1996-12-19T16:39:57-08:00[America/Los_Angeles][u-ca=hebrew]</sourcecode>
+<sourcecode id="_b22e5488-eed3-4382-89da-4c893a8be981" unnumbered="true">1996-12-19T16:39:57-08:00[America/Los_Angeles][u-ca=hebrew]</sourcecode>
 
-<p id="_cb984423-0ea0-4538-94a6-a205bf46bd12">This represents the exact same instant but it informs calendar-aware
+<p id="_8b28d668-87fe-4471-97ab-ae19802f89cc">This represents the exact same instant but it informs calendar-aware
 implementations that they should project it to the Hebrew calendar.</p>
-<sourcecode id="_19846c22-c0ce-4040-86b7-249cb1f5a150" unnumbered="true">1996-12-19T16:39:57-08:00[x-foo=bar][x-baz=bat]</sourcecode>
+<sourcecode id="_42e467bd-1f1d-4a68-9b31-3ae43778457e" unnumbered="true">1996-12-19T16:39:57-08:00[x-foo=bar][x-baz=bat]</sourcecode>
 
-<p id="_fbf36412-f40a-410b-897c-256ef61abfe8">This timestamp utilizes the private use namespace to declare two additional
+<p id="_9c0384e1-a17d-42d0-b3ae-1185d4505910">This timestamp utilizes the private use namespace to declare two additional
 pieces of information in the suffix that can be interpreted by any
 compatible implementations and ignored otherwise.</p></clause></clause>
 
-</sections><bibliography><references id="references" normative="true" obligation="informative"><title>Normative References</title> <bibitem id="RFC2234" type="standard">  <fetched>2021-06-18</fetched>  <title format="text/plain" language="en" script="Latn">Augmented BNF for Syntax Specifications: ABNF</title>  <uri type="xml">https://raw.githubusercontent.com/relaton/relaton-data-ietf/master/data/reference.RFC.2234.xml</uri>  <uri type="src">https://www.rfc-editor.org/info/rfc2234</uri>  <docidentifier type="IETF">RFC 2234</docidentifier>  <docidentifier type="rfc-anchor">RFC2234</docidentifier>  <docidentifier type="DOI">10.17487/RFC2234</docidentifier>  <date type="published">    <on>1997-11</on>  </date>  <contributor>    <role type="editor"/>    <person>      <name>        <completename language="en">D. Crocker</completename>      </name>      <affiliation>        <organization>          <name>Internet Engineering Task Force</name>          <abbreviation>IETF</abbreviation>        </organization>      </affiliation>    </person>  </contributor>  <contributor>    <role type="author"/>    <person>      <name>        <completename language="en">P. Overell</completename>      </name>      <affiliation>        <organization>          <name>Internet Engineering Task Force</name>          <abbreviation>IETF</abbreviation>        </organization>      </affiliation>    </person>  </contributor>  <contributor>    <role type="publisher"/>    <organization>      <name>Internet Engineering Task Force</name>      <abbreviation>IETF</abbreviation>    </organization>  </contributor>  <language>en</language>  <script>Latn</script>  <abstract format="text/plain" language="en" script="Latn">In the early days of the Arpanet, each specification contained its own definition of ABNF.  This included the email specifications, RFC733 and then RFC822 which have come to be the common citations for defining ABNF.  The current document separates out that definition, to permit selective reference.  Predictably, it also provides some modifications and enhancements.  [STANDARDS-TRACK]</abstract>  <series type="main">    <title format="text/plain" language="en" script="Latn">RFC</title>    <number>2234</number>  </series>  <place>Fremont, CA</place></bibitem> <bibitem id="RFC1305" type="standard">  <fetched>2021-06-18</fetched>  <title format="text/plain" language="en" script="Latn">Network Time Protocol (Version 3) Specification, Implementation and Analysis</title>  <uri type="xml">https://raw.githubusercontent.com/relaton/relaton-data-ietf/master/data/reference.RFC.1305.xml</uri>  <uri type="src">https://www.rfc-editor.org/info/rfc1305</uri>  <docidentifier type="IETF">RFC 1305</docidentifier>  <docidentifier type="rfc-anchor">RFC1305</docidentifier>  <docidentifier type="DOI">10.17487/RFC1305</docidentifier>  <date type="published">    <on>1992-03</on>  </date>  <contributor>    <role type="author"/>    <person>      <name>        <completename language="en">D. Mills</completename>      </name>      <affiliation>        <organization>          <name>Internet Engineering Task Force</name>          <abbreviation>IETF</abbreviation>        </organization>      </affiliation>    </person>  </contributor>  <contributor>    <role type="publisher"/>    <organization>      <name>Internet Engineering Task Force</name>      <abbreviation>IETF</abbreviation>    </organization>  </contributor>  <language>en</language>  <script>Latn</script>  <abstract format="text/plain" language="en" script="Latn">This document describes the Network Time Protocol (NTP), specifies its formal structure and summarizes information useful for its implementation.  [STANDARDS-TRACK]</abstract>  <series type="main">    <title format="text/plain" language="en" script="Latn">RFC</title>    <number>1305</number>  </series>  <place>Fremont, CA</place></bibitem> <bibitem id="RFC2119" type="standard">  <fetched>2021-06-18</fetched>  <title format="text/plain" language="en" script="Latn">Key words for use in RFCs to Indicate Requirement Levels</title>  <uri type="xml">https://raw.githubusercontent.com/relaton/relaton-data-ietf/master/data/reference.RFC.2119.xml</uri>  <uri type="src">https://www.rfc-editor.org/info/rfc2119</uri>  <docidentifier type="IETF">RFC 2119</docidentifier>  <docidentifier type="rfc-anchor">RFC2119</docidentifier>  <docidentifier type="DOI">10.17487/RFC2119</docidentifier>  <date type="published">    <on>1997-03</on>  </date>  <contributor>    <role type="author"/>    <person>      <name>        <completename language="en">S. Bradner</completename>      </name>      <affiliation>        <organization>          <name>Internet Engineering Task Force</name>          <abbreviation>IETF</abbreviation>        </organization>      </affiliation>    </person>  </contributor>  <contributor>    <role type="publisher"/>    <organization>      <name>Internet Engineering Task Force</name>      <abbreviation>IETF</abbreviation>    </organization>  </contributor>  <language>en</language>  <script>Latn</script>  <abstract format="text/plain" language="en" script="Latn">In many standards track documents several words are used to signify the requirements in the specification.  These words are often capitalized. This document defines these words as they should be interpreted in IETF documents.  This document specifies an Internet Best Current Practices for the Internet Community, and requests discussion and suggestions for improvements.</abstract>  <series type="main">    <title format="text/plain" language="en" script="Latn">BCP</title>    <number>14</number>  </series>  <series type="main">    <title format="text/plain" language="en" script="Latn">RFC</title>    <number>2119</number>  </series>  <place>Fremont, CA</place></bibitem> <bibitem id="RFC5646" type="standard">  <fetched>2021-06-18</fetched>  <title format="text/plain" language="en" script="Latn">Tags for Identifying Languages</title>  <uri type="xml">https://raw.githubusercontent.com/relaton/relaton-data-ietf/master/data/reference.RFC.5646.xml</uri>  <uri type="src">https://www.rfc-editor.org/info/rfc5646</uri>  <docidentifier type="IETF">RFC 5646</docidentifier>  <docidentifier type="rfc-anchor">RFC5646</docidentifier>  <docidentifier type="DOI">10.17487/RFC5646</docidentifier>  <date type="published">    <on>2009-09</on>  </date>  <contributor>    <role type="editor"/>    <person>      <name>        <completename language="en">A. Phillips</completename>      </name>      <affiliation>        <organization>          <name>Internet Engineering Task Force</name>          <abbreviation>IETF</abbreviation>        </organization>      </affiliation>    </person>  </contributor>  <contributor>    <role type="editor"/>    <person>      <name>        <completename language="en">M. Davis</completename>      </name>      <affiliation>        <organization>          <name>Internet Engineering Task Force</name>          <abbreviation>IETF</abbreviation>        </organization>      </affiliation>    </person>  </contributor>  <contributor>    <role type="publisher"/>    <organization>      <name>Internet Engineering Task Force</name>      <abbreviation>IETF</abbreviation>    </organization>  </contributor>  <language>en</language>  <script>Latn</script>  <abstract format="text/plain" language="en" script="Latn">This document describes the structure, content, construction, and semantics of language tags for use in cases where it is desirable to indicate the language used in an information object.  It also describes how to register values for use in language tags and the creation of user-defined extensions for private interchange.  This document  specifies an Internet Best Current Practices for the Internet Community, and requests discussion and suggestions for improvements.</abstract>  <series type="main">    <title format="text/plain" language="en" script="Latn">BCP</title>    <number>47</number>  </series>  <series type="main">    <title format="text/plain" language="en" script="Latn">RFC</title>    <number>5646</number>  </series>  <place>Fremont, CA</place></bibitem> <bibitem id="RFC2026" type="standard">  <fetched>2021-06-18</fetched>  <title format="text/plain" language="en" script="Latn">The Internet Standards Process&#8201;&#8212;&#8201;Revision 3</title>  <uri type="xml">https://raw.githubusercontent.com/relaton/relaton-data-ietf/master/data/reference.RFC.2026.xml</uri>  <uri type="src">https://www.rfc-editor.org/info/rfc2026</uri>  <docidentifier type="IETF">RFC 2026</docidentifier>  <docidentifier type="rfc-anchor">RFC2026</docidentifier>  <docidentifier type="DOI">10.17487/RFC2026</docidentifier>  <date type="published">    <on>1996-10</on>  </date>  <contributor>    <role type="author"/>    <person>      <name>        <completename language="en">S. Bradner</completename>      </name>      <affiliation>        <organization>          <name>Internet Engineering Task Force</name>          <abbreviation>IETF</abbreviation>        </organization>      </affiliation>    </person>  </contributor>  <contributor>    <role type="publisher"/>    <organization>      <name>Internet Engineering Task Force</name>      <abbreviation>IETF</abbreviation>    </organization>  </contributor>  <language>en</language>  <script>Latn</script>  <abstract format="text/plain" language="en" script="Latn">This memo documents the process used by the Internet community for the standardization of protocols and procedures.  It defines the stages in the standardization process, the requirements for moving a document between stages and the types of documents used during this process. This document specifies an Internet Best Current Practices for the Internet Community, and requests discussion and suggestions for improvements.</abstract>  <series type="main">    <title format="text/plain" language="en" script="Latn">BCP</title>    <number>9</number>  </series>  <series type="main">    <title format="text/plain" language="en" script="Latn">RFC</title>    <number>2026</number>  </series>  <place>Fremont, CA</place></bibitem> <bibitem id="RFC2028" type="standard">  <fetched>2021-06-18</fetched>  <title format="text/plain" language="en" script="Latn">The Organizations Involved in the IETF Standards Process</title>  <uri type="xml">https://raw.githubusercontent.com/relaton/relaton-data-ietf/master/data/reference.RFC.2028.xml</uri>  <uri type="src">https://www.rfc-editor.org/info/rfc2028</uri>  <docidentifier type="IETF">RFC 2028</docidentifier>  <docidentifier type="rfc-anchor">RFC2028</docidentifier>  <docidentifier type="DOI">10.17487/RFC2028</docidentifier>  <date type="published">    <on>1996-10</on>  </date>  <contributor>    <role type="author"/>    <person>      <name>        <completename language="en">R. Hovey</completename>      </name>      <affiliation>        <organization>          <name>Internet Engineering Task Force</name>          <abbreviation>IETF</abbreviation>        </organization>      </affiliation>    </person>  </contributor>  <contributor>    <role type="author"/>    <person>      <name>        <completename language="en">S. Bradner</completename>      </name>      <affiliation>        <organization>          <name>Internet Engineering Task Force</name>          <abbreviation>IETF</abbreviation>        </organization>      </affiliation>    </person>  </contributor>  <contributor>    <role type="publisher"/>    <organization>      <name>Internet Engineering Task Force</name>      <abbreviation>IETF</abbreviation>    </organization>  </contributor>  <language>en</language>  <script>Latn</script>  <abstract format="text/plain" language="en" script="Latn">This document describes the individuals and organizations involved in the IETF.  This includes descriptions of the IESG, the IETF Working Groups and the relationship between the IETF and the Internet Society. This document specifies an Internet Best Current Practices for the Internet Community, and requests discussion and suggestions for improvements.</abstract>  <series type="main">    <title format="text/plain" language="en" script="Latn">BCP</title>    <number>11</number>  </series>  <series type="main">    <title format="text/plain" language="en" script="Latn">RFC</title>    <number>2028</number>  </series>  <place>Fremont, CA</place></bibitem></references><references id="_informative_references" normative="false" obligation="informative"><title>Informative References</title><bibitem id="ISO8601" type="standard">  <fetched>2021-06-18</fetched>  <title type="title-intro" format="text/plain" language="en" script="Latn">Data elements and interchange formats</title>  <title type="title-main" format="text/plain" language="en" script="Latn">Information interchange</title>  <title type="title-part" format="text/plain" language="en" script="Latn">Representation of dates and times</title>  <title type="main" format="text/plain" language="en" script="Latn">Data elements and interchange formats&#8201;&#8212;&#8201;Information interchange&#8201;&#8212;&#8201;Representation of dates and times</title>  <uri type="src">https://www.iso.org/standard/15903.html</uri>  <uri type="rss">https://www.iso.org/contents/data/standard/01/59/15903.detail.rss</uri>  <docidentifier type="ISO">ISO 8601:1988</docidentifier>  <docidentifier type="URN">urn:iso:std:iso:8601:stage-95.99:ed-1:en</docidentifier>  <docnumber>8601</docnumber>  <date type="published">    <on>1988-06</on>  </date>  <contributor>    <role type="publisher"/>    <organization>      <name>International Organization for Standardization</name>      <abbreviation>ISO</abbreviation>      <uri>www.iso.org</uri>    </organization>  </contributor>  <edition>1</edition>  <language>en</language>  <script>Latn</script>  <status>    <stage>95</stage>    <substage>99</substage>  </status>  <copyright>    <from>1988</from>    <owner>      <organization>        <name>ISO</name>      </organization>    </owner>  </copyright>  <relation type="obsoletes">    <bibitem type="standard">      <formattedref format="text/plain">ISO 2014:1976</formattedref>    </bibitem>  </relation>  <relation type="obsoletes">    <bibitem type="standard">      <formattedref format="text/plain">ISO 2015:1976</formattedref>    </bibitem>  </relation>  <relation type="obsoletes">    <bibitem type="standard">      <formattedref format="text/plain">ISO 2711:1973</formattedref>    </bibitem>  </relation>  <relation type="obsoletes">    <bibitem type="standard">      <formattedref format="text/plain">ISO 3307:1975</formattedref>    </bibitem>  </relation>  <relation type="obsoletes">    <bibitem type="standard">      <formattedref format="text/plain">ISO 4031:1978</formattedref>    </bibitem>  </relation>  <relation type="updates">    <bibitem type="standard">      <formattedref format="text/plain">ISO 8601:2000</formattedref>      <date type="circulated">        <on>2000-12-21</on>      </date>    </bibitem>  </relation>  <relation type="updates">    <bibitem type="standard">      <formattedref format="text/plain">ISO 8601:1988/Cor 1:1991</formattedref>      <date type="circulated">        <on>2000-12-21</on>      </date>    </bibitem>  </relation>  <place>Geneva</place></bibitem><bibitem id="RFC3339" type="standard">  <fetched>2021-06-18</fetched>  <title format="text/plain" language="en" script="Latn">Date and Time on the Internet: Timestamps</title>  <uri type="xml">https://raw.githubusercontent.com/relaton/relaton-data-ietf/master/data/reference.RFC.3339.xml</uri>  <uri type="src">https://www.rfc-editor.org/info/rfc3339</uri>  <docidentifier type="IETF">RFC 3339</docidentifier>  <docidentifier type="rfc-anchor">RFC3339</docidentifier>  <docidentifier type="DOI">10.17487/RFC3339</docidentifier>  <date type="published">    <on>2002-07</on>  </date>  <contributor>    <role type="author"/>    <person>      <name>        <completename language="en">G. Klyne</completename>      </name>      <affiliation>        <organization>          <name>Internet Engineering Task Force</name>          <abbreviation>IETF</abbreviation>        </organization>      </affiliation>    </person>  </contributor>  <contributor>    <role type="author"/>    <person>      <name>        <completename language="en">C. Newman</completename>      </name>      <affiliation>        <organization>          <name>Internet Engineering Task Force</name>          <abbreviation>IETF</abbreviation>        </organization>      </affiliation>    </person>  </contributor>  <contributor>    <role type="publisher"/>    <organization>      <name>Internet Engineering Task Force</name>      <abbreviation>IETF</abbreviation>    </organization>  </contributor>  <language>en</language>  <script>Latn</script>  <abstract format="text/plain" language="en" script="Latn">This document defines a date and time format for use in Internet protocols that is a profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar.</abstract>  <series type="main">    <title format="text/plain" language="en" script="Latn">RFC</title>    <number>3339</number>  </series>  <place>Fremont, CA</place></bibitem><bibitem id="ITURTF460-6">
+</sections><bibliography><references id="references" normative="true" obligation="informative"><title>Normative References</title> <bibitem id="RFC2234" type="standard">  <fetched>2021-08-17</fetched>  <title format="text/plain" language="en" script="Latn">Augmented BNF for Syntax Specifications: ABNF</title>  <uri type="xml">https://raw.githubusercontent.com/relaton/relaton-data-ietf/master/data/reference.RFC.2234.xml</uri>  <uri type="src">https://www.rfc-editor.org/info/rfc2234</uri>  <docidentifier type="IETF">RFC 2234</docidentifier>  <docidentifier type="rfc-anchor">RFC2234</docidentifier>  <docidentifier type="DOI">10.17487/RFC2234</docidentifier>  <date type="published">    <on>1997-11</on>  </date>  <contributor>    <role type="editor"/>    <person>      <name>        <completename language="en">D. Crocker</completename>      </name>      <affiliation>        <organization>          <name>Internet Engineering Task Force</name>          <abbreviation>IETF</abbreviation>        </organization>      </affiliation>    </person>  </contributor>  <contributor>    <role type="author"/>    <person>      <name>        <completename language="en">P. Overell</completename>      </name>      <affiliation>        <organization>          <name>Internet Engineering Task Force</name>          <abbreviation>IETF</abbreviation>        </organization>      </affiliation>    </person>  </contributor>  <contributor>    <role type="publisher"/>    <organization>      <name>Internet Engineering Task Force</name>      <abbreviation>IETF</abbreviation>    </organization>  </contributor>  <language>en</language>  <script>Latn</script>  <abstract format="text/plain" language="en" script="Latn">In the early days of the Arpanet, each specification contained its own definition of ABNF.  This included the email specifications, RFC733 and then RFC822 which have come to be the common citations for defining ABNF.  The current document separates out that definition, to permit selective reference.  Predictably, it also provides some modifications and enhancements.  [STANDARDS-TRACK]</abstract>  <series type="main">    <title format="text/plain" language="en" script="Latn">RFC</title>    <number>2234</number>  </series>  <place>Fremont, CA</place></bibitem> <bibitem id="RFC1305" type="standard">  <fetched>2021-08-17</fetched>  <title format="text/plain" language="en" script="Latn">Network Time Protocol (Version 3) Specification, Implementation and Analysis</title>  <uri type="xml">https://raw.githubusercontent.com/relaton/relaton-data-ietf/master/data/reference.RFC.1305.xml</uri>  <uri type="src">https://www.rfc-editor.org/info/rfc1305</uri>  <docidentifier type="IETF">RFC 1305</docidentifier>  <docidentifier type="rfc-anchor">RFC1305</docidentifier>  <docidentifier type="DOI">10.17487/RFC1305</docidentifier>  <date type="published">    <on>1992-03</on>  </date>  <contributor>    <role type="author"/>    <person>      <name>        <completename language="en">D. Mills</completename>      </name>      <affiliation>        <organization>          <name>Internet Engineering Task Force</name>          <abbreviation>IETF</abbreviation>        </organization>      </affiliation>    </person>  </contributor>  <contributor>    <role type="publisher"/>    <organization>      <name>Internet Engineering Task Force</name>      <abbreviation>IETF</abbreviation>    </organization>  </contributor>  <language>en</language>  <script>Latn</script>  <abstract format="text/plain" language="en" script="Latn">This document describes the Network Time Protocol (NTP), specifies its formal structure and summarizes information useful for its implementation.  [STANDARDS-TRACK]</abstract>  <series type="main">    <title format="text/plain" language="en" script="Latn">RFC</title>    <number>1305</number>  </series>  <place>Fremont, CA</place></bibitem> <bibitem id="RFC2119" type="standard">  <fetched>2021-08-17</fetched>  <title format="text/plain" language="en" script="Latn">Key words for use in RFCs to Indicate Requirement Levels</title>  <uri type="xml">https://raw.githubusercontent.com/relaton/relaton-data-ietf/master/data/reference.RFC.2119.xml</uri>  <uri type="src">https://www.rfc-editor.org/info/rfc2119</uri>  <docidentifier type="IETF">RFC 2119</docidentifier>  <docidentifier type="rfc-anchor">RFC2119</docidentifier>  <docidentifier type="DOI">10.17487/RFC2119</docidentifier>  <date type="published">    <on>1997-03</on>  </date>  <contributor>    <role type="author"/>    <person>      <name>        <completename language="en">S. Bradner</completename>      </name>      <affiliation>        <organization>          <name>Internet Engineering Task Force</name>          <abbreviation>IETF</abbreviation>        </organization>      </affiliation>    </person>  </contributor>  <contributor>    <role type="publisher"/>    <organization>      <name>Internet Engineering Task Force</name>      <abbreviation>IETF</abbreviation>    </organization>  </contributor>  <language>en</language>  <script>Latn</script>  <abstract format="text/plain" language="en" script="Latn">In many standards track documents several words are used to signify the requirements in the specification.  These words are often capitalized. This document defines these words as they should be interpreted in IETF documents.  This document specifies an Internet Best Current Practices for the Internet Community, and requests discussion and suggestions for improvements.</abstract>  <series type="main">    <title format="text/plain" language="en" script="Latn">BCP</title>    <number>14</number>  </series>  <series type="main">    <title format="text/plain" language="en" script="Latn">RFC</title>    <number>2119</number>  </series>  <place>Fremont, CA</place></bibitem> <bibitem id="RFC5646" type="standard">  <fetched>2021-08-17</fetched>  <title format="text/plain" language="en" script="Latn">Tags for Identifying Languages</title>  <uri type="xml">https://raw.githubusercontent.com/relaton/relaton-data-ietf/master/data/reference.RFC.5646.xml</uri>  <uri type="src">https://www.rfc-editor.org/info/rfc5646</uri>  <docidentifier type="IETF">RFC 5646</docidentifier>  <docidentifier type="rfc-anchor">RFC5646</docidentifier>  <docidentifier type="DOI">10.17487/RFC5646</docidentifier>  <date type="published">    <on>2009-09</on>  </date>  <contributor>    <role type="editor"/>    <person>      <name>        <completename language="en">A. Phillips</completename>      </name>      <affiliation>        <organization>          <name>Internet Engineering Task Force</name>          <abbreviation>IETF</abbreviation>        </organization>      </affiliation>    </person>  </contributor>  <contributor>    <role type="editor"/>    <person>      <name>        <completename language="en">M. Davis</completename>      </name>      <affiliation>        <organization>          <name>Internet Engineering Task Force</name>          <abbreviation>IETF</abbreviation>        </organization>      </affiliation>    </person>  </contributor>  <contributor>    <role type="publisher"/>    <organization>      <name>Internet Engineering Task Force</name>      <abbreviation>IETF</abbreviation>    </organization>  </contributor>  <language>en</language>  <script>Latn</script>  <abstract format="text/plain" language="en" script="Latn">This document describes the structure, content, construction, and semantics of language tags for use in cases where it is desirable to indicate the language used in an information object.  It also describes how to register values for use in language tags and the creation of user-defined extensions for private interchange.  This document  specifies an Internet Best Current Practices for the Internet Community, and requests discussion and suggestions for improvements.</abstract>  <series type="main">    <title format="text/plain" language="en" script="Latn">BCP</title>    <number>47</number>  </series>  <series type="main">    <title format="text/plain" language="en" script="Latn">RFC</title>    <number>5646</number>  </series>  <place>Fremont, CA</place></bibitem> <bibitem id="RFC2026" type="standard">  <fetched>2021-08-17</fetched>  <title format="text/plain" language="en" script="Latn">The Internet Standards Process&#8201;&#8212;&#8201;Revision 3</title>  <uri type="xml">https://raw.githubusercontent.com/relaton/relaton-data-ietf/master/data/reference.RFC.2026.xml</uri>  <uri type="src">https://www.rfc-editor.org/info/rfc2026</uri>  <docidentifier type="IETF">RFC 2026</docidentifier>  <docidentifier type="rfc-anchor">RFC2026</docidentifier>  <docidentifier type="DOI">10.17487/RFC2026</docidentifier>  <date type="published">    <on>1996-10</on>  </date>  <contributor>    <role type="author"/>    <person>      <name>        <completename language="en">S. Bradner</completename>      </name>      <affiliation>        <organization>          <name>Internet Engineering Task Force</name>          <abbreviation>IETF</abbreviation>        </organization>      </affiliation>    </person>  </contributor>  <contributor>    <role type="publisher"/>    <organization>      <name>Internet Engineering Task Force</name>      <abbreviation>IETF</abbreviation>    </organization>  </contributor>  <language>en</language>  <script>Latn</script>  <abstract format="text/plain" language="en" script="Latn">This memo documents the process used by the Internet community for the standardization of protocols and procedures.  It defines the stages in the standardization process, the requirements for moving a document between stages and the types of documents used during this process. This document specifies an Internet Best Current Practices for the Internet Community, and requests discussion and suggestions for improvements.</abstract>  <series type="main">    <title format="text/plain" language="en" script="Latn">BCP</title>    <number>9</number>  </series>  <series type="main">    <title format="text/plain" language="en" script="Latn">RFC</title>    <number>2026</number>  </series>  <place>Fremont, CA</place></bibitem> <bibitem id="RFC2028" type="standard">  <fetched>2021-08-17</fetched>  <title format="text/plain" language="en" script="Latn">The Organizations Involved in the IETF Standards Process</title>  <uri type="xml">https://raw.githubusercontent.com/relaton/relaton-data-ietf/master/data/reference.RFC.2028.xml</uri>  <uri type="src">https://www.rfc-editor.org/info/rfc2028</uri>  <docidentifier type="IETF">RFC 2028</docidentifier>  <docidentifier type="rfc-anchor">RFC2028</docidentifier>  <docidentifier type="DOI">10.17487/RFC2028</docidentifier>  <date type="published">    <on>1996-10</on>  </date>  <contributor>    <role type="author"/>    <person>      <name>        <completename language="en">R. Hovey</completename>      </name>      <affiliation>        <organization>          <name>Internet Engineering Task Force</name>          <abbreviation>IETF</abbreviation>        </organization>      </affiliation>    </person>  </contributor>  <contributor>    <role type="author"/>    <person>      <name>        <completename language="en">S. Bradner</completename>      </name>      <affiliation>        <organization>          <name>Internet Engineering Task Force</name>          <abbreviation>IETF</abbreviation>        </organization>      </affiliation>    </person>  </contributor>  <contributor>    <role type="publisher"/>    <organization>      <name>Internet Engineering Task Force</name>      <abbreviation>IETF</abbreviation>    </organization>  </contributor>  <language>en</language>  <script>Latn</script>  <abstract format="text/plain" language="en" script="Latn">This document describes the individuals and organizations involved in the IETF.  This includes descriptions of the IESG, the IETF Working Groups and the relationship between the IETF and the Internet Society. This document specifies an Internet Best Current Practices for the Internet Community, and requests discussion and suggestions for improvements.</abstract>  <series type="main">    <title format="text/plain" language="en" script="Latn">BCP</title>    <number>11</number>  </series>  <series type="main">    <title format="text/plain" language="en" script="Latn">RFC</title>    <number>2028</number>  </series>  <place>Fremont, CA</place></bibitem></references><references id="_informative_references" normative="false" obligation="informative"><title>Informative References</title><bibitem id="ISO8601" type="standard">  <fetched>2021-06-18</fetched>  <title type="title-intro" format="text/plain" language="en" script="Latn">Data elements and interchange formats</title>  <title type="title-main" format="text/plain" language="en" script="Latn">Information interchange</title>  <title type="title-part" format="text/plain" language="en" script="Latn">Representation of dates and times</title>  <title type="main" format="text/plain" language="en" script="Latn">Data elements and interchange formats&#8201;&#8212;&#8201;Information interchange&#8201;&#8212;&#8201;Representation of dates and times</title>  <uri type="src">https://www.iso.org/standard/15903.html</uri>  <uri type="rss">https://www.iso.org/contents/data/standard/01/59/15903.detail.rss</uri>  <docidentifier type="ISO">ISO 8601:1988</docidentifier>  <docidentifier type="URN">urn:iso:std:iso:8601:stage-95.99:ed-1:en</docidentifier>  <docnumber>8601</docnumber>  <date type="published">    <on>1988-06</on>  </date>  <contributor>    <role type="publisher"/>    <organization>      <name>International Organization for Standardization</name>      <abbreviation>ISO</abbreviation>      <uri>www.iso.org</uri>    </organization>  </contributor>  <edition>1</edition>  <language>en</language>  <script>Latn</script>  <status>    <stage>95</stage>    <substage>99</substage>  </status>  <copyright>    <from>1988</from>    <owner>      <organization>        <name>ISO</name>      </organization>    </owner>  </copyright>  <relation type="obsoletes">    <bibitem type="standard">      <formattedref format="text/plain">ISO 2014:1976</formattedref>    </bibitem>  </relation>  <relation type="obsoletes">    <bibitem type="standard">      <formattedref format="text/plain">ISO 2015:1976</formattedref>    </bibitem>  </relation>  <relation type="obsoletes">    <bibitem type="standard">      <formattedref format="text/plain">ISO 2711:1973</formattedref>    </bibitem>  </relation>  <relation type="obsoletes">    <bibitem type="standard">      <formattedref format="text/plain">ISO 3307:1975</formattedref>    </bibitem>  </relation>  <relation type="obsoletes">    <bibitem type="standard">      <formattedref format="text/plain">ISO 4031:1978</formattedref>    </bibitem>  </relation>  <relation type="updates">    <bibitem type="standard">      <formattedref format="text/plain">ISO 8601:2000</formattedref>      <date type="circulated">        <on>2000-12-21</on>      </date>    </bibitem>  </relation>  <relation type="updates">    <bibitem type="standard">      <formattedref format="text/plain">ISO 8601:1988/Cor 1:1991</formattedref>      <date type="circulated">        <on>2000-12-21</on>      </date>    </bibitem>  </relation>  <place>Geneva</place></bibitem><bibitem id="RFC3339" type="standard">  <fetched>2021-08-17</fetched>  <title format="text/plain" language="en" script="Latn">Date and Time on the Internet: Timestamps</title>  <uri type="xml">https://raw.githubusercontent.com/relaton/relaton-data-ietf/master/data/reference.RFC.3339.xml</uri>  <uri type="src">https://www.rfc-editor.org/info/rfc3339</uri>  <docidentifier type="IETF">RFC 3339</docidentifier>  <docidentifier type="rfc-anchor">RFC3339</docidentifier>  <docidentifier type="DOI">10.17487/RFC3339</docidentifier>  <date type="published">    <on>2002-07</on>  </date>  <contributor>    <role type="author"/>    <person>      <name>        <completename language="en">G. Klyne</completename>      </name>      <affiliation>        <organization>          <name>Internet Engineering Task Force</name>          <abbreviation>IETF</abbreviation>        </organization>      </affiliation>    </person>  </contributor>  <contributor>    <role type="author"/>    <person>      <name>        <completename language="en">C. Newman</completename>      </name>      <affiliation>        <organization>          <name>Internet Engineering Task Force</name>          <abbreviation>IETF</abbreviation>        </organization>      </affiliation>    </person>  </contributor>  <contributor>    <role type="publisher"/>    <organization>      <name>Internet Engineering Task Force</name>      <abbreviation>IETF</abbreviation>    </organization>  </contributor>  <language>en</language>  <script>Latn</script>  <abstract format="text/plain" language="en" script="Latn">This document defines a date and time format for use in Internet protocols that is a profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar.</abstract>  <series type="main">    <title format="text/plain" language="en" script="Latn">RFC</title>    <number>3339</number>  </series>  <place>Fremont, CA</place></bibitem><bibitem id="ITURTF460-6">
   <formattedref format="application/x-isodoc+xml">
     <em>ITU-R TF.460-6. Standard-frequency and time-signal emissions</em>
   </formattedref>
   <docidentifier type="metanorma">[ITU-R TF.460-6]</docidentifier>
 </bibitem><bibitem id="IERS">
-  <fetched>2021-06-23</fetched>
+  <fetched>2021-08-17</fetched>
   <title type="title-main" format="text/plain">International Earth Rotation Service Bulletins</title>
   <title type="main" format="text/plain">International Earth Rotation Service Bulletins</title>
   <uri type="src">https://www.iers.org/IERS/EN/Publications/Bulletins/bulletins.html</uri>
 </bibitem><bibitem id="JAVAZDT">
-  <fetched>2021-06-23</fetched>
+  <fetched>2021-08-17</fetched>
   <title type="title-main" format="text/plain">Java SE 8, java.time.format, DateTimeFormatter: ISO_ZONED_DATE_TIME</title>
   <title type="main" format="text/plain">Java SE 8, java.time.format, DateTimeFormatter: ISO_ZONED_DATE_TIME</title>
   <uri type="src">https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html#ISO_ZONED_DATE_TIME</uri>
