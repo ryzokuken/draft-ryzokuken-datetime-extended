@@ -7,8 +7,8 @@
   <uri type="xml">documents/rfc-3339.xml</uri>
   <uri type="rxl">documents/rfc-3339.rxl</uri>
   <uri type="txt">documents/rfc-3339.txt</uri>
-  <docidentifier>draft-ryzokuken-datetime-extended-02</docidentifier>
-  <docnumber>draft-ryzokuken-datetime-extended-02</docnumber>
+  <docidentifier>draft-ietf-sedate-datetime-extended-00</docidentifier>
+  <docnumber>draft-ietf-sedate-datetime-extended-00</docnumber>
   <contributor>
     <role type="author"/>
     <person>
@@ -18,6 +18,7 @@
       <affiliation>
         <organization>
           <name>Igalia, S.L.</name>
+          <subdivision>Compilers Team</subdivision>
         </organization>
       </affiliation>
       <email>ryzokuken@igalia.com</email>
@@ -31,7 +32,7 @@
     </organization>
   </contributor>
   <version>
-    <revision-date>2020-10-21</revision-date>
+    <revision-date>2021-08-17</revision-date>
   </version>
   <language>en</language>
   <script>Latn</script>
@@ -40,7 +41,7 @@ This document defines an extension to the timestamp format defined in
  for representing additional information including a time zone.
 </abstract>
   <status>
-    <stage>published</stage>
+    <stage>draft</stage>
   </status>
   <copyright>
     <from>2021</from>
@@ -62,7 +63,7 @@ This document defines an extension to the timestamp format defined in
   <fetched>2021-08-17</fetched>
   <title format="text/plain" language="en" script="Latn">Date and Time on the Internet: Timestamps with additional information</title>
   <uri type="xml">documents/rfc-3339.rfc.xml</uri>
-  <docidentifier type="IETF">draft-ryzokuken-datetime-extended-02</docidentifier>
+  <docidentifier type="IETF">draft-ietf-sedate-datetime-extended-00</docidentifier>
   <contributor>
     <role type="author"/>
     <person>
@@ -78,6 +79,7 @@ This document defines an extension to the timestamp format defined in
         <street>Bugallal Marchesi, 22, 1º</street>
         <city>A Coruña</city>
         <country>Spain</country>
+        <postcode>15008</postcode>
       </address>
       <email>ryzokuken@igalia.com</email>
       <uri/>

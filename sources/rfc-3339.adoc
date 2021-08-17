@@ -1,9 +1,10 @@
 = Date and Time on the Internet: Timestamps with additional information
 :doctype: internet-draft
+:status: draft
 :abbrev: Timestamps Extended
-:docnumber: draft-ryzokuken-datetime-extended-02
-:workgroup: Calendaring Extensions Working Group
-:revdate: 2020-10-21
+:docnumber: draft-ietf-sedate-datetime-extended-00
+:workgroup: Serialising Extended Data About Times and Events
+:revdate: 2021-08-17
 :uri: https://ryzokuken.dev/draft-ryzokuken-datetime-extended/
 :html-uri: https://ryzokuken.dev/draft-ryzokuken-datetime-extended/documents/rfc-3339.html
 :pdf-uri: https://ryzokuken.dev/draft-ryzokuken-datetime-extended/documents/rfc-3339.pdf
@@ -12,12 +13,12 @@
 :surname: Sharma
 :email: ryzokuken@igalia.com
 :affiliation: Igalia, S.L.
-:subdivision: Compilers Team
+:affiliation_subdiv: Compilers Team
 :pub-uri: https://www.igalia.com/
 :street: Bugallal Marchesi, 22, 1º
 :city: A Coruña
 :region: Galicia
-:code: 15008
+:postcode: 15008
 :country: Spain
 :docfile: rfc-3339.adoc
 :mn-document-class: ietf

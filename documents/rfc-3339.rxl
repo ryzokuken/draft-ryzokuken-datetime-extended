@@ -4,8 +4,8 @@
 <uri>https://ryzokuken.dev/draft-ryzokuken-datetime-extended/</uri>
 <uri type="html">https://ryzokuken.dev/draft-ryzokuken-datetime-extended/documents/rfc-3339.html</uri>
 <uri type="pdf">https://ryzokuken.dev/draft-ryzokuken-datetime-extended/documents/rfc-3339.pdf</uri>
-<docidentifier>draft-ryzokuken-datetime-extended-02</docidentifier>
-<docnumber>draft-ryzokuken-datetime-extended-02</docnumber>
+<docidentifier>draft-ietf-sedate-datetime-extended-00</docidentifier>
+<docnumber>draft-ietf-sedate-datetime-extended-00</docnumber>
 <contributor>
 <role type="author"/>
 <person>
@@ -15,10 +15,12 @@
 <affiliation>
 <organization>
 <name>Igalia, S.L.</name>
+<subdivision>Compilers Team</subdivision>
 <address>
 <street>Bugallal Marchesi, 22, 1&#186;</street>
 <city>A Coru&#241;a</city>
 <country>Spain</country>
+<postcode>15008</postcode>
 </address>
 </organization>
 </affiliation>
@@ -33,7 +35,7 @@
 </organization>
 </contributor>
 <version>
-<revision-date>2020-10-21</revision-date>
+<revision-date>2021-08-17</revision-date>
 </version>
 <language>en</language>
 <script>Latn</script><abstract>
@@ -41,7 +43,7 @@
 <eref type="inline" bibitemid="RFC3339" citeas="RFC 3339"/> for representing additional information including a time zone.</p>
 </abstract>
 <status>
-<stage>published</stage>
+<stage>draft</stage>
 </status>
 <copyright>
 <from>2021</from>
@@ -58,7 +60,7 @@
 <ext>
 <doctype>internet-draft</doctype>
 <editorialgroup>
-<workgroup>Calendaring Extensions Working Group</workgroup>
+<workgroup>Serialising Extended Data About Times and Events</workgroup>
 </editorialgroup>
 <ipr>trust200902</ipr>
 <pi>

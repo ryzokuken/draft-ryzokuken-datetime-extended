@@ -3,40 +3,45 @@ sources/rfc-3339.err errors
 
 == Bibliography
 
-(XML Line 000326): Reference IERS is missing a document identifier (docid)
+(XML Line 000328): Reference IERS is missing a document identifier (docid)
 	<clause id="_international_earth_rotation_service_bulletins" inline-header="false" bibitem="true" obligation="informative">
 	
-	<dl id="_fb9ffda8-7cc2-47d7-bb27-bf81cc01ca62">
+	<dl id="_0faa3d89-f57d-4d4a-bdbd-ad08c7cfab77">
 	<dt>id</dt>
 	
-(XML Line 000350): Reference JAVAZDT is missing a document identifier (docid)
+(XML Line 000352): Reference JAVAZDT is missing a document identifier (docid)
 	<clause id="_java_se_8_java_time_format_datetimeformatter_iso_zoned_date_time" inline-header="false" bibitem="true" obligation="informative">
 	
-	<dl id="_483ad602-fd3d-445f-bd5f-fa46a8e69d70">
+	<dl id="_b35e70d1-604a-4d3a-b67c-48fe7dbd6647">
 	<dt>id</dt>
 	
 
 
 == Crossreferences
 
-(XML Line 000083): JAVAZDT does not have a corresponding anchor ID in the bibliography!
+(XML Line 000085): JAVAZDT does not have a corresponding anchor ID in the bibliography!
 	<eref target="JAVAZDT" type="inline" bibitemid="JAVAZDT" citeas=""/>
-(XML Line 000096): JAVAZDT does not have a corresponding anchor ID in the bibliography!
+(XML Line 000098): JAVAZDT does not have a corresponding anchor ID in the bibliography!
 	<eref target="JAVAZDT" type="inline" bibitemid="JAVAZDT" citeas=""/>
-(XML Line 000112): IERS does not have a corresponding anchor ID in the bibliography!
+(XML Line 000114): IERS does not have a corresponding anchor ID in the bibliography!
 	<eref target="IERS" type="inline" bibitemid="IERS" citeas=""/>
 
 
 == Metanorma XML Style Warning
 
-(XML Line 000148): Hanging paragraph in clause
-	<clause id="date-time-format" inline-header="false" obligation="normative"><title>Extended Date and Time format</title><p id="_3886eb7d-5c9c-4c29-9442-3d4a7551e86b">This section discusses desirable qualities of formats for the timestamp
+(XML Line 000150): Hanging paragraph in clause
+	<clause id="date-time-format" inline-header="false" obligation="normative"><title>Extended Date and Time format</title><p id="_6594a4f0-1f9f-4a1e-a9b6-e5bc1e9dabc7">This section discusses desirable qualities of formats for the timestamp
 	extension suffix and defines such a format that extends <eref type="inline" bibitemid="RFC3339" citeas="RFC 3339"/> for use in
 	Internet protocols.</p>
-	<clause id="_informative" inline-header="false" obligation="normative"><title>Informative</title><p id="_2f8b484f-d835-4df9-817b-948114fcaed6">The format should allow implementations to specify additional important
+	<clause id="_informative" inline-header="false" obligation="normative"><title>Informative</title><p id="_3aecc16a-36a7-481b-964b-524f679bbf0c">The format should allow implementations to specify additional important
 	information in addition to the bare timestamp. This is done by allowing
+
+
+== Document Attributes
+
+(): IETF: unrecognised working group Serialising Extended Data About Times and Events
 
 
 == Metanorma XML Syntax
 
-(XML Line 000063:12): element "workgroup" not allowed here; expected the element end-tag or element "committee"
+(XML Line 000065:12): element "workgroup" not allowed here; expected the element end-tag or element "committee"
