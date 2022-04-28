@@ -76,7 +76,7 @@ GEM
       thor (~> 1.0.1)
       ttfunk (~> 1.6)
     gb-agencies (0.0.7)
-    git (1.9.1)
+    git (1.11.0)
       rchardet (~> 1.8)
     hashie (4.1.0)
     hollaback (0.1.0)
